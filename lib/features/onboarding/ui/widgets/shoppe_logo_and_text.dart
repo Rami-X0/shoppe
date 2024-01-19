@@ -14,8 +14,8 @@ class ShoppeLogoAndText extends StatelessWidget {
         Center(
           child: Image.asset(
             'assets/images/shoppe_logo.png',
-            width: 143.w,
-            height: 143.h,
+            width: 134.w,
+            height: 134.h,
           ),
         ),
          verticalSpace(5),
