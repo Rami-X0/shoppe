@@ -1,6 +1,8 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import'package:flutter/material.dart';
-import 'package:shoppe/features/onboarding/ui/onboarding_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:shoppe/core/routing/routes.dart';
+import 'core/routing/app_router.dart' as route;
+
 class ShoppeApp extends StatelessWidget {
   const ShoppeApp({super.key});
 
@@ -11,7 +13,8 @@ class ShoppeApp extends StatelessWidget {
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: OnBoardingScreen(),
+        initialRoute: Routes.onBoardingScreen,
+        onGenerateRoute: route.generateRoute,
       ),
     );
   }
