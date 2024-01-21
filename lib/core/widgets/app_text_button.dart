@@ -10,6 +10,8 @@ class AppTextButton extends StatelessWidget {
   final double? verticalSize;
   final double? horizontalSize;
   final double? border;
+  final Color? shadowColor;
+  final double? elevationShadow;
 
   const AppTextButton({
     super.key,
@@ -20,12 +22,18 @@ class AppTextButton extends StatelessWidget {
     this.verticalSize,
     this.horizontalSize,
     this.border,
+    this.shadowColor,
+    this.elevationShadow,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
+        animationDuration: const Duration(milliseconds: 750),
+        elevation: MaterialStateProperty.all(elevationShadow ?? 5),
+        shadowColor:
+            MaterialStateProperty.all(shadowColor ?? ColorsManager.darkBlue),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
@@ -46,7 +54,8 @@ class AppTextButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       child: Text(
-        text,style: textStyle,
+        text,
+        style: textStyle,
       ),
     );
   }
