@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shoppe/core/helper/spacing.dart';
+import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 
 class ShoppeLogoAndText extends StatelessWidget {
@@ -33,9 +34,11 @@ class ShoppeLogoAndText extends StatelessWidget {
           ),
           verticalSpace(18),
           Text(
-            'Best products in the market of 2024 \nwith the highest quality you will find.',
+            'Best products in the market of 2024 with the \nhighest quality you will find.',
             textAlign: TextAlign.center,
-            style: TextStyles.font19DarkBlueLight,
+            style: TextStyles.font15DarkBlueRegular.copyWith(
+              color: ColorsManager.grey,
+            ),
           ),
           verticalSpace(105),
         ],

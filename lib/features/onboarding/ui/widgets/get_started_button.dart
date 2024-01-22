@@ -20,7 +20,7 @@ class GetStartedButton extends StatelessWidget {
             context.navigatorPushNamed(Routes.loginScreen);
           },
           text: 'Let\'s get started',
-          textStyle: TextStyles.font22WhiteLight,
+          textStyle: TextStyles.font22WhiteBold,
         ),
         verticalSpace(18),
         Row(
@@ -28,7 +28,9 @@ class GetStartedButton extends StatelessWidget {
           children: [
             Text(
               'I already have an account',
-              style: TextStyles.font15DarkBlueLight,
+              style: TextStyles.font15DarkBlueRegular.copyWith(
+
+              ),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(

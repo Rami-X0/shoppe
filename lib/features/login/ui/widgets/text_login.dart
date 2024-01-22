@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 
 class TextLogin extends StatelessWidget {
@@ -7,6 +8,7 @@ class TextLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Login',
@@ -14,7 +16,9 @@ class TextLogin extends StatelessWidget {
         ),
         Text(
           'Good to see you back!',
-          style: TextStyles.font19DarkBlueLight,
+          style: TextStyles.font15DarkBlueRegular.copyWith(
+            color: ColorsManager.grey
+          ),
         ),
       ],
     );

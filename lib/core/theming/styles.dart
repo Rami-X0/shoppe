@@ -9,19 +9,30 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: ColorsManager.darkBlue,
   );
-  static TextStyle font19DarkBlueLight = TextStyle(
-    fontSize: 19.sp,
-    fontWeight: FontWeightHelper.light,
-    color: ColorsManager.darkBlue,
-  );
-  static TextStyle font22WhiteLight = TextStyle(
+
+  static TextStyle font22WhiteBold = TextStyle(
     fontSize: 22.sp,
-    fontWeight: FontWeightHelper.light,
+    fontWeight: FontWeightHelper.bold,
     color: Colors.white,
   );
-  static TextStyle font15DarkBlueLight = TextStyle(
+  static TextStyle font15DarkBlueRegular = TextStyle(
     fontSize: 15.sp,
-    fontWeight: FontWeightHelper.light,
+    fontWeight: FontWeightHelper.regular,
     color: ColorsManager.darkBlue,
+  );
+  static TextStyle font13MoreLighterGreyRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.moreLighterGray,
+  );
+  static TextStyle font13DarkBlueRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.darkBlue,
+  );
+  static TextStyle font14LightGrayMedium = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.lightGray,
   );
 }
