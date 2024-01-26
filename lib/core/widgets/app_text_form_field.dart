@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppe/core/theming/colors.dart';
 
 class AppTextFormField extends StatelessWidget {
   final String hintText;
-  final Widget suffixIcon;
+  final Widget? suffixIcon;
   final EdgeInsetsGeometry? contentPadding;
   final double borderRadius = 16;
-  final bool obscureText;
+  final bool? obscureText;
   final  Function(String?) validator;
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   const AppTextFormField({
     super.key,
     required this.hintText,
     required this.suffixIcon,
     this.contentPadding,
-    this.obscureText = false,
+    this.obscureText ,
     required this.validator,
     required this.controller,
   });
@@ -28,7 +27,8 @@ class AppTextFormField extends StatelessWidget {
       return validator(value);
 
         },
-      obscureText: obscureText,
+      controller: controller,
+      obscureText: obscureText??false,
       cursorOpacityAnimates: true,
       decoration: InputDecoration(
         contentPadding: contentPadding ??

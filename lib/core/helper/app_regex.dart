@@ -3,6 +3,12 @@ class AppRegex {
     return RegExp(r'^.+@[a-zA-Z]+\.[a-zA-Z]+(\.?[a-zA-Z]+)$').hasMatch(email);
   }
 
+  static bool isPasswordValid(String password) {
+    return RegExp(
+            r"(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")
+        .hasMatch(password);
+  }
+
   static bool hasLowerCase(String password) {
     return RegExp(r'(?=.*[a-z])').hasMatch(password);
   }
