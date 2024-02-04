@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/core/di/dependency_injection.dart';
 import 'package:shoppe/core/routing/routes.dart';
+import 'package:shoppe/features/home/ui/home_screen.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/features/login/ui/login_screen.dart';
 import 'package:shoppe/features/onboarding/ui/onboarding_screen.dart';
@@ -16,7 +17,9 @@ Route generateRoute(RouteSettings settings) {
             create: (context) => getIt<LoginCubit>(),
             child: const LoginScreen()),
       );
-    default:
+    case Routes.homeScreen:
+      return MaterialPageRoute(builder: (_)=>const HomeScreen());
+      default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(
           body: Center(

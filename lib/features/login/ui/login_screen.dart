@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
+import 'package:shoppe/features/login/data/models/login_request_body.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/features/login/ui/widgets/already_have_account.dart';
 import 'package:shoppe/features/login/ui/widgets/email_and_password.dart';
+import 'package:shoppe/features/login/ui/widgets/login_bloc_listener.dart';
 import 'package:shoppe/features/login/ui/widgets/terms_and_conditions.dart';
 import 'package:shoppe/features/login/ui/widgets/text_login.dart';
 
@@ -34,10 +36,7 @@ class LoginScreen extends StatelessWidget {
                 AppTextButton(
                   onPressed: () {
                     validateThenLogin(context);
-                  // debugPrint('===========>Login');
-
-                    }
-                  ,
+                  },
                   text: 'Login',
                   textStyle: TextStyles.font22WhiteBold,
                 ),
@@ -45,8 +44,7 @@ class LoginScreen extends StatelessWidget {
                 const Center(child: TermsAndConditions()),
                 verticalSpace(24),
                 const AlreadyHaveAccount(),
-                // LoginBlocListiner(),
-
+                const LoginBlocListener(),
               ],
             ),
           ),
@@ -57,13 +55,12 @@ class LoginScreen extends StatelessWidget {
 
   void validateThenLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      debugPrint('===========>setupValidate');
-      // context.read<LoginCubit>().emitLogin(
-      //       LoginRequestBody(
-      //         email: context.read<LoginCubit>().emailController.text,
-      //         password: context.read<LoginCubit>().passwordController.text,
-      //       ),
-      //     );
+      context.read<LoginCubit>().emitLogin(
+            LoginRequestBody(
+              email: context.read<LoginCubit>().emailController.text,
+              password: context.read<LoginCubit>().passwordController.text,
+            ),
+          );
     }
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 extension NavigatorHelper on BuildContext {
-  void navigatorPushNamed(String name) {
+  void pushNamed(String name) {
     Navigator.pushNamed(this, name);
   }
 
@@ -9,7 +9,7 @@ extension NavigatorHelper on BuildContext {
     Navigator.pushNamedAndRemoveUntil(this, name, (route) => false);
   }
 
-  void navigatorPop(String name) {
+  void pop() {
     Navigator.pop(this);
   }
 }
