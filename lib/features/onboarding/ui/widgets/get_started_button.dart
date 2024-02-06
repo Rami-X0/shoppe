@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoppe/core/caching/app_shared_pref.dart';
+import 'package:shoppe/core/caching/app_shared_pref_key.dart';
 import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/routing/routes.dart';
@@ -18,6 +20,11 @@ class GetStartedButton extends StatelessWidget {
         AppTextButton(
           onPressed: () {
             context.pushNamed(Routes.loginScreen);
+              AppSharedPref.sharedPrefSet(
+                key: AppSharedPrefKey.onBoarding,
+                value: Routes.loginScreen,
+              );
+
           },
           text: 'Let\'s get started',
           textStyle: TextStyles.font22WhiteBold,
@@ -28,9 +35,7 @@ class GetStartedButton extends StatelessWidget {
           children: [
             Text(
               'I already have an account',
-              style: TextStyles.font15DarkBlueRegular.copyWith(
-
-              ),
+              style: TextStyles.font15DarkBlueRegular.copyWith(),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 extension NavigatorHelper on BuildContext {
-  void pushNamed(String name) {
-    Navigator.pushNamed(this, name);
+  Future<void> pushNamed(String name) {
+   return  Navigator.pushNamed(this, name);
   }
 
   void navigatorPushNamedAndRemoveUntil(String name) {

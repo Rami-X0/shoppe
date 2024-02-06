@@ -12,26 +12,27 @@ part of 'api_result.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ApiResult<T> {
+  Object? get data => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(ApiErrorModel networkExceptions) failure,
+    required TResult Function(String data) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(ApiErrorModel networkExceptions)? failure,
+    TResult? Function(String data)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(ApiErrorModel networkExceptions)? failure,
+    TResult Function(String data)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,7 +141,7 @@ class _$SucessImpl<T> implements Sucess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(ApiErrorModel networkExceptions) failure,
+    required TResult Function(String data) failure,
   }) {
     return success(data);
   }
@@ -149,7 +150,7 @@ class _$SucessImpl<T> implements Sucess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(ApiErrorModel networkExceptions)? failure,
+    TResult? Function(String data)? failure,
   }) {
     return success?.call(data);
   }
@@ -158,7 +159,7 @@ class _$SucessImpl<T> implements Sucess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(ApiErrorModel networkExceptions)? failure,
+    TResult Function(String data)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -202,6 +203,7 @@ class _$SucessImpl<T> implements Sucess<T> {
 abstract class Sucess<T> implements ApiResult<T> {
   const factory Sucess(final T data) = _$SucessImpl<T>;
 
+  @override
   T get data;
   @JsonKey(ignore: true)
   _$$SucessImplCopyWith<T, _$SucessImpl<T>> get copyWith =>
@@ -214,7 +216,7 @@ abstract class _$$FailureImplCopyWith<T, $Res> {
           _$FailureImpl<T> value, $Res Function(_$FailureImpl<T>) then) =
       __$$FailureImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({ApiErrorModel networkExceptions});
+  $Res call({String data});
 }
 
 /// @nodoc
@@ -228,13 +230,13 @@ class __$$FailureImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? networkExceptions = null,
+    Object? data = null,
   }) {
     return _then(_$FailureImpl<T>(
-      null == networkExceptions
-          ? _value.networkExceptions
-          : networkExceptions // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -242,14 +244,14 @@ class __$$FailureImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$FailureImpl<T> implements Failure<T> {
-  const _$FailureImpl(this.networkExceptions);
+  const _$FailureImpl(this.data);
 
   @override
-  final ApiErrorModel networkExceptions;
+  final String data;
 
   @override
   String toString() {
-    return 'ApiResult<$T>.failure(networkExceptions: $networkExceptions)';
+    return 'ApiResult<$T>.failure(data: $data)';
   }
 
   @override
@@ -257,12 +259,11 @@ class _$FailureImpl<T> implements Failure<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FailureImpl<T> &&
-            (identical(other.networkExceptions, networkExceptions) ||
-                other.networkExceptions == networkExceptions));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, networkExceptions);
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
@@ -274,29 +275,29 @@ class _$FailureImpl<T> implements Failure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(ApiErrorModel networkExceptions) failure,
+    required TResult Function(String data) failure,
   }) {
-    return failure(networkExceptions);
+    return failure(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(ApiErrorModel networkExceptions)? failure,
+    TResult? Function(String data)? failure,
   }) {
-    return failure?.call(networkExceptions);
+    return failure?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(ApiErrorModel networkExceptions)? failure,
+    TResult Function(String data)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(networkExceptions);
+      return failure(data);
     }
     return orElse();
   }
@@ -334,10 +335,10 @@ class _$FailureImpl<T> implements Failure<T> {
 }
 
 abstract class Failure<T> implements ApiResult<T> {
-  const factory Failure(final ApiErrorModel networkExceptions) =
-      _$FailureImpl<T>;
+  const factory Failure(final String data) = _$FailureImpl<T>;
 
-  ApiErrorModel get networkExceptions;
+  @override
+  String get data;
   @JsonKey(ignore: true)
   _$$FailureImplCopyWith<T, _$FailureImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
