@@ -10,5 +10,4 @@ class LoginState<T> with _$LoginState<T> {
   const factory LoginState.loading() = Loading;
 
   const factory LoginState.success(LoginResponse data) = Success<T>;
-// const factory LoginState.failure(NetworkExceptions failure)=Failure<T>;
 }

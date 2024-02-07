@@ -6,6 +6,8 @@ import 'package:shoppe/features/home/ui/home_screen.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/features/login/ui/login_screen.dart';
 import 'package:shoppe/features/onboarding/ui/onboarding_screen.dart';
+import 'package:shoppe/features/sign_up/logic/cubit/signup_cubit.dart';
+import 'package:shoppe/features/sign_up/ui/sign_up_screen.dart';
 
 Route generateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -17,9 +19,14 @@ Route generateRoute(RouteSettings settings) {
             create: (context) => getIt<LoginCubit>(),
             child: const LoginScreen()),
       );
+    case Routes.signUpScreen:
+      return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+              create: (context) => getIt<SignUpCubit>(),
+              child: const SignUpScreen()));
     case Routes.homeScreen:
-      return MaterialPageRoute(builder: (_)=>const HomeScreen());
-      default:
+      return MaterialPageRoute(builder: (_) => const HomeScreen());
+    default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(
           body: Center(

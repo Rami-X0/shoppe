@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/helper/spacing.dart';
+import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/theming/styles.dart';
+import 'package:shoppe/core/widgets/app_have_account.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
 import 'package:shoppe/features/login/data/models/login_request_body.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
-import 'package:shoppe/features/login/ui/widgets/already_have_account.dart';
 import 'package:shoppe/features/login/ui/widgets/email_and_password.dart';
 import 'package:shoppe/features/login/ui/widgets/login_bloc_listener.dart';
-import 'package:shoppe/features/login/ui/widgets/terms_and_conditions.dart';
+import 'package:shoppe/core/widgets/app_terms_and_conditions.dart';
 import 'package:shoppe/features/login/ui/widgets/text_login.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -41,9 +42,14 @@ class LoginScreen extends StatelessWidget {
                   textStyle: TextStyles.font22WhiteBold,
                 ),
                 verticalSpace(50),
-                const Center(child: TermsAndConditions()),
+                const Center(child: AppTermsAndConditions()),
                 verticalSpace(24),
-                const AlreadyHaveAccount(),
+                AppHaveAccount(
+                    onPressed: () {
+                      context.navigatorPushNamedAndRemoveUntil(Routes.signUpScreen);
+                    },
+                    text: 'You don\'t have an account?',
+                    textButton: 'Sign Up'),
                 const LoginBlocListener(),
               ],
             ),

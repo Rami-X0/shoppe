@@ -3,8 +3,17 @@ import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 
-class AlreadyHaveAccount extends StatelessWidget {
-  const AlreadyHaveAccount({super.key});
+class AppHaveAccount extends StatelessWidget {
+  final String text;
+  final String textButton;
+  final VoidCallback onPressed;
+
+  const AppHaveAccount({
+    super.key,
+    required this.onPressed,
+    required this.text,
+    required this.textButton,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +21,14 @@ class AlreadyHaveAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Already have an account yet?',
+          text,
           style: TextStyles.font13DarkBlueRegular,
         ),
         horizontalSpace(3),
         InkWell(
+          onTap: onPressed,
           child: Text(
-            'Sign Up',
+            textButton,
             style: TextStyles.font13DarkBlueRegular.copyWith(
               color: ColorsManager.mainBlue,
             ),

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shoppe/core/theming/styles.dart';
 
-class TermsAndConditions extends StatelessWidget {
-  const TermsAndConditions({super.key});
+class AppTermsAndConditions extends StatelessWidget {
+  const AppTermsAndConditions({super.key});
 
   @override
   Widget build(BuildContext context) {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-
         children: [
           TextSpan(
             text: 'By logging, you agree to our ',

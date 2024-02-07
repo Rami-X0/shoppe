@@ -67,6 +67,7 @@ class AppTextFormField extends StatelessWidget {
         filled: true,
         fillColor: ColorsManager.moreLightGray,
       ),
+
     );
   }
 }

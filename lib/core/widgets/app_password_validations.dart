@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
 
-class PasswordValidations extends StatelessWidget {
+class AppPasswordValidations extends StatelessWidget {
   final bool hasUpperCase;
   final bool hasLowerCase;
   final bool hasSpecialCharacters;
   final bool hasNumber;
   final bool hasMineLength;
 
-  const PasswordValidations({
+  const AppPasswordValidations({
     super.key,
     required this.hasUpperCase,
     required this.hasLowerCase,
@@ -22,7 +22,7 @@ class PasswordValidations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildValidationRow('At least 1 lowercase letter',hasLowerCase ),
+        buildValidationRow('At least 1 lowercase letter', hasLowerCase),
         verticalSpace(2),
         buildValidationRow('At least 1 uppercase letter', hasUpperCase),
         verticalSpace(2),
