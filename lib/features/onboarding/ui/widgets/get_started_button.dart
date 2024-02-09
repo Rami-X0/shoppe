@@ -19,10 +19,10 @@ class GetStartedButton extends StatelessWidget {
       children: [
         AppTextButton(
           onPressed: () {
-            context.pushNamed(Routes.loginScreen);
+            context.pushNamed(Routes.signUpScreen);
               AppSharedPref.sharedPrefSet(
                 key: AppSharedPrefKey.onBoarding,
-                value: Routes.loginScreen,
+                value: Routes.signUpScreen,
               );
 
           },
@@ -36,6 +36,7 @@ class GetStartedButton extends StatelessWidget {
             Text(
               'I already have an account',
               style: TextStyles.font15DarkBlueRegular.copyWith(),
+
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -45,7 +46,13 @@ class GetStartedButton extends StatelessWidget {
                   ),
                   shape: const CircleBorder(),
                   backgroundColor: ColorsManager.mainBlue),
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed(Routes.loginScreen);
+                AppSharedPref.sharedPrefSet(
+                  key: AppSharedPrefKey.onBoarding,
+                  value: Routes.loginScreen,
+                );
+              },
               child: FaIcon(
                 FontAwesomeIcons.arrowRight,
                 size: 15.w,

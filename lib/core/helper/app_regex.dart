@@ -9,9 +9,7 @@ class AppRegex {
         .hasMatch(password);
   }
 
-  static bool isPhoneValid(String password) {
-    return !RegExp(r'^[0-9]+$').hasMatch(password);
-  }
+
 
   static bool hasLowerCase(String password) {
     return RegExp(r'(?=.*[a-z])').hasMatch(password);

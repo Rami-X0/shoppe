@@ -6,15 +6,18 @@ import 'package:shoppe/features/login/logic/cubit/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
-  final GlobalKey<FormState> formKey = GlobalKey();
+  final formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
 
-  void emitLogin(LoginRequestBody loginRequestBody) async {
+  void emitLogin() async {
     emit(const LoginState.loading());
-    final response = await _loginRepo.login(loginRequestBody);
+    final response = await _loginRepo.login(LoginRequest(
+      email: emailController.text,
+      password: passwordController.text,
+    ));
     response.whenOrNull(
       success: (loginResponse) {
         emit(LoginState.success(loginResponse));

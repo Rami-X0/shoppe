@@ -6,38 +6,35 @@ import 'package:shoppe/core/helper/app_regex.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_text_form_field.dart';
+import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/core/widgets/app_password_validations.dart';
-import 'package:shoppe/features/sign_up/logic/cubit/signup_cubit.dart';
 
-class EmailAndPasswordAndPhone extends StatefulWidget {
-  const EmailAndPasswordAndPhone({super.key});
+class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
 
   @override
-  State<EmailAndPasswordAndPhone> createState() =>
-      _EmailAndPasswordAndPhoneState();
+  State<LoginForm> createState() => _LoginFormState();
 }
 
-late TextEditingController passwordController;
-bool hasNumber = false;
-bool _showPassword = true;
-bool hasLowerCase = false;
-bool hasUpperCase = false;
-bool hasMineLength = false;
-bool hasSpecialCharacters = false;
-bool isEmailColorFailureIcon = false;
-bool isPasswordColorFailureIcon = false;
-bool isNameColorFailureIcon = false;
-bool isPhoneColorFailureIcon = false;
+class _LoginFormState extends State<LoginForm> {
+  bool _showPassword = true;
+  bool hasLowerCase = false;
+  bool hasUpperCase = false;
+  bool hasSpecialCharacters = false;
+  bool hasNumber = false;
+  bool hasMineLength = false;
+  bool isEmailColorFailureIcon = false;
+  bool isPasswordColorFailureIcon = false;
+   TextEditingController passwordController=TextEditingController();
 
-class _EmailAndPasswordAndPhoneState extends State<EmailAndPasswordAndPhone> {
   @override
   void initState() {
     super.initState();
-    passwordController = context.read<SignUpCubit>().passwordController;
-    setupPasswordControllerListener();
+    passwordController = context.read<LoginCubit>().passwordController;
+   setupPasswordControllerListener();
   }
 
-  void setupPasswordControllerListener() {
+ void setupPasswordControllerListener() {
     passwordController.addListener(() {
       setState(() {
         hasLowerCase = AppRegex.hasLowerCase(passwordController.text);
@@ -50,14 +47,15 @@ class _EmailAndPasswordAndPhoneState extends State<EmailAndPasswordAndPhone> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<SignUpCubit>().formKey,
+      key: context.read<LoginCubit>().formKey,
       child: Column(
         children: [
           AppTextFormField(
-            controller: context.read<SignUpCubit>().emailController,
+            controller: context.read<LoginCubit>().emailController,
             hintText: 'Email',
             suffixIcon: _paddingSuffixIcon(
               FaIcon(
@@ -84,64 +82,7 @@ class _EmailAndPasswordAndPhoneState extends State<EmailAndPasswordAndPhone> {
           ),
           verticalSpace(16),
           AppTextFormField(
-            controller: context.read<SignUpCubit>().nameController,
-            hintText: 'Name',
-            suffixIcon: _paddingSuffixIcon(
-              FaIcon(
-                FontAwesomeIcons.solidUser,
-                color: isNameColorFailureIcon
-                    ? Colors.red
-                    : ColorsManager.mainBlue,
-              ),
-            ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                setState(() {
-                  isNameColorFailureIcon = true;
-                });
-                return 'Please enter your name right';
-              } else if (value.length < 4) {
-                return "Name must be more than four letters";
-              } else {
-                setState(() {
-                  isNameColorFailureIcon = false;
-                });
-              }
-            },
-          ),
-          verticalSpace(16),
-          AppTextFormField(
-            controller: context.read<SignUpCubit>().phoneController,
-            hintText: 'Phone',
-            suffixIcon: _paddingSuffixIcon(
-              FaIcon(
-                FontAwesomeIcons.squarePhone,
-                color: isPhoneColorFailureIcon
-                    ? Colors.red
-                    : ColorsManager.mainBlue,
-              ),
-            ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                setState(() {
-                  isPhoneColorFailureIcon = true;
-                });
-                return 'Please enter your phone right';
-              } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
-                return 'Please register numbers only';
-              } else if (value.length < 8) {
-                return "Number must be more than eight letters";
-              } else {
-                setState(() {
-                  isPhoneColorFailureIcon = false;
-                });
-              }
-            },
-          ),
-          verticalSpace(16),
-          AppTextFormField(
-            controller: context.read<SignUpCubit>().passwordController,
-            obscureText: _showPassword,
+            controller: context.read<LoginCubit>().passwordController,
             hintText: 'Password',
             suffixIcon: _paddingSuffixIcon(
               GestureDetector(
@@ -160,7 +101,7 @@ class _EmailAndPasswordAndPhoneState extends State<EmailAndPasswordAndPhone> {
                 ),
               ),
             ),
-            //obscureText: _showPassword,
+            obscureText: _showPassword,
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
@@ -190,13 +131,6 @@ class _EmailAndPasswordAndPhoneState extends State<EmailAndPasswordAndPhone> {
     );
   }
 
-  @override
-  void dispose() {
-    context.read<SignUpCubit>().close();
-    passwordController.dispose();
-    super.dispose();
-  }
-
   Widget _paddingSuffixIcon(Widget child) {
     return Padding(
       padding: EdgeInsets.symmetric(
@@ -205,5 +139,11 @@ class _EmailAndPasswordAndPhoneState extends State<EmailAndPasswordAndPhone> {
       ),
       child: child,
     );
+  }
+
+  @override
+  void dispose() {
+    passwordController.dispose();
+    super.dispose();
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppe/core/caching/app_shared_pref_key.dart';
@@ -17,6 +18,13 @@ class ShoppeApp extends StatefulWidget {
 class _ShoppeAppState extends State<ShoppeApp> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
+
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
@@ -28,11 +36,18 @@ class _ShoppeAppState extends State<ShoppeApp> {
                 : Routes.loginScreen)
             : Routes.homeScreen,
         onGenerateRoute: route.generateRoute,
+        themeMode: ThemeMode.dark,
         theme: ThemeData(
           textSelectionTheme: const TextSelectionThemeData(
             cursorColor: ColorsManager.mainBlue,
             selectionColor: ColorsManager.mainBlue,
             selectionHandleColor: ColorsManager.mainBlue,
+          ),
+          appBarTheme: const AppBarTheme(
+            systemOverlayStyle: SystemUiOverlayStyle(
+              statusBarColor: Colors.transparent,
+              statusBarIconBrightness: Brightness.dark,
+            ),
           ),
         ),
       ),

@@ -10,18 +10,21 @@ import 'package:shoppe/core/widgets/app_terms_and_conditions.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
 import 'package:shoppe/features/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:shoppe/features/sign_up/ui/widgets/create_account_text.dart';
-import 'package:shoppe/features/sign_up/ui/widgets/email_and_password_and_phone.dart';
+import 'package:shoppe/features/sign_up/ui/widgets/signup_form.dart';
+import 'package:shoppe/features/sign_up/ui/widgets/signup_bloc_listener.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
-  @override
+
+
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(
-            top: 95.h,
+            top: 25.h,
             right: 25.w,
             left: 25.w,
           ),
@@ -30,7 +33,7 @@ class SignUpScreen extends StatelessWidget {
               children: [
                 const CreateAccountText(),
                 verticalSpace(36),
-                const EmailAndPasswordAndPhone(),
+                const SignUpForm(),
                 AppTextButton(
                   onPressed: () {
                     validationThenSignUp(context);
@@ -43,12 +46,18 @@ class SignUpScreen extends StatelessWidget {
                 verticalSpace(24),
                 AppHaveAccount(
                     onPressed: () {
-                      context.navigatorPushNamedAndRemoveUntil(
-                        Routes.loginScreen,
-                      );
+                      // context.navigatorPushNamedAndRemoveUntil(
+                      //   Routes.loginScreen,
+                      // );
+
+                    context.pushNamed(Routes.loginScreen);
+
+
+
                     },
                     text: 'You have an account?',
                     textButton: 'Login'),
+                const SignUpBlocListener(),
               ],
             ),
           ),
@@ -57,9 +66,9 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 
-
   void validationThenSignUp(BuildContext context) {
-    if (context.read<SignUpCubit>().formKey.currentState!.validate()) {}
+    if (context.read<SignUpCubit>().formKey.currentState!.validate()) {
+      context.read<SignUpCubit>().signUp();
+    }
   }
-
 }

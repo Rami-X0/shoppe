@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/core/di/dependency_injection.dart';
+import 'package:shoppe/core/routing/animation_router/app_size_transition_router.dart';
 import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/features/home/ui/home_screen.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
@@ -14,16 +15,15 @@ Route generateRoute(RouteSettings settings) {
     case Routes.onBoardingScreen:
       return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
     case Routes.loginScreen:
-      return MaterialPageRoute(
-        builder: (_) => BlocProvider(
+      return AppSizeTransitionRouter(
+        BlocProvider(
             create: (context) => getIt<LoginCubit>(),
             child: const LoginScreen()),
       );
     case Routes.signUpScreen:
-      return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-              create: (context) => getIt<SignUpCubit>(),
-              child: const SignUpScreen()));
+      return AppSizeTransitionRouter(BlocProvider(
+          create: (context) => getIt<SignUpCubit>(),
+          child: const SignUpScreen()));
     case Routes.homeScreen:
       return MaterialPageRoute(builder: (_) => const HomeScreen());
     default:

@@ -7,9 +7,8 @@ import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_have_account.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
-import 'package:shoppe/features/login/data/models/login_request_body.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
-import 'package:shoppe/features/login/ui/widgets/email_and_password.dart';
+import 'package:shoppe/features/login/ui/widgets/login_form.dart';
 import 'package:shoppe/features/login/ui/widgets/login_bloc_listener.dart';
 import 'package:shoppe/core/widgets/app_terms_and_conditions.dart';
 import 'package:shoppe/features/login/ui/widgets/text_login.dart';
@@ -33,7 +32,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 const TextLogin(),
                 verticalSpace(36),
-                const EmailAndPassword(),
+                const LoginForm(),
                 AppTextButton(
                   onPressed: () {
                     validateThenLogin(context);
@@ -46,7 +45,8 @@ class LoginScreen extends StatelessWidget {
                 verticalSpace(24),
                 AppHaveAccount(
                     onPressed: () {
-                      context.navigatorPushNamedAndRemoveUntil(Routes.signUpScreen);
+                      context.navigatorPushNamedAndRemoveUntil(
+                          Routes.signUpScreen);
                     },
                     text: 'You don\'t have an account?',
                     textButton: 'Sign Up'),
@@ -61,12 +61,7 @@ class LoginScreen extends StatelessWidget {
 
   void validateThenLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      context.read<LoginCubit>().emitLogin(
-            LoginRequestBody(
-              email: context.read<LoginCubit>().emailController.text,
-              password: context.read<LoginCubit>().passwordController.text,
-            ),
-          );
+      context.read<LoginCubit>().emitLogin();
     }
   }
 }

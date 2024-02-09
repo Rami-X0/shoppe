@@ -6,31 +6,34 @@ import 'package:shoppe/core/helper/app_regex.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_text_form_field.dart';
-import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/core/widgets/app_password_validations.dart';
+import 'package:shoppe/features/sign_up/logic/cubit/signup_cubit.dart';
 
-class EmailAndPassword extends StatefulWidget {
-  const EmailAndPassword({super.key});
+class SignUpForm extends StatefulWidget {
+  const SignUpForm({super.key});
 
   @override
-  State<EmailAndPassword> createState() => _EmailAndPasswordState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
-late TextEditingController passwordController;
-bool _showPassword = true;
-bool hasLowerCase = false;
-bool hasUpperCase = false;
-bool hasSpecialCharacters = false;
-bool hasNumber = false;
-bool hasMineLength = false;
-bool isEmailColorFailureIcon = false;
-bool isPasswordColorFailureIcon = false;
+class _SignUpFormState extends State<SignUpForm> {
+  bool hasNumber = false;
+  bool _showPassword = true;
+  bool hasLowerCase = false;
+  bool hasUpperCase = false;
+  bool hasMineLength = false;
+  bool hasSpecialCharacters = false;
+  bool isEmailColorFailureIcon = false;
+  bool isPasswordColorFailureIcon = false;
+  bool isNameColorFailureIcon = false;
+  bool isPhoneColorFailureIcon = false;
+  late TextEditingController passwordController;
 
-class _EmailAndPasswordState extends State<EmailAndPassword> {
   @override
   void initState() {
     super.initState();
-    passwordController = context.read<LoginCubit>().passwordController;
+    passwordController = context.read<SignUpCubit>().passwordController;
+
     setupPasswordControllerListener();
   }
 
@@ -50,11 +53,11 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<LoginCubit>().formKey,
+      key: context.read<SignUpCubit>().formKey,
       child: Column(
         children: [
           AppTextFormField(
-            controller: context.read<LoginCubit>().emailController,
+            controller: context.read<SignUpCubit>().emailController,
             hintText: 'Email',
             suffixIcon: _paddingSuffixIcon(
               FaIcon(
@@ -81,8 +84,62 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           ),
           verticalSpace(16),
           AppTextFormField(
-            controller: context.read<LoginCubit>().passwordController,
-            // obscureText: _showPassword,
+            controller: context.read<SignUpCubit>().nameController,
+            hintText: 'Name',
+            suffixIcon: _paddingSuffixIcon(
+              FaIcon(
+                FontAwesomeIcons.solidUser,
+                color: isNameColorFailureIcon
+                    ? Colors.red
+                    : ColorsManager.mainBlue,
+              ),
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                setState(() {
+                  isNameColorFailureIcon = true;
+                });
+                return 'Please enter your name right';
+              } else if (value.length < 4) {
+                return "Name must be more than four letters";
+              } else {
+                setState(() {
+                  isNameColorFailureIcon = false;
+                });
+              }
+            },
+          ),
+          verticalSpace(16),
+          AppTextFormField(
+            controller: context.read<SignUpCubit>().phoneController,
+            hintText: 'Phone',
+            suffixIcon: _paddingSuffixIcon(
+              FaIcon(
+                FontAwesomeIcons.squarePhone,
+                color: isPhoneColorFailureIcon
+                    ? Colors.red
+                    : ColorsManager.mainBlue,
+              ),
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                setState(() {
+                  isPhoneColorFailureIcon = true;
+                });
+                return 'Please enter your phone right';
+              } else if (value.length < 8) {
+                return "Number must be more than eight letters";
+              } else {
+                setState(() {
+                  isPhoneColorFailureIcon = false;
+                });
+              }
+            },
+          ),
+          verticalSpace(16),
+          AppTextFormField(
+            controller: context.read<SignUpCubit>().passwordController,
+            obscureText: _showPassword,
             hintText: 'Password',
             suffixIcon: _paddingSuffixIcon(
               GestureDetector(
@@ -101,7 +158,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                 ),
               ),
             ),
-            obscureText: _showPassword,
+            //obscureText: _showPassword,
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
@@ -124,7 +181,6 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             hasSpecialCharacters: hasSpecialCharacters,
             hasNumber: hasNumber,
             hasMineLength: hasMineLength,
-
           ),
           verticalSpace(10),
         ],
@@ -134,11 +190,10 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
 
   @override
   void dispose() {
-
-    context.read<LoginCubit>().close();
     passwordController.dispose();
     super.dispose();
   }
+
   Widget _paddingSuffixIcon(Widget child) {
     return Padding(
       padding: EdgeInsets.symmetric(

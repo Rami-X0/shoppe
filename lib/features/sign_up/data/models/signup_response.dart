@@ -6,6 +6,7 @@ part 'signup_response.g.dart';
 class SignUpResponse {
   final bool? status;
   final String? message;
+  @JsonKey(name: 'data')
   final UserData? userData;
 
   SignUpResponse({
@@ -13,7 +14,8 @@ class SignUpResponse {
     this.message,
     this.userData,
   });
-
+  factory SignUpResponse.fromJson(Map<String, dynamic> json) =>
+      _$SignUpResponseFromJson(json);
   Map<String, dynamic> toJson() => _$SignUpResponseToJson(this);
 }
 
