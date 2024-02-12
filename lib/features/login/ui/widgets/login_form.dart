@@ -57,13 +57,11 @@ class _LoginFormState extends State<LoginForm> {
           AppTextFormField(
             controller: context.read<LoginCubit>().emailController,
             hintText: 'Email',
-            suffixIcon: _paddingSuffixIcon(
-              FaIcon(
-                FontAwesomeIcons.solidEnvelope,
-                color: isEmailColorFailureIcon
-                    ? Colors.red
-                    : ColorsManager.mainBlue,
-              ),
+            suffixIcon:  FaIcon(
+              FontAwesomeIcons.solidEnvelope,
+              color: isEmailColorFailureIcon
+                  ? Colors.red
+                  : ColorsManager.mainBlue,
             ),
             validator: (value) {
               if (value == null ||
@@ -84,21 +82,19 @@ class _LoginFormState extends State<LoginForm> {
           AppTextFormField(
             controller: context.read<LoginCubit>().passwordController,
             hintText: 'Password',
-            suffixIcon: _paddingSuffixIcon(
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _showPassword = !_showPassword;
-                  });
-                },
-                child: FaIcon(
-                  _showPassword
-                      ? FontAwesomeIcons.eyeSlash
-                      : FontAwesomeIcons.eye,
-                  color: isPasswordColorFailureIcon
-                      ? Colors.red
-                      : ColorsManager.mainBlue,
-                ),
+            suffixIcon:  GestureDetector(
+              onTap: () {
+                setState(() {
+                  _showPassword = !_showPassword;
+                });
+              },
+              child: FaIcon(
+                _showPassword
+                    ? FontAwesomeIcons.eyeSlash
+                    : FontAwesomeIcons.eye,
+                color: isPasswordColorFailureIcon
+                    ? Colors.red
+                    : ColorsManager.mainBlue,
               ),
             ),
             obscureText: _showPassword,
@@ -131,15 +127,7 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Widget _paddingSuffixIcon(Widget child) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: 19.h,
-        horizontal: 20.w,
-      ),
-      child: child,
-    );
-  }
+
 
   @override
   void dispose() {

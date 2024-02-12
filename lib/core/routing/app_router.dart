@@ -21,11 +21,15 @@ Route generateRoute(RouteSettings settings) {
             child: const LoginScreen()),
       );
     case Routes.signUpScreen:
-      return AppSizeTransitionRouter(BlocProvider(
-          create: (context) => getIt<SignUpCubit>(),
-          child: const SignUpScreen()));
+      return AppSizeTransitionRouter(
+        BlocProvider(
+            create: (context) => getIt<SignUpCubit>(),
+            child: const SignUpScreen()),
+      );
     case Routes.homeScreen:
-      return MaterialPageRoute(builder: (_) => const HomeScreen());
+      return AppSizeTransitionRouter(
+        const HomeScreen(),
+      );
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

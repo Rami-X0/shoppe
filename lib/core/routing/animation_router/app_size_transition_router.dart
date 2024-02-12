@@ -7,7 +7,7 @@ class AppSizeTransitionRouter extends PageRouteBuilder {
   AppSizeTransitionRouter(
     this.child,
   ) : super(
-          transitionDuration: const Duration(milliseconds: 452),
+          transitionDuration: const Duration(milliseconds: 500),
           pageBuilder: (context, animation, secondaryAnimation) => child,
           barrierColor: Colors.white30,
           transitionsBuilder: (context, animation, secondaryAnimation, child) {

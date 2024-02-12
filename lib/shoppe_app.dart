@@ -35,6 +35,7 @@ class _ShoppeAppState extends State<ShoppeApp> {
                 ? Routes.onBoardingScreen
                 : Routes.loginScreen)
             : Routes.homeScreen,
+
         onGenerateRoute: route.generateRoute,
         themeMode: ThemeMode.dark,
         theme: ThemeData(

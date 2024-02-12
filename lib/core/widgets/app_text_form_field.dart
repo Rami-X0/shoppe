@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/theming/colors.dart';
 
 class AppTextFormField extends StatelessWidget {
@@ -7,7 +8,7 @@ class AppTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final double borderRadius = 16;
   final bool? obscureText;
-  final  Function(String?) validator;
+  final Function(String?) validator;
   final TextEditingController? controller;
 
   const AppTextFormField({
@@ -15,7 +16,7 @@ class AppTextFormField extends StatelessWidget {
     required this.hintText,
     required this.suffixIcon,
     this.contentPadding,
-    this.obscureText ,
+    this.obscureText,
     required this.validator,
     required this.controller,
   });
@@ -23,12 +24,11 @@ class AppTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value){
-      return validator(value);
-
-        },
+      validator: (value) {
+        return validator(value);
+      },
       controller: controller,
-      obscureText: obscureText??false,
+      obscureText: obscureText ?? false,
       cursorOpacityAnimates: true,
       decoration: InputDecoration(
         contentPadding: contentPadding ??
@@ -62,12 +62,17 @@ class AppTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(color: Colors.red, width: 1.3),
         ),
-        suffixIcon: suffixIcon,
+        suffixIcon: Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: 19.h,
+            horizontal: 20.w,
+          ),
+          child: suffixIcon,
+        ),
         isDense: true,
         filled: true,
         fillColor: ColorsManager.moreLightGray,
       ),
-
     );
   }
 }

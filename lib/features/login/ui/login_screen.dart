@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                 verticalSpace(24),
                 AppHaveAccount(
                     onPressed: () {
-                      context.navigatorPushNamedAndRemoveUntil(
+                      context.pushNamed(
                           Routes.signUpScreen);
                     },
                     text: 'You don\'t have an account?',

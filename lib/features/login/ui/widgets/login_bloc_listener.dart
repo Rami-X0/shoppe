@@ -4,6 +4,8 @@ import 'package:shoppe/core/caching/app_shared_pref.dart';
 import 'package:shoppe/core/caching/app_shared_pref_key.dart';
 import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/routing/routes.dart';
+import 'package:shoppe/core/theming/colors.dart';
+import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
 import 'package:shoppe/core/widgets/app_show_dialog.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
@@ -21,6 +23,7 @@ class LoginBlocListener extends StatelessWidget {
         state.whenOrNull(
           loading: () {
             return showDialog(
+                barrierDismissible: false,
                 context: context,
                 builder: (context) {
                   return const AppLoading();
@@ -30,16 +33,25 @@ class LoginBlocListener extends StatelessWidget {
             if (loginResponse.status == true) {
               context.pop();
               Navigator.pop(context);
-
               context.pushNamed(Routes.homeScreen);
               AppSharedPref.sharedPrefSet(
                 key: AppSharedPrefKey.tokenKey,
                 value: loginResponse.userData!.token,
               );
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    loginResponse.message,
+                    style: TextStyles.font14LightGrayMedium,
+                  ),
+                  duration: const Duration(milliseconds: 750),
+                  backgroundColor: ColorsManager.darkBlue,
+                ),
+              );
             } else {
               Navigator.pop(context);
-
               showDialog(
+                barrierDismissible: false,
                 context: context,
                 builder: (context) {
                   return AppShowDialog(text: loginResponse.message);

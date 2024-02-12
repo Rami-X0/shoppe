@@ -18,7 +18,8 @@ class SignUpBlocListener extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(loading: () {
          return showDialog(
-              context: context,
+             barrierDismissible: false,
+             context: context,
               builder: (context) {
                 return
                   const AppLoading();
@@ -31,13 +32,13 @@ class SignUpBlocListener extends StatelessWidget {
           } else {
             context.pop();
             return showDialog(
+                barrierDismissible: false,
                 context: context,
                 builder: (context) {
                   return AppShowDialog(
                     text: signupResponse.message,
                   );
                 });
-         // debugPrint('0000000000=====>');
           }
         });
       },
