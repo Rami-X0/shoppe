@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shoppe/features/home/data/models/banners_response.dart';
 part'home_state.freezed.dart';
