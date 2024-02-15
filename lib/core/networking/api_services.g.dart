@@ -22,7 +22,7 @@ class _ApiServices implements ApiServices {
 
   @override
   Future<LoginResponse> login(LoginRequest loginRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -50,7 +50,7 @@ class _ApiServices implements ApiServices {
 
   @override
   Future<SignUpResponse> signUp(SignUpRequest signUpRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -73,6 +73,33 @@ class _ApiServices implements ApiServices {
               baseUrl,
             ))));
     final value = SignUpResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<BannersResponse> banners() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<BannersResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'banners',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = BannersResponse.fromJson(_result.data!);
     return value;
   }
 

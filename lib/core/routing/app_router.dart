@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/core/di/dependency_injection.dart';
 import 'package:shoppe/core/routing/animation_router/app_size_transition_router.dart';
 import 'package:shoppe/core/routing/routes.dart';
+import 'package:shoppe/features/home/logic/home_cubit.dart';
 import 'package:shoppe/features/home/ui/home_screen.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/features/login/ui/login_screen.dart';
@@ -28,7 +29,9 @@ Route generateRoute(RouteSettings settings) {
       );
     case Routes.homeScreen:
       return AppSizeTransitionRouter(
-        const HomeScreen(),
+        BlocProvider(
+            create: (context) => getIt<HomeCubit>()..emitBanners(),
+            child: const HomeScreen()),
       );
     default:
       return MaterialPageRoute(

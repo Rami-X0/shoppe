@@ -14,7 +14,7 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   SignUpCubit(this._signUpRepo) : super((const SignUpState.initial()));
 
-  void signUp() async {
+  void emitSignUp() async {
     emit(const SignUpState.loading());
     final response = await _signUpRepo.signUp(SignUpRequest(
       email: emailController.text,

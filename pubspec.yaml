@@ -54,18 +54,22 @@ dependencies:
   flutter_svg: ^2.0.9
   # dependency Injection
   get_it: ^7.6.7
-  # splash Flutter
-  flutter_screenutil: ^5.9.0
   #   adapting Screen And Font Size.
-  flutter_native_splash: ^2.3.10
+  flutter_screenutil: ^5.9.0
+  # splash Flutter
+  flutter_native_splash: ^2.3.11
   # add Icons
   font_awesome_flutter: ^10.7.0
   # Simple local DataBase
   shared_preferences: ^2.2.2
   # Save cache Image data
   cached_network_image: ^3.3.1
-#  # A carousel slider widget
-#  carousel_slider: ^4.2.1
+  # A carousel slider widget, support infinite scroll and custom child widget
+  carousel_slider: ^4.2.1
+  # Used lottie animation gif
+  lottie: ^3.0.0
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -92,6 +96,7 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
+    - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
