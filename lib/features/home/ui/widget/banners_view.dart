@@ -9,18 +9,14 @@ import 'package:shoppe/features/home/logic/home_cubit.dart';
 import 'package:shoppe/features/home/logic/home_state.dart';
 import 'package:shoppe/features/home/ui/widget/banners_view_item.dart';
 
-class BannersPageView extends StatefulWidget {
+class BannersPageView extends StatelessWidget {
   const BannersPageView({
     super.key,
   });
 
   @override
-  State<BannersPageView> createState() => _BannersPageViewState();
-}
-
-class _BannersPageViewState extends State<BannersPageView> {
-  @override
   Widget build(BuildContext context) {
+    BlocProvider.of<HomeCubit>(context).emitBanners();
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 10.h,
@@ -28,6 +24,7 @@ class _BannersPageViewState extends State<BannersPageView> {
       ),
       child: Container(
         height: 235.h,
+        width: 335.w,
         padding: EdgeInsets.symmetric(
           horizontal: 10.w,
           vertical: 3.h,
@@ -37,16 +34,18 @@ class _BannersPageViewState extends State<BannersPageView> {
           borderRadius: BorderRadius.circular(15),
         ),
         child: BlocBuilder<HomeCubit, HomeState>(
+          buildWhen: (previous, current) =>
+              current is LoadingGetBanners || current is SuccessGetBanners,
           builder: (context, state) {
-            return state.when(
-              initial: () {
-                return const SizedBox.shrink();
-              },
+            return state.maybeWhen(
               loadingGetBanners: () {
                 return const AppLoading();
               },
               successGetBanners: (bannersResponse) {
                 return _carouselSlider(bannersResponse);
+              },
+              orElse: () {
+                return const SizedBox.shrink();
               },
             );
           },
@@ -54,24 +53,24 @@ class _BannersPageViewState extends State<BannersPageView> {
       ),
     );
   }
-Widget _carouselSlider(BannersResponse bannersResponse){
- return CarouselSlider.builder(
-    options: CarouselOptions(
-      initialPage: 2,
-      autoPlay: true,
-      autoPlayCurve: Curves.linear,
-      enlargeCenterPage: true,
-      animateToClosest: true,
-      autoPlayAnimationDuration:
-      const Duration(milliseconds: 750),
-    ),
-    itemCount: bannersResponse.bannersData!.length,
-    itemBuilder: (context, index, realIndex) {
-      return BannersViewItem(
-        bannersResponse: bannersResponse,
-        index: index,
-      );
-    },
-  );
-}
+
+  Widget _carouselSlider(BannersResponse bannersResponse) {
+    return CarouselSlider.builder(
+      options: CarouselOptions(
+        initialPage: 2,
+        autoPlay: true,
+        autoPlayCurve: Curves.linear,
+        enlargeCenterPage: true,
+        animateToClosest: true,
+        autoPlayAnimationDuration: const Duration(milliseconds: 750),
+      ),
+      itemCount: bannersResponse.bannersData!.length,
+      itemBuilder: (context, index, realIndex) {
+        return BannersViewItem(
+          bannersResponse: bannersResponse,
+          index: index,
+        );
+      },
+    );
+  }
 }

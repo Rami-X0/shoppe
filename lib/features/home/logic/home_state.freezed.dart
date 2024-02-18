@@ -21,6 +21,8 @@ mixin _$HomeState {
     required TResult Function() initial,
     required TResult Function() loadingGetBanners,
     required TResult Function(BannersResponse data) successGetBanners,
+    required TResult Function() loadingGetCategories,
+    required TResult Function(CategoriesResponse data) successGetCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +30,8 @@ mixin _$HomeState {
     TResult? Function()? initial,
     TResult? Function()? loadingGetBanners,
     TResult? Function(BannersResponse data)? successGetBanners,
+    TResult? Function()? loadingGetCategories,
+    TResult? Function(CategoriesResponse data)? successGetCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +39,8 @@ mixin _$HomeState {
     TResult Function()? initial,
     TResult Function()? loadingGetBanners,
     TResult Function(BannersResponse data)? successGetBanners,
+    TResult Function()? loadingGetCategories,
+    TResult Function(CategoriesResponse data)? successGetCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +49,8 @@ mixin _$HomeState {
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingGetBanners value) loadingGetBanners,
     required TResult Function(SuccessGetBanners value) successGetBanners,
+    required TResult Function(LoadingGetCategories value) loadingGetCategories,
+    required TResult Function(SuccessGetCategories value) successGetCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +58,8 @@ mixin _$HomeState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingGetBanners value)? loadingGetBanners,
     TResult? Function(SuccessGetBanners value)? successGetBanners,
+    TResult? Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult? Function(SuccessGetCategories value)? successGetCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +67,8 @@ mixin _$HomeState {
     TResult Function(_Initial value)? initial,
     TResult Function(LoadingGetBanners value)? loadingGetBanners,
     TResult Function(SuccessGetBanners value)? successGetBanners,
+    TResult Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult Function(SuccessGetCategories value)? successGetCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +132,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loadingGetBanners,
     required TResult Function(BannersResponse data) successGetBanners,
+    required TResult Function() loadingGetCategories,
+    required TResult Function(CategoriesResponse data) successGetCategories,
   }) {
     return initial();
   }
@@ -130,6 +144,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loadingGetBanners,
     TResult? Function(BannersResponse data)? successGetBanners,
+    TResult? Function()? loadingGetCategories,
+    TResult? Function(CategoriesResponse data)? successGetCategories,
   }) {
     return initial?.call();
   }
@@ -140,6 +156,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadingGetBanners,
     TResult Function(BannersResponse data)? successGetBanners,
+    TResult Function()? loadingGetCategories,
+    TResult Function(CategoriesResponse data)? successGetCategories,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -154,6 +172,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingGetBanners value) loadingGetBanners,
     required TResult Function(SuccessGetBanners value) successGetBanners,
+    required TResult Function(LoadingGetCategories value) loadingGetCategories,
+    required TResult Function(SuccessGetCategories value) successGetCategories,
   }) {
     return initial(this);
   }
@@ -164,6 +184,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingGetBanners value)? loadingGetBanners,
     TResult? Function(SuccessGetBanners value)? successGetBanners,
+    TResult? Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult? Function(SuccessGetCategories value)? successGetCategories,
   }) {
     return initial?.call(this);
   }
@@ -174,6 +196,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(LoadingGetBanners value)? loadingGetBanners,
     TResult Function(SuccessGetBanners value)? successGetBanners,
+    TResult Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult Function(SuccessGetCategories value)? successGetCategories,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -228,6 +252,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     required TResult Function() initial,
     required TResult Function() loadingGetBanners,
     required TResult Function(BannersResponse data) successGetBanners,
+    required TResult Function() loadingGetCategories,
+    required TResult Function(CategoriesResponse data) successGetCategories,
   }) {
     return loadingGetBanners();
   }
@@ -238,6 +264,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     TResult? Function()? initial,
     TResult? Function()? loadingGetBanners,
     TResult? Function(BannersResponse data)? successGetBanners,
+    TResult? Function()? loadingGetCategories,
+    TResult? Function(CategoriesResponse data)? successGetCategories,
   }) {
     return loadingGetBanners?.call();
   }
@@ -248,6 +276,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     TResult Function()? initial,
     TResult Function()? loadingGetBanners,
     TResult Function(BannersResponse data)? successGetBanners,
+    TResult Function()? loadingGetCategories,
+    TResult Function(CategoriesResponse data)? successGetCategories,
     required TResult orElse(),
   }) {
     if (loadingGetBanners != null) {
@@ -262,6 +292,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingGetBanners value) loadingGetBanners,
     required TResult Function(SuccessGetBanners value) successGetBanners,
+    required TResult Function(LoadingGetCategories value) loadingGetCategories,
+    required TResult Function(SuccessGetCategories value) successGetCategories,
   }) {
     return loadingGetBanners(this);
   }
@@ -272,6 +304,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingGetBanners value)? loadingGetBanners,
     TResult? Function(SuccessGetBanners value)? successGetBanners,
+    TResult? Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult? Function(SuccessGetCategories value)? successGetCategories,
   }) {
     return loadingGetBanners?.call(this);
   }
@@ -282,6 +316,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     TResult Function(_Initial value)? initial,
     TResult Function(LoadingGetBanners value)? loadingGetBanners,
     TResult Function(SuccessGetBanners value)? successGetBanners,
+    TResult Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult Function(SuccessGetCategories value)? successGetCategories,
     required TResult orElse(),
   }) {
     if (loadingGetBanners != null) {
@@ -363,6 +399,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     required TResult Function() initial,
     required TResult Function() loadingGetBanners,
     required TResult Function(BannersResponse data) successGetBanners,
+    required TResult Function() loadingGetCategories,
+    required TResult Function(CategoriesResponse data) successGetCategories,
   }) {
     return successGetBanners(data);
   }
@@ -373,6 +411,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     TResult? Function()? initial,
     TResult? Function()? loadingGetBanners,
     TResult? Function(BannersResponse data)? successGetBanners,
+    TResult? Function()? loadingGetCategories,
+    TResult? Function(CategoriesResponse data)? successGetCategories,
   }) {
     return successGetBanners?.call(data);
   }
@@ -383,6 +423,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     TResult Function()? initial,
     TResult Function()? loadingGetBanners,
     TResult Function(BannersResponse data)? successGetBanners,
+    TResult Function()? loadingGetCategories,
+    TResult Function(CategoriesResponse data)? successGetCategories,
     required TResult orElse(),
   }) {
     if (successGetBanners != null) {
@@ -397,6 +439,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingGetBanners value) loadingGetBanners,
     required TResult Function(SuccessGetBanners value) successGetBanners,
+    required TResult Function(LoadingGetCategories value) loadingGetCategories,
+    required TResult Function(SuccessGetCategories value) successGetCategories,
   }) {
     return successGetBanners(this);
   }
@@ -407,6 +451,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingGetBanners value)? loadingGetBanners,
     TResult? Function(SuccessGetBanners value)? successGetBanners,
+    TResult? Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult? Function(SuccessGetCategories value)? successGetCategories,
   }) {
     return successGetBanners?.call(this);
   }
@@ -417,6 +463,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     TResult Function(_Initial value)? initial,
     TResult Function(LoadingGetBanners value)? loadingGetBanners,
     TResult Function(SuccessGetBanners value)? successGetBanners,
+    TResult Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult Function(SuccessGetCategories value)? successGetCategories,
     required TResult orElse(),
   }) {
     if (successGetBanners != null) {
@@ -434,4 +482,279 @@ abstract class SuccessGetBanners implements HomeState {
   @JsonKey(ignore: true)
   _$$SuccessGetBannersImplCopyWith<_$SuccessGetBannersImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingGetCategoriesImplCopyWith<$Res> {
+  factory _$$LoadingGetCategoriesImplCopyWith(_$LoadingGetCategoriesImpl value,
+          $Res Function(_$LoadingGetCategoriesImpl) then) =
+      __$$LoadingGetCategoriesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingGetCategoriesImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$LoadingGetCategoriesImpl>
+    implements _$$LoadingGetCategoriesImplCopyWith<$Res> {
+  __$$LoadingGetCategoriesImplCopyWithImpl(_$LoadingGetCategoriesImpl _value,
+      $Res Function(_$LoadingGetCategoriesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingGetCategoriesImpl implements LoadingGetCategories {
+  const _$LoadingGetCategoriesImpl();
+
+  @override
+  String toString() {
+    return 'HomeState.loadingGetCategories()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingGetCategoriesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingGetBanners,
+    required TResult Function(BannersResponse data) successGetBanners,
+    required TResult Function() loadingGetCategories,
+    required TResult Function(CategoriesResponse data) successGetCategories,
+  }) {
+    return loadingGetCategories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingGetBanners,
+    TResult? Function(BannersResponse data)? successGetBanners,
+    TResult? Function()? loadingGetCategories,
+    TResult? Function(CategoriesResponse data)? successGetCategories,
+  }) {
+    return loadingGetCategories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingGetBanners,
+    TResult Function(BannersResponse data)? successGetBanners,
+    TResult Function()? loadingGetCategories,
+    TResult Function(CategoriesResponse data)? successGetCategories,
+    required TResult orElse(),
+  }) {
+    if (loadingGetCategories != null) {
+      return loadingGetCategories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadingGetBanners value) loadingGetBanners,
+    required TResult Function(SuccessGetBanners value) successGetBanners,
+    required TResult Function(LoadingGetCategories value) loadingGetCategories,
+    required TResult Function(SuccessGetCategories value) successGetCategories,
+  }) {
+    return loadingGetCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadingGetBanners value)? loadingGetBanners,
+    TResult? Function(SuccessGetBanners value)? successGetBanners,
+    TResult? Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult? Function(SuccessGetCategories value)? successGetCategories,
+  }) {
+    return loadingGetCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadingGetBanners value)? loadingGetBanners,
+    TResult Function(SuccessGetBanners value)? successGetBanners,
+    TResult Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult Function(SuccessGetCategories value)? successGetCategories,
+    required TResult orElse(),
+  }) {
+    if (loadingGetCategories != null) {
+      return loadingGetCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingGetCategories implements HomeState {
+  const factory LoadingGetCategories() = _$LoadingGetCategoriesImpl;
+}
+
+/// @nodoc
+abstract class _$$SuccessGetCategoriesImplCopyWith<$Res> {
+  factory _$$SuccessGetCategoriesImplCopyWith(_$SuccessGetCategoriesImpl value,
+          $Res Function(_$SuccessGetCategoriesImpl) then) =
+      __$$SuccessGetCategoriesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CategoriesResponse data});
+}
+
+/// @nodoc
+class __$$SuccessGetCategoriesImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$SuccessGetCategoriesImpl>
+    implements _$$SuccessGetCategoriesImplCopyWith<$Res> {
+  __$$SuccessGetCategoriesImplCopyWithImpl(_$SuccessGetCategoriesImpl _value,
+      $Res Function(_$SuccessGetCategoriesImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SuccessGetCategoriesImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as CategoriesResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessGetCategoriesImpl implements SuccessGetCategories {
+  const _$SuccessGetCategoriesImpl({required this.data});
+
+  @override
+  final CategoriesResponse data;
+
+  @override
+  String toString() {
+    return 'HomeState.successGetCategories(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessGetCategoriesImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessGetCategoriesImplCopyWith<_$SuccessGetCategoriesImpl>
+      get copyWith =>
+          __$$SuccessGetCategoriesImplCopyWithImpl<_$SuccessGetCategoriesImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingGetBanners,
+    required TResult Function(BannersResponse data) successGetBanners,
+    required TResult Function() loadingGetCategories,
+    required TResult Function(CategoriesResponse data) successGetCategories,
+  }) {
+    return successGetCategories(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingGetBanners,
+    TResult? Function(BannersResponse data)? successGetBanners,
+    TResult? Function()? loadingGetCategories,
+    TResult? Function(CategoriesResponse data)? successGetCategories,
+  }) {
+    return successGetCategories?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingGetBanners,
+    TResult Function(BannersResponse data)? successGetBanners,
+    TResult Function()? loadingGetCategories,
+    TResult Function(CategoriesResponse data)? successGetCategories,
+    required TResult orElse(),
+  }) {
+    if (successGetCategories != null) {
+      return successGetCategories(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadingGetBanners value) loadingGetBanners,
+    required TResult Function(SuccessGetBanners value) successGetBanners,
+    required TResult Function(LoadingGetCategories value) loadingGetCategories,
+    required TResult Function(SuccessGetCategories value) successGetCategories,
+  }) {
+    return successGetCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadingGetBanners value)? loadingGetBanners,
+    TResult? Function(SuccessGetBanners value)? successGetBanners,
+    TResult? Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult? Function(SuccessGetCategories value)? successGetCategories,
+  }) {
+    return successGetCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadingGetBanners value)? loadingGetBanners,
+    TResult Function(SuccessGetBanners value)? successGetBanners,
+    TResult Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult Function(SuccessGetCategories value)? successGetCategories,
+    required TResult orElse(),
+  }) {
+    if (successGetCategories != null) {
+      return successGetCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessGetCategories implements HomeState {
+  const factory SuccessGetCategories({required final CategoriesResponse data}) =
+      _$SuccessGetCategoriesImpl;
+
+  CategoriesResponse get data;
+  @JsonKey(ignore: true)
+  _$$SuccessGetCategoriesImplCopyWith<_$SuccessGetCategoriesImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

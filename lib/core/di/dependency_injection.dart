@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shoppe/core/networking/dio_factory.dart';
 import 'package:shoppe/core/networking/api_services.dart';
-import 'package:shoppe/features/home/data/banners_repo/banners_repo.dart';
+import 'package:shoppe/features/home/data/home_repo/home_repo.dart';
 import 'package:shoppe/features/home/logic/home_cubit.dart';
 import 'package:shoppe/features/login/data/repo/login_repo.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
@@ -22,5 +22,5 @@ Future<void> initGetIt() async {
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
 //home
   getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt()));
-  getIt.registerLazySingleton<BannersRepo>(() => BannersRepo(getIt()));
+  getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
 }
