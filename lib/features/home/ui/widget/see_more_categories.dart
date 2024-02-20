@@ -13,8 +13,6 @@ class SeeMoreCategories extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 8.w),
       child: Row(
         children: [
-
-
           RichText(
             text: TextSpan(
               children: [

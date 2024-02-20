@@ -5,4 +5,5 @@ class ApiConstants {
   static const String signUp = 'register';
   static const String banners = 'banners';
   static const String categories = 'categories';
+  static const String products = 'products';
 }

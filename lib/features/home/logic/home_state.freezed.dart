@@ -23,6 +23,8 @@ mixin _$HomeState {
     required TResult Function(BannersResponse data) successGetBanners,
     required TResult Function() loadingGetCategories,
     required TResult Function(CategoriesResponse data) successGetCategories,
+    required TResult Function() loadingGetProducts,
+    required TResult Function(ProductsResponse data) successGetProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +34,8 @@ mixin _$HomeState {
     TResult? Function(BannersResponse data)? successGetBanners,
     TResult? Function()? loadingGetCategories,
     TResult? Function(CategoriesResponse data)? successGetCategories,
+    TResult? Function()? loadingGetProducts,
+    TResult? Function(ProductsResponse data)? successGetProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +45,8 @@ mixin _$HomeState {
     TResult Function(BannersResponse data)? successGetBanners,
     TResult Function()? loadingGetCategories,
     TResult Function(CategoriesResponse data)? successGetCategories,
+    TResult Function()? loadingGetProducts,
+    TResult Function(ProductsResponse data)? successGetProducts,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +57,8 @@ mixin _$HomeState {
     required TResult Function(SuccessGetBanners value) successGetBanners,
     required TResult Function(LoadingGetCategories value) loadingGetCategories,
     required TResult Function(SuccessGetCategories value) successGetCategories,
+    required TResult Function(LoadingGetProducts value) loadingGetProducts,
+    required TResult Function(SuccessGetProducts value) successGetProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +68,8 @@ mixin _$HomeState {
     TResult? Function(SuccessGetBanners value)? successGetBanners,
     TResult? Function(LoadingGetCategories value)? loadingGetCategories,
     TResult? Function(SuccessGetCategories value)? successGetCategories,
+    TResult? Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult? Function(SuccessGetProducts value)? successGetProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +79,8 @@ mixin _$HomeState {
     TResult Function(SuccessGetBanners value)? successGetBanners,
     TResult Function(LoadingGetCategories value)? loadingGetCategories,
     TResult Function(SuccessGetCategories value)? successGetCategories,
+    TResult Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult Function(SuccessGetProducts value)? successGetProducts,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +146,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(BannersResponse data) successGetBanners,
     required TResult Function() loadingGetCategories,
     required TResult Function(CategoriesResponse data) successGetCategories,
+    required TResult Function() loadingGetProducts,
+    required TResult Function(ProductsResponse data) successGetProducts,
   }) {
     return initial();
   }
@@ -146,6 +160,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(BannersResponse data)? successGetBanners,
     TResult? Function()? loadingGetCategories,
     TResult? Function(CategoriesResponse data)? successGetCategories,
+    TResult? Function()? loadingGetProducts,
+    TResult? Function(ProductsResponse data)? successGetProducts,
   }) {
     return initial?.call();
   }
@@ -158,6 +174,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(BannersResponse data)? successGetBanners,
     TResult Function()? loadingGetCategories,
     TResult Function(CategoriesResponse data)? successGetCategories,
+    TResult Function()? loadingGetProducts,
+    TResult Function(ProductsResponse data)? successGetProducts,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -174,6 +192,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(SuccessGetBanners value) successGetBanners,
     required TResult Function(LoadingGetCategories value) loadingGetCategories,
     required TResult Function(SuccessGetCategories value) successGetCategories,
+    required TResult Function(LoadingGetProducts value) loadingGetProducts,
+    required TResult Function(SuccessGetProducts value) successGetProducts,
   }) {
     return initial(this);
   }
@@ -186,6 +206,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(SuccessGetBanners value)? successGetBanners,
     TResult? Function(LoadingGetCategories value)? loadingGetCategories,
     TResult? Function(SuccessGetCategories value)? successGetCategories,
+    TResult? Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult? Function(SuccessGetProducts value)? successGetProducts,
   }) {
     return initial?.call(this);
   }
@@ -198,6 +220,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(SuccessGetBanners value)? successGetBanners,
     TResult Function(LoadingGetCategories value)? loadingGetCategories,
     TResult Function(SuccessGetCategories value)? successGetCategories,
+    TResult Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult Function(SuccessGetProducts value)? successGetProducts,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -254,6 +278,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     required TResult Function(BannersResponse data) successGetBanners,
     required TResult Function() loadingGetCategories,
     required TResult Function(CategoriesResponse data) successGetCategories,
+    required TResult Function() loadingGetProducts,
+    required TResult Function(ProductsResponse data) successGetProducts,
   }) {
     return loadingGetBanners();
   }
@@ -266,6 +292,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     TResult? Function(BannersResponse data)? successGetBanners,
     TResult? Function()? loadingGetCategories,
     TResult? Function(CategoriesResponse data)? successGetCategories,
+    TResult? Function()? loadingGetProducts,
+    TResult? Function(ProductsResponse data)? successGetProducts,
   }) {
     return loadingGetBanners?.call();
   }
@@ -278,6 +306,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     TResult Function(BannersResponse data)? successGetBanners,
     TResult Function()? loadingGetCategories,
     TResult Function(CategoriesResponse data)? successGetCategories,
+    TResult Function()? loadingGetProducts,
+    TResult Function(ProductsResponse data)? successGetProducts,
     required TResult orElse(),
   }) {
     if (loadingGetBanners != null) {
@@ -294,6 +324,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     required TResult Function(SuccessGetBanners value) successGetBanners,
     required TResult Function(LoadingGetCategories value) loadingGetCategories,
     required TResult Function(SuccessGetCategories value) successGetCategories,
+    required TResult Function(LoadingGetProducts value) loadingGetProducts,
+    required TResult Function(SuccessGetProducts value) successGetProducts,
   }) {
     return loadingGetBanners(this);
   }
@@ -306,6 +338,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     TResult? Function(SuccessGetBanners value)? successGetBanners,
     TResult? Function(LoadingGetCategories value)? loadingGetCategories,
     TResult? Function(SuccessGetCategories value)? successGetCategories,
+    TResult? Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult? Function(SuccessGetProducts value)? successGetProducts,
   }) {
     return loadingGetBanners?.call(this);
   }
@@ -318,6 +352,8 @@ class _$LoadingGetBannersImpl implements LoadingGetBanners {
     TResult Function(SuccessGetBanners value)? successGetBanners,
     TResult Function(LoadingGetCategories value)? loadingGetCategories,
     TResult Function(SuccessGetCategories value)? successGetCategories,
+    TResult Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult Function(SuccessGetProducts value)? successGetProducts,
     required TResult orElse(),
   }) {
     if (loadingGetBanners != null) {
@@ -401,6 +437,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     required TResult Function(BannersResponse data) successGetBanners,
     required TResult Function() loadingGetCategories,
     required TResult Function(CategoriesResponse data) successGetCategories,
+    required TResult Function() loadingGetProducts,
+    required TResult Function(ProductsResponse data) successGetProducts,
   }) {
     return successGetBanners(data);
   }
@@ -413,6 +451,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     TResult? Function(BannersResponse data)? successGetBanners,
     TResult? Function()? loadingGetCategories,
     TResult? Function(CategoriesResponse data)? successGetCategories,
+    TResult? Function()? loadingGetProducts,
+    TResult? Function(ProductsResponse data)? successGetProducts,
   }) {
     return successGetBanners?.call(data);
   }
@@ -425,6 +465,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     TResult Function(BannersResponse data)? successGetBanners,
     TResult Function()? loadingGetCategories,
     TResult Function(CategoriesResponse data)? successGetCategories,
+    TResult Function()? loadingGetProducts,
+    TResult Function(ProductsResponse data)? successGetProducts,
     required TResult orElse(),
   }) {
     if (successGetBanners != null) {
@@ -441,6 +483,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     required TResult Function(SuccessGetBanners value) successGetBanners,
     required TResult Function(LoadingGetCategories value) loadingGetCategories,
     required TResult Function(SuccessGetCategories value) successGetCategories,
+    required TResult Function(LoadingGetProducts value) loadingGetProducts,
+    required TResult Function(SuccessGetProducts value) successGetProducts,
   }) {
     return successGetBanners(this);
   }
@@ -453,6 +497,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     TResult? Function(SuccessGetBanners value)? successGetBanners,
     TResult? Function(LoadingGetCategories value)? loadingGetCategories,
     TResult? Function(SuccessGetCategories value)? successGetCategories,
+    TResult? Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult? Function(SuccessGetProducts value)? successGetProducts,
   }) {
     return successGetBanners?.call(this);
   }
@@ -465,6 +511,8 @@ class _$SuccessGetBannersImpl implements SuccessGetBanners {
     TResult Function(SuccessGetBanners value)? successGetBanners,
     TResult Function(LoadingGetCategories value)? loadingGetCategories,
     TResult Function(SuccessGetCategories value)? successGetCategories,
+    TResult Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult Function(SuccessGetProducts value)? successGetProducts,
     required TResult orElse(),
   }) {
     if (successGetBanners != null) {
@@ -528,6 +576,8 @@ class _$LoadingGetCategoriesImpl implements LoadingGetCategories {
     required TResult Function(BannersResponse data) successGetBanners,
     required TResult Function() loadingGetCategories,
     required TResult Function(CategoriesResponse data) successGetCategories,
+    required TResult Function() loadingGetProducts,
+    required TResult Function(ProductsResponse data) successGetProducts,
   }) {
     return loadingGetCategories();
   }
@@ -540,6 +590,8 @@ class _$LoadingGetCategoriesImpl implements LoadingGetCategories {
     TResult? Function(BannersResponse data)? successGetBanners,
     TResult? Function()? loadingGetCategories,
     TResult? Function(CategoriesResponse data)? successGetCategories,
+    TResult? Function()? loadingGetProducts,
+    TResult? Function(ProductsResponse data)? successGetProducts,
   }) {
     return loadingGetCategories?.call();
   }
@@ -552,6 +604,8 @@ class _$LoadingGetCategoriesImpl implements LoadingGetCategories {
     TResult Function(BannersResponse data)? successGetBanners,
     TResult Function()? loadingGetCategories,
     TResult Function(CategoriesResponse data)? successGetCategories,
+    TResult Function()? loadingGetProducts,
+    TResult Function(ProductsResponse data)? successGetProducts,
     required TResult orElse(),
   }) {
     if (loadingGetCategories != null) {
@@ -568,6 +622,8 @@ class _$LoadingGetCategoriesImpl implements LoadingGetCategories {
     required TResult Function(SuccessGetBanners value) successGetBanners,
     required TResult Function(LoadingGetCategories value) loadingGetCategories,
     required TResult Function(SuccessGetCategories value) successGetCategories,
+    required TResult Function(LoadingGetProducts value) loadingGetProducts,
+    required TResult Function(SuccessGetProducts value) successGetProducts,
   }) {
     return loadingGetCategories(this);
   }
@@ -580,6 +636,8 @@ class _$LoadingGetCategoriesImpl implements LoadingGetCategories {
     TResult? Function(SuccessGetBanners value)? successGetBanners,
     TResult? Function(LoadingGetCategories value)? loadingGetCategories,
     TResult? Function(SuccessGetCategories value)? successGetCategories,
+    TResult? Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult? Function(SuccessGetProducts value)? successGetProducts,
   }) {
     return loadingGetCategories?.call(this);
   }
@@ -592,6 +650,8 @@ class _$LoadingGetCategoriesImpl implements LoadingGetCategories {
     TResult Function(SuccessGetBanners value)? successGetBanners,
     TResult Function(LoadingGetCategories value)? loadingGetCategories,
     TResult Function(SuccessGetCategories value)? successGetCategories,
+    TResult Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult Function(SuccessGetProducts value)? successGetProducts,
     required TResult orElse(),
   }) {
     if (loadingGetCategories != null) {
@@ -676,6 +736,8 @@ class _$SuccessGetCategoriesImpl implements SuccessGetCategories {
     required TResult Function(BannersResponse data) successGetBanners,
     required TResult Function() loadingGetCategories,
     required TResult Function(CategoriesResponse data) successGetCategories,
+    required TResult Function() loadingGetProducts,
+    required TResult Function(ProductsResponse data) successGetProducts,
   }) {
     return successGetCategories(data);
   }
@@ -688,6 +750,8 @@ class _$SuccessGetCategoriesImpl implements SuccessGetCategories {
     TResult? Function(BannersResponse data)? successGetBanners,
     TResult? Function()? loadingGetCategories,
     TResult? Function(CategoriesResponse data)? successGetCategories,
+    TResult? Function()? loadingGetProducts,
+    TResult? Function(ProductsResponse data)? successGetProducts,
   }) {
     return successGetCategories?.call(data);
   }
@@ -700,6 +764,8 @@ class _$SuccessGetCategoriesImpl implements SuccessGetCategories {
     TResult Function(BannersResponse data)? successGetBanners,
     TResult Function()? loadingGetCategories,
     TResult Function(CategoriesResponse data)? successGetCategories,
+    TResult Function()? loadingGetProducts,
+    TResult Function(ProductsResponse data)? successGetProducts,
     required TResult orElse(),
   }) {
     if (successGetCategories != null) {
@@ -716,6 +782,8 @@ class _$SuccessGetCategoriesImpl implements SuccessGetCategories {
     required TResult Function(SuccessGetBanners value) successGetBanners,
     required TResult Function(LoadingGetCategories value) loadingGetCategories,
     required TResult Function(SuccessGetCategories value) successGetCategories,
+    required TResult Function(LoadingGetProducts value) loadingGetProducts,
+    required TResult Function(SuccessGetProducts value) successGetProducts,
   }) {
     return successGetCategories(this);
   }
@@ -728,6 +796,8 @@ class _$SuccessGetCategoriesImpl implements SuccessGetCategories {
     TResult? Function(SuccessGetBanners value)? successGetBanners,
     TResult? Function(LoadingGetCategories value)? loadingGetCategories,
     TResult? Function(SuccessGetCategories value)? successGetCategories,
+    TResult? Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult? Function(SuccessGetProducts value)? successGetProducts,
   }) {
     return successGetCategories?.call(this);
   }
@@ -740,6 +810,8 @@ class _$SuccessGetCategoriesImpl implements SuccessGetCategories {
     TResult Function(SuccessGetBanners value)? successGetBanners,
     TResult Function(LoadingGetCategories value)? loadingGetCategories,
     TResult Function(SuccessGetCategories value)? successGetCategories,
+    TResult Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult Function(SuccessGetProducts value)? successGetProducts,
     required TResult orElse(),
   }) {
     if (successGetCategories != null) {
@@ -757,4 +829,301 @@ abstract class SuccessGetCategories implements HomeState {
   @JsonKey(ignore: true)
   _$$SuccessGetCategoriesImplCopyWith<_$SuccessGetCategoriesImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingGetProductsImplCopyWith<$Res> {
+  factory _$$LoadingGetProductsImplCopyWith(_$LoadingGetProductsImpl value,
+          $Res Function(_$LoadingGetProductsImpl) then) =
+      __$$LoadingGetProductsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingGetProductsImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$LoadingGetProductsImpl>
+    implements _$$LoadingGetProductsImplCopyWith<$Res> {
+  __$$LoadingGetProductsImplCopyWithImpl(_$LoadingGetProductsImpl _value,
+      $Res Function(_$LoadingGetProductsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingGetProductsImpl implements LoadingGetProducts {
+  const _$LoadingGetProductsImpl();
+
+  @override
+  String toString() {
+    return 'HomeState.loadingGetProducts()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingGetProductsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingGetBanners,
+    required TResult Function(BannersResponse data) successGetBanners,
+    required TResult Function() loadingGetCategories,
+    required TResult Function(CategoriesResponse data) successGetCategories,
+    required TResult Function() loadingGetProducts,
+    required TResult Function(ProductsResponse data) successGetProducts,
+  }) {
+    return loadingGetProducts();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingGetBanners,
+    TResult? Function(BannersResponse data)? successGetBanners,
+    TResult? Function()? loadingGetCategories,
+    TResult? Function(CategoriesResponse data)? successGetCategories,
+    TResult? Function()? loadingGetProducts,
+    TResult? Function(ProductsResponse data)? successGetProducts,
+  }) {
+    return loadingGetProducts?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingGetBanners,
+    TResult Function(BannersResponse data)? successGetBanners,
+    TResult Function()? loadingGetCategories,
+    TResult Function(CategoriesResponse data)? successGetCategories,
+    TResult Function()? loadingGetProducts,
+    TResult Function(ProductsResponse data)? successGetProducts,
+    required TResult orElse(),
+  }) {
+    if (loadingGetProducts != null) {
+      return loadingGetProducts();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadingGetBanners value) loadingGetBanners,
+    required TResult Function(SuccessGetBanners value) successGetBanners,
+    required TResult Function(LoadingGetCategories value) loadingGetCategories,
+    required TResult Function(SuccessGetCategories value) successGetCategories,
+    required TResult Function(LoadingGetProducts value) loadingGetProducts,
+    required TResult Function(SuccessGetProducts value) successGetProducts,
+  }) {
+    return loadingGetProducts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadingGetBanners value)? loadingGetBanners,
+    TResult? Function(SuccessGetBanners value)? successGetBanners,
+    TResult? Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult? Function(SuccessGetCategories value)? successGetCategories,
+    TResult? Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult? Function(SuccessGetProducts value)? successGetProducts,
+  }) {
+    return loadingGetProducts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadingGetBanners value)? loadingGetBanners,
+    TResult Function(SuccessGetBanners value)? successGetBanners,
+    TResult Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult Function(SuccessGetCategories value)? successGetCategories,
+    TResult Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult Function(SuccessGetProducts value)? successGetProducts,
+    required TResult orElse(),
+  }) {
+    if (loadingGetProducts != null) {
+      return loadingGetProducts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingGetProducts implements HomeState {
+  const factory LoadingGetProducts() = _$LoadingGetProductsImpl;
+}
+
+/// @nodoc
+abstract class _$$SuccessGetProductsImplCopyWith<$Res> {
+  factory _$$SuccessGetProductsImplCopyWith(_$SuccessGetProductsImpl value,
+          $Res Function(_$SuccessGetProductsImpl) then) =
+      __$$SuccessGetProductsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ProductsResponse data});
+}
+
+/// @nodoc
+class __$$SuccessGetProductsImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$SuccessGetProductsImpl>
+    implements _$$SuccessGetProductsImplCopyWith<$Res> {
+  __$$SuccessGetProductsImplCopyWithImpl(_$SuccessGetProductsImpl _value,
+      $Res Function(_$SuccessGetProductsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SuccessGetProductsImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ProductsResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessGetProductsImpl implements SuccessGetProducts {
+  const _$SuccessGetProductsImpl({required this.data});
+
+  @override
+  final ProductsResponse data;
+
+  @override
+  String toString() {
+    return 'HomeState.successGetProducts(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessGetProductsImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessGetProductsImplCopyWith<_$SuccessGetProductsImpl> get copyWith =>
+      __$$SuccessGetProductsImplCopyWithImpl<_$SuccessGetProductsImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingGetBanners,
+    required TResult Function(BannersResponse data) successGetBanners,
+    required TResult Function() loadingGetCategories,
+    required TResult Function(CategoriesResponse data) successGetCategories,
+    required TResult Function() loadingGetProducts,
+    required TResult Function(ProductsResponse data) successGetProducts,
+  }) {
+    return successGetProducts(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingGetBanners,
+    TResult? Function(BannersResponse data)? successGetBanners,
+    TResult? Function()? loadingGetCategories,
+    TResult? Function(CategoriesResponse data)? successGetCategories,
+    TResult? Function()? loadingGetProducts,
+    TResult? Function(ProductsResponse data)? successGetProducts,
+  }) {
+    return successGetProducts?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingGetBanners,
+    TResult Function(BannersResponse data)? successGetBanners,
+    TResult Function()? loadingGetCategories,
+    TResult Function(CategoriesResponse data)? successGetCategories,
+    TResult Function()? loadingGetProducts,
+    TResult Function(ProductsResponse data)? successGetProducts,
+    required TResult orElse(),
+  }) {
+    if (successGetProducts != null) {
+      return successGetProducts(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadingGetBanners value) loadingGetBanners,
+    required TResult Function(SuccessGetBanners value) successGetBanners,
+    required TResult Function(LoadingGetCategories value) loadingGetCategories,
+    required TResult Function(SuccessGetCategories value) successGetCategories,
+    required TResult Function(LoadingGetProducts value) loadingGetProducts,
+    required TResult Function(SuccessGetProducts value) successGetProducts,
+  }) {
+    return successGetProducts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadingGetBanners value)? loadingGetBanners,
+    TResult? Function(SuccessGetBanners value)? successGetBanners,
+    TResult? Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult? Function(SuccessGetCategories value)? successGetCategories,
+    TResult? Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult? Function(SuccessGetProducts value)? successGetProducts,
+  }) {
+    return successGetProducts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadingGetBanners value)? loadingGetBanners,
+    TResult Function(SuccessGetBanners value)? successGetBanners,
+    TResult Function(LoadingGetCategories value)? loadingGetCategories,
+    TResult Function(SuccessGetCategories value)? successGetCategories,
+    TResult Function(LoadingGetProducts value)? loadingGetProducts,
+    TResult Function(SuccessGetProducts value)? successGetProducts,
+    required TResult orElse(),
+  }) {
+    if (successGetProducts != null) {
+      return successGetProducts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessGetProducts implements HomeState {
+  const factory SuccessGetProducts({required final ProductsResponse data}) =
+      _$SuccessGetProductsImpl;
+
+  ProductsResponse get data;
+  @JsonKey(ignore: true)
+  _$$SuccessGetProductsImplCopyWith<_$SuccessGetProductsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

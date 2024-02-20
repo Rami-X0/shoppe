@@ -10,24 +10,33 @@ class AppCachedNetworkImage extends StatelessWidget {
   final double? circular;
   final double? widthErrorIcon;
   final double? heightErrorIcon;
+  final double? widthImage;
+  final double? heightImage;
+  final BoxFit? fitImage;
 
-  const AppCachedNetworkImage(
-      {super.key,
-      required this.index,
-      required this.object,
-      this.circular,
-      this.widthErrorIcon,
-      this.heightErrorIcon});
+  const AppCachedNetworkImage({
+    super.key,
+    required this.index,
+    required this.object,
+    this.circular,
+    this.widthErrorIcon,
+    this.heightErrorIcon,
+    this.widthImage,
+    this.heightImage,
+    this.fitImage,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(circular ?? 14),
       child: CachedNetworkImage(
+        width: widthImage?.w,
+        height: heightImage?.h,
         imageUrl: object.toString(),
         placeholder: (context, url) => const AppLoading(),
         errorWidget: (context, error, url) => errorDownloadImage(),
-        fit: BoxFit.cover,
+        fit: fitImage,
       ),
     );
   }

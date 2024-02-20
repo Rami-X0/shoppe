@@ -45,6 +45,7 @@ class GetStartedButton extends StatelessWidget {
                     35.h,
                   ),
                   shape: const CircleBorder(),
+                 elevation: 5,
                   backgroundColor: ColorsManager.mainBlue),
               onPressed: () {
                 context.pushNamed(Routes.loginScreen);
@@ -56,6 +57,7 @@ class GetStartedButton extends StatelessWidget {
               child: FaIcon(
                 FontAwesomeIcons.arrowRight,
                 size: 15.w,
+
                 color: Colors.white,
               ),
             ),

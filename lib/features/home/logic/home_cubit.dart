@@ -26,4 +26,14 @@ class HomeCubit extends Cubit<HomeState> {
       },
     );
   }
+
+  void emitProducts() async {
+    emit(const HomeState.loadingGetProducts());
+    final response = await _bannersRepo.products();
+    response.whenOrNull(
+      success: (productsResponse) {
+        emit(HomeState.successGetProducts(data: productsResponse));
+      },
+    );
+  }
 }

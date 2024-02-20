@@ -31,7 +31,9 @@ class BannersViewItem extends StatelessWidget {
             )
           ],
         ),
-        child: AppCachedNetworkImage(index: index,
+        child: AppCachedNetworkImage(
+          fitImage: BoxFit.cover,
+          index: index,
           object: bannersResponse.bannersData![index].image.toString(),)
     );
   }
