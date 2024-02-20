@@ -8,11 +8,19 @@ import 'package:shoppe/features/home/logic/home_state.dart';
 import 'package:shoppe/features/home/ui/widget/default_container_home.dart';
 import 'package:shoppe/features/home/ui/widget/product_view.dart';
 
-class BlocBuilderProductsView extends StatelessWidget {
+class BlocBuilderProductsView extends StatefulWidget {
   const BlocBuilderProductsView({super.key});
 
   @override
+  State<BlocBuilderProductsView> createState() => _BlocBuilderProductsViewState();
+}
+
+class _BlocBuilderProductsViewState extends State<BlocBuilderProductsView> with AutomaticKeepAliveClientMixin{
+  @override
+  bool get wantKeepAlive => true;
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     BlocProvider.of<HomeCubit>(context).emitProducts();
     return DefaultContainerHome(
       child: Column(

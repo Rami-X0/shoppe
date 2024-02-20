@@ -4,8 +4,11 @@ class AppSlideScaleFadeTransition extends StatefulWidget {
   final Widget child;
   final double scaleOffsetEnd;
 
-  const AppSlideScaleFadeTransition(
-      {super.key, required this.child, required this.scaleOffsetEnd});
+  const AppSlideScaleFadeTransition({
+    super.key,
+    required this.child,
+    required this.scaleOffsetEnd,
+  });
 
   @override
   State<AppSlideScaleFadeTransition> createState() =>
@@ -19,9 +22,8 @@ class _AppSlideScaleFadeTransitionState
   late Animation<double> _scaleWithFadeAnimation;
   late Animation<Offset> _slideAnimation;
 
-  // late Animation<double> _fadeAnimation;
-  Duration durationAnimation = const Duration(milliseconds: 1200);
-  Curve curvesAnimation = Curves.easeInOutQuart;
+  Duration durationAnimation = const Duration(milliseconds: 1350);
+  Curve curvesAnimation = Curves.ease;
 
   @override
   void initState() {
@@ -45,7 +47,6 @@ class _AppSlideScaleFadeTransitionState
         .animate(CurvedAnimation(parent: _controller, curve: curvesAnimation));
   }
 
-
   @override
   Widget build(BuildContext context) {
     return ScaleTransition(
@@ -59,12 +60,12 @@ class _AppSlideScaleFadeTransitionState
       ),
     );
   }
+
   @override
   void dispose() {
     _controller.dispose();
-    debugPrint('===========================================>>>>>');
+    debugPrint('========>>>>>Dispose Animation');
 
     super.dispose();
   }
-
 }
