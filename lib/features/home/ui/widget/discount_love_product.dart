@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 
 class DiscountLoveProduct extends StatelessWidget {
   const DiscountLoveProduct({
     super.key,
-
   });
-
 
   final double radiusCircular = 15;
   final Color colorWidget = Colors.white70;
@@ -28,13 +27,17 @@ class DiscountLoveProduct extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        _buildDiscountLoveProduct(
-          color: ColorsManager.mainBlue,
-          topLeft: radiusCircular,
-          bottomRight: radiusCircular,
-          child: const Icon(
-            Icons.favorite,
-            color: Colors.white70,
+        InkWell(
+          borderRadius: BorderRadius.circular(50),
+          onTap: () {},
+          child: _buildDiscountLoveProduct(
+            color: ColorsManager.mainBlue,
+            topLeft: radiusCircular,
+            bottomRight: radiusCircular,
+            child: const FaIcon(
+              FontAwesomeIcons.heart,
+              color: Colors.white70,
+            ),
           ),
         ),
       ],

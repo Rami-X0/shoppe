@@ -30,12 +30,15 @@ class _ShoppeAppState extends State<ShoppeApp> {
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: token == null
-            ? (onBoarding == null
-                ? Routes.onBoardingScreen
-                : Routes.loginScreen)
-            : Routes.homeScreen,
+        initialRoute:
 
+        // token == null
+        //     ? (onBoarding == null
+        //         ? Routes.onBoardingScreen
+        //         : Routes.loginScreen)
+        //     : Routes.homeScreen,
+
+Routes.favoritesScreen,
         onGenerateRoute: route.generateRoute,
         themeMode: ThemeMode.dark,
         theme: ThemeData(

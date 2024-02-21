@@ -23,10 +23,10 @@ class HomeScreen extends StatelessWidget {
               scaleOffsetEnd: 2,
               child: ListView(
                 children: [
-                  const BlocBuilderBannersView(),
-                  verticalSpace(10),
-                  const BlocBuilderCategoriesView(),
-                  verticalSpace(15),
+                  // const BlocBuilderBannersView(),
+                  // verticalSpace(10),
+                  // const BlocBuilderCategoriesView(),
+                  // verticalSpace(15),
                   const BlocBuilderProductsView(),
                 ],
               ),

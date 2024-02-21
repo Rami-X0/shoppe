@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/core/di/dependency_injection.dart';
-import 'package:shoppe/core/routing/animation_router/app_size_transition_router.dart';
+import 'package:shoppe/core/routing/animation_routing/app_size_transition_router.dart';
 import 'package:shoppe/core/routing/routes.dart';
+import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
+import 'package:shoppe/features/favorites/ui/favorites_screen.dart';
 import 'package:shoppe/features/home/logic/home_cubit.dart';
 import 'package:shoppe/features/home/ui/home_screen.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
@@ -30,10 +32,14 @@ Route generateRoute(RouteSettings settings) {
     case Routes.homeScreen:
       return AppSizeTransitionRouter(
         BlocProvider(
-            create: (context) => getIt<HomeCubit>(),
-
-            child: const HomeScreen()),
+            create: (context) => getIt<HomeCubit>(), child: const HomeScreen()),
       );
+    case Routes.favoritesScreen:
+   return   MaterialPageRoute(
+          builder: (_) => BlocProvider(
+                create: (context) => getIt<FavoritesCubit>()..emitFavorites(),
+                child: const FavoritesScreen(),
+              ));
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

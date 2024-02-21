@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:shoppe/core/networking/api_constants.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:shoppe/features/favorites/data/models/favorites_response.dart';
 import 'package:shoppe/features/home/data/models/banners_response.dart';
 import 'package:shoppe/features/home/data/models/categories_response.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
@@ -30,4 +31,9 @@ abstract class ApiServices {
   @GET(ApiConstants.products)
   Future<ProductsResponse> products();
 
+  @GET(ApiConstants.favorites)
+  Future<FavoritesResponse> favorites();
+
+  // @POST(ApiConstants.favorites)
+  // Future<FavoritesResponse> addFavorites(@Header('Authorization') String token);
 }
