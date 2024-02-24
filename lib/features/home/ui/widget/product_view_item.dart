@@ -40,7 +40,10 @@ class ProductViewItem extends StatelessWidget {
               index: index,
             ),
             verticalSpace(5),
-            PriceProducts(productsResponse: productsResponse, index: index,),
+            PriceProducts(
+              productsResponse: productsResponse,
+              index: index,
+            ),
             Center(
               child: Container(
                 width: 175.w,
@@ -64,7 +67,10 @@ class ProductViewItem extends StatelessWidget {
               ),
             ),
             verticalSpace(10),
-            const DiscountLoveProduct(),
+            DiscountLoveProduct(productsResponse: productsResponse, index:index,),
+
+
+
           ],
         ),
       ),

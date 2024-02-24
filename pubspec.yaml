@@ -51,13 +51,13 @@ dependencies:
   freezed: ^2.4.7
   freezed_annotation: ^2.4.1
   # add Image Svg
-  flutter_svg: ^2.0.9
+  flutter_svg: ^2.0.10+1
   # dependency Injection
   get_it: ^7.6.7
   #   adapting Screen And Font Size.
   flutter_screenutil: ^5.9.0
   # splash Flutter
-  flutter_native_splash: ^2.3.11
+  flutter_native_splash: ^2.3.13
   # add Icons
   font_awesome_flutter: ^10.7.0
   # Simple local DataBase
@@ -67,7 +67,7 @@ dependencies:
   # A carousel slider widget, support infinite scroll and custom child widget
   carousel_slider: ^4.2.1
   # Used lottie animation gif
-  lottie: ^3.0.0
+  lottie: ^3.1.0
 
 
 dev_dependencies:

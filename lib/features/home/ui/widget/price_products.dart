@@ -25,13 +25,16 @@ class PriceProducts extends StatelessWidget {
           text: 'Price',
           price: productsResponse.data!.productData![index].price.toString(),
         ),
-        priceProduct(
-          text: 'Old Price',
-          price: productsResponse.data!.productData![index].oldPrice.toString(),
-          iconPriceColor: ColorsManager.moreLighterGray,
-          priceColor: ColorsManager.moreLighterGray,
-          decorationPrice: TextDecoration.lineThrough,
-        ),
+        productsResponse.data!.productData![index].discount! > 0
+            ? priceProduct(
+                text: 'Old Price',
+                price: productsResponse.data!.productData![index].oldPrice
+                    .toString(),
+                iconPriceColor: ColorsManager.moreLighterGray,
+                priceColor: ColorsManager.moreLighterGray,
+                decorationPrice: TextDecoration.lineThrough,
+              )
+            : const SizedBox.shrink(),
       ],
     );
   }

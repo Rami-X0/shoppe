@@ -40,8 +40,8 @@ ProductData _$ProductDataFromJson(Map<String, dynamic> json) => ProductData(
       description: json['description'] as String?,
       images:
           (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      inFavorites: json['inFavorites'] as bool?,
-      inCart: json['inCart'] as bool?,
+      inFavorites: json['in_favorites'] as bool?,
+      inCart: json['in_cart'] as bool?,
     );
 
 Map<String, dynamic> _$ProductDataToJson(ProductData instance) =>
@@ -54,6 +54,6 @@ Map<String, dynamic> _$ProductDataToJson(ProductData instance) =>
       'name': instance.name,
       'description': instance.description,
       'images': instance.images,
-      'inFavorites': instance.inFavorites,
-      'inCart': instance.inCart,
+      'in_favorites': instance.inFavorites,
+      'in_cart': instance.inCart,
     };

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppe/core/theming/colors.dart';
+import 'package:shoppe/core/theming/styles.dart';
+import 'package:shoppe/core/widgets/app_snack_bar.dart';
 
 class BottomHomeNavigationBar extends StatefulWidget {
   const BottomHomeNavigationBar({super.key});
@@ -25,7 +27,7 @@ class _BottomHomeNavigationBarState extends State<BottomHomeNavigationBar> {
         child: BottomNavigationBar(
           showSelectedLabels: false,
           showUnselectedLabels: false,
-         selectedFontSize: 0,
+          selectedFontSize: 0,
           unselectedFontSize: 0,
           selectedIconTheme: const IconThemeData(color: Colors.white),
           unselectedItemColor: ColorsManager.mainBlue.withOpacity(0.7),
@@ -35,6 +37,9 @@ class _BottomHomeNavigationBarState extends State<BottomHomeNavigationBar> {
           elevation: 5,
           items: [
             _bottomNavigationItem(
+              onTap: () {
+
+              },
               fontAwesomeIcons: FontAwesomeIcons.house,
             ),
             _bottomNavigationItem(
@@ -62,14 +67,17 @@ class _BottomHomeNavigationBarState extends State<BottomHomeNavigationBar> {
 
   BottomNavigationBarItem _bottomNavigationItem({
     required IconData fontAwesomeIcons,
+    VoidCallback? onTap,
   }) {
     return BottomNavigationBarItem(
-      icon: Icon(
-        fontAwesomeIcons,
-        size: 22.w,
+      icon: InkWell(
+        onTap: onTap,
+        child: Icon(
+          fontAwesomeIcons,
+          size: 22.w,
+        ),
       ),
       label: '',
-
       backgroundColor: ColorsManager.mainBlue.withOpacity(0.3),
     );
   }

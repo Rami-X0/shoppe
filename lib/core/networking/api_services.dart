@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:shoppe/core/networking/api_constants.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:shoppe/features/favorites/data/models/favorites_add_response.dart';
+import 'package:shoppe/features/favorites/data/models/favorites_request.dart';
 import 'package:shoppe/features/favorites/data/models/favorites_response.dart';
 import 'package:shoppe/features/home/data/models/banners_response.dart';
 import 'package:shoppe/features/home/data/models/categories_response.dart';
@@ -34,6 +36,6 @@ abstract class ApiServices {
   @GET(ApiConstants.favorites)
   Future<FavoritesResponse> favorites();
 
-  // @POST(ApiConstants.favorites)
-  // Future<FavoritesResponse> addFavorites(@Header('Authorization') String token);
+  @POST(ApiConstants.favorites)
+  Future<FavoritesAddResponse> addFavorites(@Body() FavoritesRequest favoritesResponse);
 }

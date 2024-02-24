@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/widgets/app_slide_scale_fade_transition.dart';
-import 'package:shoppe/features/home/ui/widget/bloc_builder_banners_view.dart';
-import 'package:shoppe/features/home/ui/widget/bloc_builder_categories_view.dart';
 import 'package:shoppe/features/home/ui/widget/bloc_builder_products_view.dart';
 import 'package:shoppe/features/home/ui/widget/bottom_home_navigation_bar.dart';
 

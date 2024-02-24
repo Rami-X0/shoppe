@@ -43,7 +43,10 @@ class ProductData {
   final String? name;
   final String? description;
   final List<String>? images;
+  @JsonKey(name:'in_favorites')
   final bool? inFavorites;
+  @JsonKey(name:'in_cart')
+
   final bool? inCart;
 
   ProductData({

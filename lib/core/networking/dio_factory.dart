@@ -8,7 +8,7 @@ class DioFactory {
   DioFactory._();
 
   static Dio? dio;
-
+  
   static Future<Dio> getDio() async {
     await AppSharedPref.initSharedPref();
     token = await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.tokenKey);
@@ -19,8 +19,10 @@ class DioFactory {
       dio = Dio();
 
       dio!.options.headers = {
+        'Content-Type':'application/json',
         'Authorization': token.toString(),
         'lang': 'ar',
+
       };
       dio!
         ..options.connectTimeout = timeOut

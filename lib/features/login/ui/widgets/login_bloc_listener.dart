@@ -5,9 +5,9 @@ import 'package:shoppe/core/caching/app_shared_pref_key.dart';
 import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/theming/colors.dart';
-import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
 import 'package:shoppe/core/widgets/app_show_dialog.dart';
+import 'package:shoppe/core/widgets/app_snack_bar.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/features/login/logic/cubit/login_state.dart';
 
@@ -38,15 +38,10 @@ class LoginBlocListener extends StatelessWidget {
                 key: AppSharedPrefKey.tokenKey,
                 value: loginResponse.userData!.token,
               );
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    loginResponse.message,
-                    style: TextStyles.font14LightGrayMedium,
-                  ),
-                  duration: const Duration(milliseconds: 750),
-                  backgroundColor: ColorsManager.darkBlue,
-                ),
+              appSnackBar(
+                text: loginResponse.message,
+                backGroundColor: ColorsManager.darkBlue,
+                context: context,
               );
             } else {
               Navigator.pop(context);

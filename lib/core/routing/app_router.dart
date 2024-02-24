@@ -32,7 +32,7 @@ Route generateRoute(RouteSettings settings) {
     case Routes.homeScreen:
       return AppSizeTransitionRouter(
         BlocProvider(
-            create: (context) => getIt<HomeCubit>(), child: const HomeScreen()),
+                  create: (context) => getIt<HomeCubit>(), child: const HomeScreen()),
       );
     case Routes.favoritesScreen:
    return   MaterialPageRoute(

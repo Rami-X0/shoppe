@@ -21,6 +21,8 @@ mixin _$FavoritesState {
     required TResult Function() initial,
     required TResult Function() loadingGetFavorites,
     required TResult Function(FavoritesResponse data) successGetFavorites,
+    required TResult Function() loadingAddFavorites,
+    required TResult Function(FavoritesAddResponse data) successAddFavorites,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +30,8 @@ mixin _$FavoritesState {
     TResult? Function()? initial,
     TResult? Function()? loadingGetFavorites,
     TResult? Function(FavoritesResponse data)? successGetFavorites,
+    TResult? Function()? loadingAddFavorites,
+    TResult? Function(FavoritesAddResponse data)? successAddFavorites,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +39,8 @@ mixin _$FavoritesState {
     TResult Function()? initial,
     TResult Function()? loadingGetFavorites,
     TResult Function(FavoritesResponse data)? successGetFavorites,
+    TResult Function()? loadingAddFavorites,
+    TResult Function(FavoritesAddResponse data)? successAddFavorites,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +49,8 @@ mixin _$FavoritesState {
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingGetFavorites value) loadingGetFavorites,
     required TResult Function(SuccessGetFavorites value) successGetFavorites,
+    required TResult Function(LoadingAddFavorites value) loadingAddFavorites,
+    required TResult Function(SuccessAddFavorites value) successAddFavorites,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +58,8 @@ mixin _$FavoritesState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingGetFavorites value)? loadingGetFavorites,
     TResult? Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult? Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult? Function(SuccessAddFavorites value)? successAddFavorites,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +67,8 @@ mixin _$FavoritesState {
     TResult Function(_Initial value)? initial,
     TResult Function(LoadingGetFavorites value)? loadingGetFavorites,
     TResult Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult Function(SuccessAddFavorites value)? successAddFavorites,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +133,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loadingGetFavorites,
     required TResult Function(FavoritesResponse data) successGetFavorites,
+    required TResult Function() loadingAddFavorites,
+    required TResult Function(FavoritesAddResponse data) successAddFavorites,
   }) {
     return initial();
   }
@@ -131,6 +145,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loadingGetFavorites,
     TResult? Function(FavoritesResponse data)? successGetFavorites,
+    TResult? Function()? loadingAddFavorites,
+    TResult? Function(FavoritesAddResponse data)? successAddFavorites,
   }) {
     return initial?.call();
   }
@@ -141,6 +157,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadingGetFavorites,
     TResult Function(FavoritesResponse data)? successGetFavorites,
+    TResult Function()? loadingAddFavorites,
+    TResult Function(FavoritesAddResponse data)? successAddFavorites,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -155,6 +173,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingGetFavorites value) loadingGetFavorites,
     required TResult Function(SuccessGetFavorites value) successGetFavorites,
+    required TResult Function(LoadingAddFavorites value) loadingAddFavorites,
+    required TResult Function(SuccessAddFavorites value) successAddFavorites,
   }) {
     return initial(this);
   }
@@ -165,6 +185,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingGetFavorites value)? loadingGetFavorites,
     TResult? Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult? Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult? Function(SuccessAddFavorites value)? successAddFavorites,
   }) {
     return initial?.call(this);
   }
@@ -175,6 +197,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(LoadingGetFavorites value)? loadingGetFavorites,
     TResult Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult Function(SuccessAddFavorites value)? successAddFavorites,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -230,6 +254,8 @@ class _$LoadingGetFavoritesImpl implements LoadingGetFavorites {
     required TResult Function() initial,
     required TResult Function() loadingGetFavorites,
     required TResult Function(FavoritesResponse data) successGetFavorites,
+    required TResult Function() loadingAddFavorites,
+    required TResult Function(FavoritesAddResponse data) successAddFavorites,
   }) {
     return loadingGetFavorites();
   }
@@ -240,6 +266,8 @@ class _$LoadingGetFavoritesImpl implements LoadingGetFavorites {
     TResult? Function()? initial,
     TResult? Function()? loadingGetFavorites,
     TResult? Function(FavoritesResponse data)? successGetFavorites,
+    TResult? Function()? loadingAddFavorites,
+    TResult? Function(FavoritesAddResponse data)? successAddFavorites,
   }) {
     return loadingGetFavorites?.call();
   }
@@ -250,6 +278,8 @@ class _$LoadingGetFavoritesImpl implements LoadingGetFavorites {
     TResult Function()? initial,
     TResult Function()? loadingGetFavorites,
     TResult Function(FavoritesResponse data)? successGetFavorites,
+    TResult Function()? loadingAddFavorites,
+    TResult Function(FavoritesAddResponse data)? successAddFavorites,
     required TResult orElse(),
   }) {
     if (loadingGetFavorites != null) {
@@ -264,6 +294,8 @@ class _$LoadingGetFavoritesImpl implements LoadingGetFavorites {
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingGetFavorites value) loadingGetFavorites,
     required TResult Function(SuccessGetFavorites value) successGetFavorites,
+    required TResult Function(LoadingAddFavorites value) loadingAddFavorites,
+    required TResult Function(SuccessAddFavorites value) successAddFavorites,
   }) {
     return loadingGetFavorites(this);
   }
@@ -274,6 +306,8 @@ class _$LoadingGetFavoritesImpl implements LoadingGetFavorites {
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingGetFavorites value)? loadingGetFavorites,
     TResult? Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult? Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult? Function(SuccessAddFavorites value)? successAddFavorites,
   }) {
     return loadingGetFavorites?.call(this);
   }
@@ -284,6 +318,8 @@ class _$LoadingGetFavoritesImpl implements LoadingGetFavorites {
     TResult Function(_Initial value)? initial,
     TResult Function(LoadingGetFavorites value)? loadingGetFavorites,
     TResult Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult Function(SuccessAddFavorites value)? successAddFavorites,
     required TResult orElse(),
   }) {
     if (loadingGetFavorites != null) {
@@ -365,6 +401,8 @@ class _$SuccessGetFavoritesImpl implements SuccessGetFavorites {
     required TResult Function() initial,
     required TResult Function() loadingGetFavorites,
     required TResult Function(FavoritesResponse data) successGetFavorites,
+    required TResult Function() loadingAddFavorites,
+    required TResult Function(FavoritesAddResponse data) successAddFavorites,
   }) {
     return successGetFavorites(data);
   }
@@ -375,6 +413,8 @@ class _$SuccessGetFavoritesImpl implements SuccessGetFavorites {
     TResult? Function()? initial,
     TResult? Function()? loadingGetFavorites,
     TResult? Function(FavoritesResponse data)? successGetFavorites,
+    TResult? Function()? loadingAddFavorites,
+    TResult? Function(FavoritesAddResponse data)? successAddFavorites,
   }) {
     return successGetFavorites?.call(data);
   }
@@ -385,6 +425,8 @@ class _$SuccessGetFavoritesImpl implements SuccessGetFavorites {
     TResult Function()? initial,
     TResult Function()? loadingGetFavorites,
     TResult Function(FavoritesResponse data)? successGetFavorites,
+    TResult Function()? loadingAddFavorites,
+    TResult Function(FavoritesAddResponse data)? successAddFavorites,
     required TResult orElse(),
   }) {
     if (successGetFavorites != null) {
@@ -399,6 +441,8 @@ class _$SuccessGetFavoritesImpl implements SuccessGetFavorites {
     required TResult Function(_Initial value) initial,
     required TResult Function(LoadingGetFavorites value) loadingGetFavorites,
     required TResult Function(SuccessGetFavorites value) successGetFavorites,
+    required TResult Function(LoadingAddFavorites value) loadingAddFavorites,
+    required TResult Function(SuccessAddFavorites value) successAddFavorites,
   }) {
     return successGetFavorites(this);
   }
@@ -409,6 +453,8 @@ class _$SuccessGetFavoritesImpl implements SuccessGetFavorites {
     TResult? Function(_Initial value)? initial,
     TResult? Function(LoadingGetFavorites value)? loadingGetFavorites,
     TResult? Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult? Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult? Function(SuccessAddFavorites value)? successAddFavorites,
   }) {
     return successGetFavorites?.call(this);
   }
@@ -419,6 +465,8 @@ class _$SuccessGetFavoritesImpl implements SuccessGetFavorites {
     TResult Function(_Initial value)? initial,
     TResult Function(LoadingGetFavorites value)? loadingGetFavorites,
     TResult Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult Function(SuccessAddFavorites value)? successAddFavorites,
     required TResult orElse(),
   }) {
     if (successGetFavorites != null) {
@@ -435,5 +483,279 @@ abstract class SuccessGetFavorites implements FavoritesState {
   FavoritesResponse get data;
   @JsonKey(ignore: true)
   _$$SuccessGetFavoritesImplCopyWith<_$SuccessGetFavoritesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingAddFavoritesImplCopyWith<$Res> {
+  factory _$$LoadingAddFavoritesImplCopyWith(_$LoadingAddFavoritesImpl value,
+          $Res Function(_$LoadingAddFavoritesImpl) then) =
+      __$$LoadingAddFavoritesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingAddFavoritesImplCopyWithImpl<$Res>
+    extends _$FavoritesStateCopyWithImpl<$Res, _$LoadingAddFavoritesImpl>
+    implements _$$LoadingAddFavoritesImplCopyWith<$Res> {
+  __$$LoadingAddFavoritesImplCopyWithImpl(_$LoadingAddFavoritesImpl _value,
+      $Res Function(_$LoadingAddFavoritesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingAddFavoritesImpl implements LoadingAddFavorites {
+  const _$LoadingAddFavoritesImpl();
+
+  @override
+  String toString() {
+    return 'FavoritesState.loadingAddFavorites()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingAddFavoritesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingGetFavorites,
+    required TResult Function(FavoritesResponse data) successGetFavorites,
+    required TResult Function() loadingAddFavorites,
+    required TResult Function(FavoritesAddResponse data) successAddFavorites,
+  }) {
+    return loadingAddFavorites();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingGetFavorites,
+    TResult? Function(FavoritesResponse data)? successGetFavorites,
+    TResult? Function()? loadingAddFavorites,
+    TResult? Function(FavoritesAddResponse data)? successAddFavorites,
+  }) {
+    return loadingAddFavorites?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingGetFavorites,
+    TResult Function(FavoritesResponse data)? successGetFavorites,
+    TResult Function()? loadingAddFavorites,
+    TResult Function(FavoritesAddResponse data)? successAddFavorites,
+    required TResult orElse(),
+  }) {
+    if (loadingAddFavorites != null) {
+      return loadingAddFavorites();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadingGetFavorites value) loadingGetFavorites,
+    required TResult Function(SuccessGetFavorites value) successGetFavorites,
+    required TResult Function(LoadingAddFavorites value) loadingAddFavorites,
+    required TResult Function(SuccessAddFavorites value) successAddFavorites,
+  }) {
+    return loadingAddFavorites(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadingGetFavorites value)? loadingGetFavorites,
+    TResult? Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult? Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult? Function(SuccessAddFavorites value)? successAddFavorites,
+  }) {
+    return loadingAddFavorites?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadingGetFavorites value)? loadingGetFavorites,
+    TResult Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult Function(SuccessAddFavorites value)? successAddFavorites,
+    required TResult orElse(),
+  }) {
+    if (loadingAddFavorites != null) {
+      return loadingAddFavorites(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingAddFavorites implements FavoritesState {
+  const factory LoadingAddFavorites() = _$LoadingAddFavoritesImpl;
+}
+
+/// @nodoc
+abstract class _$$SuccessAddFavoritesImplCopyWith<$Res> {
+  factory _$$SuccessAddFavoritesImplCopyWith(_$SuccessAddFavoritesImpl value,
+          $Res Function(_$SuccessAddFavoritesImpl) then) =
+      __$$SuccessAddFavoritesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({FavoritesAddResponse data});
+}
+
+/// @nodoc
+class __$$SuccessAddFavoritesImplCopyWithImpl<$Res>
+    extends _$FavoritesStateCopyWithImpl<$Res, _$SuccessAddFavoritesImpl>
+    implements _$$SuccessAddFavoritesImplCopyWith<$Res> {
+  __$$SuccessAddFavoritesImplCopyWithImpl(_$SuccessAddFavoritesImpl _value,
+      $Res Function(_$SuccessAddFavoritesImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SuccessAddFavoritesImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as FavoritesAddResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessAddFavoritesImpl implements SuccessAddFavorites {
+  const _$SuccessAddFavoritesImpl(this.data);
+
+  @override
+  final FavoritesAddResponse data;
+
+  @override
+  String toString() {
+    return 'FavoritesState.successAddFavorites(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessAddFavoritesImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessAddFavoritesImplCopyWith<_$SuccessAddFavoritesImpl> get copyWith =>
+      __$$SuccessAddFavoritesImplCopyWithImpl<_$SuccessAddFavoritesImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingGetFavorites,
+    required TResult Function(FavoritesResponse data) successGetFavorites,
+    required TResult Function() loadingAddFavorites,
+    required TResult Function(FavoritesAddResponse data) successAddFavorites,
+  }) {
+    return successAddFavorites(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingGetFavorites,
+    TResult? Function(FavoritesResponse data)? successGetFavorites,
+    TResult? Function()? loadingAddFavorites,
+    TResult? Function(FavoritesAddResponse data)? successAddFavorites,
+  }) {
+    return successAddFavorites?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingGetFavorites,
+    TResult Function(FavoritesResponse data)? successGetFavorites,
+    TResult Function()? loadingAddFavorites,
+    TResult Function(FavoritesAddResponse data)? successAddFavorites,
+    required TResult orElse(),
+  }) {
+    if (successAddFavorites != null) {
+      return successAddFavorites(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadingGetFavorites value) loadingGetFavorites,
+    required TResult Function(SuccessGetFavorites value) successGetFavorites,
+    required TResult Function(LoadingAddFavorites value) loadingAddFavorites,
+    required TResult Function(SuccessAddFavorites value) successAddFavorites,
+  }) {
+    return successAddFavorites(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadingGetFavorites value)? loadingGetFavorites,
+    TResult? Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult? Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult? Function(SuccessAddFavorites value)? successAddFavorites,
+  }) {
+    return successAddFavorites?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadingGetFavorites value)? loadingGetFavorites,
+    TResult Function(SuccessGetFavorites value)? successGetFavorites,
+    TResult Function(LoadingAddFavorites value)? loadingAddFavorites,
+    TResult Function(SuccessAddFavorites value)? successAddFavorites,
+    required TResult orElse(),
+  }) {
+    if (successAddFavorites != null) {
+      return successAddFavorites(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessAddFavorites implements FavoritesState {
+  const factory SuccessAddFavorites(final FavoritesAddResponse data) =
+      _$SuccessAddFavoritesImpl;
+
+  FavoritesAddResponse get data;
+  @JsonKey(ignore: true)
+  _$$SuccessAddFavoritesImplCopyWith<_$SuccessAddFavoritesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

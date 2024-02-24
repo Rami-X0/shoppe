@@ -12,12 +12,20 @@ class BlocBuilderFavoritesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FavoritesCubit, FavoritesState>(
       builder: (context, state) {
-        return state.when(initial: () {
-          return const SizedBox.shrink();
-        }, loadingGetFavorites: () {
-          return const AppLoading();
-        }, successGetFavorites: (favoritesResponse) {
-          return FavoritesView(favoritesResponse: favoritesResponse,);
-        },);
-      },);
-  }}
+        return state.maybeWhen(
+          orElse: () {
+            return const SizedBox.shrink();
+          },
+          loadingGetFavorites: () {
+            return const AppLoading();
+          },
+          successGetFavorites: (favoritesResponse) {
+            return FavoritesView(
+              favoritesResponse: favoritesResponse,
+            );
+          },
+        );
+      },
+    );
+  }
+}

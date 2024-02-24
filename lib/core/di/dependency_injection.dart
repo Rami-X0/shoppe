@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:shoppe/core/caching/app_shared_pref_key.dart';
 import 'package:shoppe/core/networking/dio_factory.dart';
 import 'package:shoppe/core/networking/api_services.dart';
 import 'package:shoppe/features/favorites/data/favorites_repo/favorites_repo.dart';
@@ -24,10 +23,9 @@ Future<void> initGetIt() async {
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
 // home
-  getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt()));
+  getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
 // favorites
-  getIt.registerFactory<FavoritesCubit>(() => FavoritesCubit(getIt()));
+  getIt.registerFactory<FavoritesCubit>(() => FavoritesCubit(getIt(), getIt()));
   getIt.registerLazySingleton<FavoritesRepo>(() => FavoritesRepo(getIt()));
-
 }
