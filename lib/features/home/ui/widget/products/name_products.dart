@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/helper/spacing.dart';
+import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
 
-class NameProduct extends StatelessWidget {
+class NameProducts extends StatelessWidget {
   final ProductsResponse productsResponse;
   final int index;
 
-  const NameProduct(
+  const NameProducts(
       {super.key, required this.productsResponse, required this.index});
 
   @override
@@ -23,7 +24,9 @@ class NameProduct extends StatelessWidget {
                 .toString()
                 .substring(0, 20)
                 .replaceRange(18, 20, '...'),
-            style: TextStyles.font18DarkBlueSemiBold,
+            style: TextStyles.font18MainBlueSemiBold.copyWith(
+              color: ColorsManager.darkBlue ,
+            ),
           ),
         ),
         verticalSpace(10),

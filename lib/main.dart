@@ -11,8 +11,7 @@ void main() async {
   initGetIt();
   await AppSharedPref.initSharedPref();
   token = await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.tokenKey);
-  onBoarding =
-      await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.onBoarding);
+  onBoarding = await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.onBoarding);
   Bloc.observer = MyBlocObserver();
 
   runApp(const ShoppeApp());

@@ -5,7 +5,7 @@ import 'package:shoppe/core/widgets/app_loading.dart';
 import 'package:shoppe/core/widgets/app_slide_scale_fade_transition.dart';
 import 'package:shoppe/features/home/logic/home_cubit.dart';
 import 'package:shoppe/features/home/logic/home_state.dart';
-import 'package:shoppe/features/home/ui/widget/banners_view.dart';
+import 'package:shoppe/features/home/ui/widget/banners/banners_view.dart';
 import 'package:shoppe/features/home/ui/widget/default_container_home.dart';
 
 class BlocBuilderBannersView extends StatefulWidget {

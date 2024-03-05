@@ -12,16 +12,13 @@ class FavoritesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      // height: 500,
-      child: ListView.builder(
-          itemCount: favoritesResponse.favoritesData!.data!.length,
-          itemBuilder: (context, index) {
-        return FavoritesViewItem(
-          favoritesResponse: favoritesResponse,
-          index: index,
-        );
-      }),
-    );
+    return ListView.builder(
+        itemCount: favoritesResponse.favoritesData!.data!.length,
+        itemBuilder: (context, index) {
+          return FavoritesViewItem(
+            favoritesResponse: favoritesResponse,
+            index: index,
+          );
+        });
   }
 }

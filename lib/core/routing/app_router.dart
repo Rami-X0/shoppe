@@ -31,15 +31,18 @@ Route generateRoute(RouteSettings settings) {
       );
     case Routes.homeScreen:
       return AppSizeTransitionRouter(
-        BlocProvider(
-                  create: (context) => getIt<HomeCubit>(), child: const HomeScreen()),
+        _routesMultiBlocProvider(
+          child: const HomeScreen(),
+        ),
       );
+
     case Routes.favoritesScreen:
-   return   MaterialPageRoute(
-          builder: (_) => BlocProvider(
-                create: (context) => getIt<FavoritesCubit>()..emitFavorites(),
-                child: const FavoritesScreen(),
-              ));
+      return MaterialPageRoute(
+        builder: (_) => _routesMultiBlocProvider(
+          child: const FavoritesScreen(),
+        ),
+      );
+
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(
@@ -49,4 +52,20 @@ Route generateRoute(RouteSettings settings) {
         ),
       );
   }
+}
+
+Widget _routesMultiBlocProvider({
+  required Widget child,
+}) {
+  return MultiBlocProvider(
+    providers: [
+      BlocProvider<HomeCubit>.value(
+        value: getIt<HomeCubit>(),
+      ),
+      BlocProvider<FavoritesCubit>.value(
+        value: getIt<FavoritesCubit>()..emitFavorites(),
+      )
+    ],
+    child: child,
+  );
 }

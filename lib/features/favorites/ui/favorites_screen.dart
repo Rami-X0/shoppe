@@ -7,7 +7,8 @@ class FavoritesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilderFavoritesView(),
+      appBar: AppBar(),
+      body: const BlocBuilderFavoritesView(),
     );
   }
 }

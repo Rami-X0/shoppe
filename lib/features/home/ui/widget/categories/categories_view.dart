@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoppe/features/home/data/models/categories_response.dart';
-import 'package:shoppe/features/home/ui/widget/categories_view_item.dart';
+import 'package:shoppe/features/home/ui/widget/categories/categories_view_item.dart';
 
 class CategoriesView extends StatelessWidget {
 final CategoriesResponse categoriesResponse;

@@ -4,7 +4,7 @@ part 'favorites_request.g.dart';
 @JsonSerializable()
 class FavoritesRequest{
   @JsonKey(name: 'product_id')
-  final int productId;
+  final num productId;
 
   FavoritesRequest({required this.productId});
 

@@ -18,6 +18,7 @@ class ShoppeApp extends StatefulWidget {
 class _ShoppeAppState extends State<ShoppeApp> {
   @override
   Widget build(BuildContext context) {
+
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -46,11 +47,9 @@ class _ShoppeAppState extends State<ShoppeApp> {
             selectionColor: ColorsManager.mainBlue,
             selectionHandleColor: ColorsManager.mainBlue,
           ),
+          scaffoldBackgroundColor: Colors.white,
           appBarTheme: const AppBarTheme(
-            systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: Colors.transparent,
-              statusBarIconBrightness: Brightness.dark,
-            ),
+
           ),
         ),
       ),

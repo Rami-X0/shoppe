@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
-import 'package:shoppe/features/home/ui/widget/more_small_product_view_item.dart';
+import 'package:shoppe/features/home/ui/widget/products/more_small_product_view_item.dart';
 
 class MoreSmallProductView extends StatelessWidget {
   final ProductData productData;
@@ -16,13 +16,14 @@ class MoreSmallProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      padding: EdgeInsets.only(right: 120.w,left: 10.w),
       child: SizedBox(
 
         width: 123.w,
         height: 50.h,
         child: ListView.separated(
           shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           scrollDirection: Axis.horizontal,
           separatorBuilder: (context, index) {
             return horizontalSpace(0);

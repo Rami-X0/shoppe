@@ -18,7 +18,7 @@ class SeeMoreCategories extends StatelessWidget {
               children: [
                 TextSpan(
                     text: 'Categories',
-                    style: TextStyles.font18DarkBlueSemiBold),
+                    style: TextStyles.font18MainBlueSemiBold),
                 WidgetSpan(
                   child: horizontalSpace(170),
                 ),

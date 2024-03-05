@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppe/features/home/data/models/banners_response.dart';
-import 'package:shoppe/features/home/ui/widget/banners_view_item.dart';
+import 'package:shoppe/features/home/ui/widget/banners/banners_view_item.dart';
 
 class BannersView extends StatelessWidget {
  final BannersResponse bannersResponse;

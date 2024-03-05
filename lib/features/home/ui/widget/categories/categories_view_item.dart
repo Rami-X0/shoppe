@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_cached_network_image.dart';
 import 'package:shoppe/features/home/data/models/categories_response.dart';
-import 'package:shoppe/features/home/ui/widget/categories_name.dart';
+import 'package:shoppe/features/home/ui/widget/categories/categories_name.dart';
 
 class CategoriesViewItem extends StatelessWidget {
   final CategoriesResponse categoriesResponse;

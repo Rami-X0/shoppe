@@ -1,14 +1,21 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
-import 'package:shoppe/core/widgets/app_cached_network_image.dart';
+import 'package:shoppe/features/favorites/ui/widgets/app_button_favorite.dart';
+import 'package:shoppe/features/favorites/ui/widgets/favorites_image.dart';
+import 'package:shoppe/features/favorites/ui/widgets/favorites_name.dart';
 import 'package:shoppe/features/favorites/data/models/favorites_response.dart';
-import 'package:shoppe/features/favorites/ui/widgets/name_favorites.dart';
 import 'package:shoppe/features/favorites/ui/widgets/price_icon_favorites.dart';
+
 
 class FavoritesViewItem extends StatelessWidget {
   final FavoritesResponse favoritesResponse;
+
+
   final int index;
 
   const FavoritesViewItem({
@@ -21,6 +28,7 @@ class FavoritesViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final BorderRadius radius = BorderRadius.circular(10);
     return Container(
+      height: 150.h,
       margin: EdgeInsets.symmetric(
         horizontal: 5.w,
         vertical: 3.h,
@@ -29,38 +37,56 @@ class FavoritesViewItem extends StatelessWidget {
         color: ColorsManager.mainBlue.withOpacity(0.1),
         borderRadius: radius,
       ),
-      child: Row(
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            decoration:
-                BoxDecoration(color: Colors.white, borderRadius: radius),
-            child: AppCachedNetworkImage(
-              circular: 10,
-              index: 1,
-              object: favoritesResponse
-                  .favoritesData!.data![index].product!.image
-                  .toString(),
-            ),
-          ),
-          horizontalSpace(10),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: 6.w,
+          vertical: 10.h,
+        ),
+        child: _imageFavorite(),
+      ),
+    );
+  }
+
+  Row _imageFavorite() {
+    return Row(
+      children: [
+        FavoritesImage(
+          favoritesResponse: favoritesResponse,
+          index: index,
+        ),
+        horizontalSpace(10),
+        _nameAndPriceAndIconFavorite(),
+      ],
+    );
+  }
+
+  Column _nameAndPriceAndIconFavorite() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Gap(20.h),
+        FavoritesName(
+          favoritesResponse: favoritesResponse,
+          index: index,
+        ),
+        Gap(50.h),
+        SizedBox(
+          width: 150,
+          child: Row(
             children: [
-              NameFavorites(
+              PriceFavorites(
                 favoritesResponse: favoritesResponse,
                 index: index,
               ),
-              verticalSpace(25),
-              PriceIconFavorites(
-                favoritesResponse: favoritesResponse,
-                index: index,
+              const Spacer(),
+              AppButtonFavorite(
+                productId:
+                    favoritesResponse.favoritesData!.data![index].product!.id!,
               ),
             ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

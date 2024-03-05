@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/helper/spacing.dart';
-import 'package:shoppe/core/widgets/app_cached_network_image.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
-import 'package:shoppe/features/home/ui/widget/discount_love_product.dart';
-import 'package:shoppe/features/home/ui/widget/more_small_product_view.dart';
-import 'package:shoppe/features/home/ui/widget/price_products.dart';
-import 'package:shoppe/features/home/ui/widget/name_product.dart';
+import 'package:shoppe/features/home/ui/widget/products/discount_favorite_product.dart';
+import 'package:shoppe/features/home/ui/widget/products/image_product.dart';
+import 'package:shoppe/features/home/ui/widget/products/more_small_product_view.dart';
+import 'package:shoppe/features/home/ui/widget/products/price_products.dart';
+import 'name_products.dart';
 
 class ProductViewItem extends StatelessWidget {
   final ProductsResponse productsResponse;
@@ -23,19 +23,27 @@ class ProductViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25.w),
+      padding: EdgeInsets.symmetric(horizontal: 4.w),
       child: Container(
-        height: 381.h,
+        width: 215.w,
         margin: EdgeInsets.symmetric(
           vertical: 8.h,
         ),
         decoration: BoxDecoration(
           color: Colors.white38,
           borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1 / 2),
+              offset: const Offset(0, 5),
+              spreadRadius: 0.5,
+              blurRadius: 2,
+            ),
+          ],
         ),
         child: Column(
           children: [
-            NameProduct(
+            NameProducts(
               productsResponse: productsResponse,
               index: index,
             ),
@@ -44,33 +52,24 @@ class ProductViewItem extends StatelessWidget {
               productsResponse: productsResponse,
               index: index,
             ),
-            Center(
-              child: Container(
-                width: 175.w,
-                height: 175.h,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10)),
-                child: AppCachedNetworkImage(
-                  object: productsResponse.data!.productData![index].image
-                      .toString(),
-                  index: index,
-                ),
-              ),
+            ImageProduct(
+              productsResponse: productsResponse,
+              productData: productData,
+              index: index,
             ),
             verticalSpace(10),
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,
               child: MoreSmallProductView(
                 productData: productData,
                 index: index,
               ),
             ),
-            verticalSpace(10),
-            DiscountLoveProduct(productsResponse: productsResponse, index:index,),
-
-
-
+            const Spacer(),
+            DiscountFavoriteProduct(
+              productsResponse: productsResponse,
+              index: index,
+            ),
           ],
         ),
       ),

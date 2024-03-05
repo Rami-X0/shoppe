@@ -37,5 +37,6 @@ abstract class ApiServices {
   Future<FavoritesResponse> favorites();
 
   @POST(ApiConstants.favorites)
-  Future<FavoritesAddResponse> addFavorites(@Body() FavoritesRequest favoritesResponse);
+  Future<FavoritesAddResponse> addFavorites(
+      @Body() FavoritesRequest favoritesResponse);
 }

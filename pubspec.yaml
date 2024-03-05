@@ -68,7 +68,8 @@ dependencies:
   carousel_slider: ^4.2.1
   # Used lottie animation gif
   lottie: ^3.1.0
-
+  # Add easy spacing in column and row
+  gap: ^3.0.1
 
 dev_dependencies:
   flutter_test:

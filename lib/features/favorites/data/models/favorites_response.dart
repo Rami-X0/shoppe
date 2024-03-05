@@ -46,11 +46,11 @@ class Data {
 
 @JsonSerializable()
 class Product {
-  final int? id;
-  final int? price;
+  final num? id;
+  final num? price;
 @JsonKey(name:'old_price')
-  final int? oldPrice;
-  final int? discount;
+  final num? oldPrice;
+  final num? discount;
   final String? image;
   final String? name;
   final String? description;

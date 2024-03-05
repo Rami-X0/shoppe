@@ -62,7 +62,7 @@ class PriceProducts extends StatelessWidget {
             ),
             horizontalSpace(5),
             Text(
-              price,
+              price.replaceAll('.0', ' '),
               style: TextStyles.font15MainBlueSemiBold.copyWith(
                 color: priceColor,
                 decoration: decorationPrice,
