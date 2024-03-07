@@ -5,8 +5,8 @@ import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
 
-class AddToCartProductView extends StatelessWidget {
-  const AddToCartProductView({super.key});
+class PayProductView extends StatelessWidget {
+  const PayProductView({super.key});
 
   @override
   Widget build(BuildContext context) {

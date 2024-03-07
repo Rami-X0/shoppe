@@ -16,7 +16,7 @@ class CartsCubit extends Cubit<CartsState> {
     _homeCubit.carts[id.productId] = !_homeCubit.carts[id.productId]!;
     final response = await _cartsRepo.addCarts(id);
     response.whenOrNull(success: (cartsResponse) {
-      if (cartsResponse.status!) {
+      if (!cartsResponse.status!) {
         _homeCubit.carts[id.productId] = !_homeCubit.carts[id.productId]!;
       }
       emit(CartsState.successAddCarts(cartsResponse));

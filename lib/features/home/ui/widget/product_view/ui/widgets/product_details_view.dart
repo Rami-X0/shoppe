@@ -6,6 +6,7 @@ import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
+import 'package:shoppe/features/home/ui/widget/button_carts_home.dart';
 import 'package:shoppe/features/home/ui/widget/product_view/ui/widgets/inkwell_product_view.dart';
 
 class ProductDetailsView extends StatefulWidget {
@@ -45,6 +46,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                       style: TextStyles.font14MainBlueBold),
                 ],
               ),
+              ButtonCartsHome(productId: widget.productData.id!),
               _theProductDetails(),
             ],
           ),
@@ -86,6 +88,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
 
   Widget _theProductDetails() {
     return InkWellProductView(
+        messageToolTip: 'details',
         height: 40,
         onTap: () {
           setState(() {

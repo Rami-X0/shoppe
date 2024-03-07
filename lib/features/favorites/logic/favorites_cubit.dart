@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/features/favorites/data/favorites_repo/favorites_repo.dart';
 import 'package:shoppe/features/favorites/data/models/favorites_request.dart';
 import 'package:shoppe/features/favorites/logic/favorites_state.dart';
+import 'package:shoppe/features/home/data/models/product_response.dart';
 import 'package:shoppe/features/home/logic/home_cubit.dart';
 
 class FavoritesCubit extends Cubit<FavoritesState> {
@@ -25,11 +27,18 @@ class FavoritesCubit extends Cubit<FavoritesState> {
     final response = await _favoritesRepo.addFavorites(id);
     response.whenOrNull(success: (favoritesAddResponse) {
       if (!favoritesAddResponse.status!) {
-        _homeCubit.favorites[id.productId] =
-            !_homeCubit.favorites[id.productId]!;
+        _homeCubit.favorites[id.productId] = !_homeCubit.favorites[id.productId]!;
       }
       emitFavorites();
       emit(FavoritesState.successAddFavorites(favoritesAddResponse));
     });
+  }
+
+  void addProductFavorites(BuildContext context, ProductData productData) {
+    context.read<FavoritesCubit>().emitAddFavorites(
+          FavoritesRequest(
+            productId: productData.id!,
+          ),
+        );
   }
 }

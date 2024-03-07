@@ -68,6 +68,7 @@ class ProductViewItem extends StatelessWidget {
             const Spacer(),
             DiscountFavoriteProduct(
               productsResponse: productsResponse,
+              productData: productData,
               index: index,
             ),
           ],

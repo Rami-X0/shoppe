@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
+import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
-import 'package:shoppe/features/home/ui/widget/app_button_favorite_home.dart';
+import 'package:shoppe/features/home/ui/widget/button_favorites_home.dart';
 
 class DiscountFavoriteProduct extends StatelessWidget {
   final ProductsResponse productsResponse;
+  final ProductData productData;
   final int index;
 
   const DiscountFavoriteProduct({
     super.key,
     required this.productsResponse,
     required this.index,
+    required this.productData,
   });
 
   final double radiusCircular = 15;
@@ -37,14 +41,22 @@ class DiscountFavoriteProduct extends StatelessWidget {
               )
             : const SizedBox.shrink(),
         const Spacer(),
-        _buildDiscountLoveProduct(
+        GestureDetector(
+          onTap: () {
+            context
+                .read<FavoritesCubit>()
+                .addProductFavorites(context, productData);
+          },
+          child: _buildDiscountLoveProduct(
             color: ColorsManager.mainBlue,
             topLeft: radiusCircular,
             bottomRight: radiusCircular,
-            child: AppButtonFavoriteHome(
+            child: ButtonFavoriteHome(
               favoriteIconColor: Colors.white70,
               productId: productsResponse.data!.productData![index].id!,
-            ))
+            ),
+          ),
+        )
       ],
     );
   }
