@@ -21,6 +21,8 @@ mixin _$CartsState {
     required TResult Function() initial,
     required TResult Function() loadingAddCarts,
     required TResult Function(CartsAddResponse cartsResponse) successAddCarts,
+    required TResult Function() loadingGetCarts,
+    required TResult Function(CartsResponse cartsResponse) successGetCarts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +30,8 @@ mixin _$CartsState {
     TResult? Function()? initial,
     TResult? Function()? loadingAddCarts,
     TResult? Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult? Function()? loadingGetCarts,
+    TResult? Function(CartsResponse cartsResponse)? successGetCarts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +39,8 @@ mixin _$CartsState {
     TResult Function()? initial,
     TResult Function()? loadingAddCarts,
     TResult Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult Function()? loadingGetCarts,
+    TResult Function(CartsResponse cartsResponse)? successGetCarts,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +49,8 @@ mixin _$CartsState {
     required TResult Function(Initial value) initial,
     required TResult Function(LoadingAddCarts value) loadingAddCarts,
     required TResult Function(SuccessAddCarts value) successAddCarts,
+    required TResult Function(LoadingGetCarts value) loadingGetCarts,
+    required TResult Function(SuccessGetCarts value) successGetCarts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +58,8 @@ mixin _$CartsState {
     TResult? Function(Initial value)? initial,
     TResult? Function(LoadingAddCarts value)? loadingAddCarts,
     TResult? Function(SuccessAddCarts value)? successAddCarts,
+    TResult? Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult? Function(SuccessGetCarts value)? successGetCarts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +67,8 @@ mixin _$CartsState {
     TResult Function(Initial value)? initial,
     TResult Function(LoadingAddCarts value)? loadingAddCarts,
     TResult Function(SuccessAddCarts value)? successAddCarts,
+    TResult Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult Function(SuccessGetCarts value)? successGetCarts,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +133,8 @@ class _$InitialImpl implements Initial {
     required TResult Function() initial,
     required TResult Function() loadingAddCarts,
     required TResult Function(CartsAddResponse cartsResponse) successAddCarts,
+    required TResult Function() loadingGetCarts,
+    required TResult Function(CartsResponse cartsResponse) successGetCarts,
   }) {
     return initial();
   }
@@ -131,6 +145,8 @@ class _$InitialImpl implements Initial {
     TResult? Function()? initial,
     TResult? Function()? loadingAddCarts,
     TResult? Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult? Function()? loadingGetCarts,
+    TResult? Function(CartsResponse cartsResponse)? successGetCarts,
   }) {
     return initial?.call();
   }
@@ -141,6 +157,8 @@ class _$InitialImpl implements Initial {
     TResult Function()? initial,
     TResult Function()? loadingAddCarts,
     TResult Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult Function()? loadingGetCarts,
+    TResult Function(CartsResponse cartsResponse)? successGetCarts,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -155,6 +173,8 @@ class _$InitialImpl implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(LoadingAddCarts value) loadingAddCarts,
     required TResult Function(SuccessAddCarts value) successAddCarts,
+    required TResult Function(LoadingGetCarts value) loadingGetCarts,
+    required TResult Function(SuccessGetCarts value) successGetCarts,
   }) {
     return initial(this);
   }
@@ -165,6 +185,8 @@ class _$InitialImpl implements Initial {
     TResult? Function(Initial value)? initial,
     TResult? Function(LoadingAddCarts value)? loadingAddCarts,
     TResult? Function(SuccessAddCarts value)? successAddCarts,
+    TResult? Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult? Function(SuccessGetCarts value)? successGetCarts,
   }) {
     return initial?.call(this);
   }
@@ -175,6 +197,8 @@ class _$InitialImpl implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(LoadingAddCarts value)? loadingAddCarts,
     TResult Function(SuccessAddCarts value)? successAddCarts,
+    TResult Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult Function(SuccessGetCarts value)? successGetCarts,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -229,6 +253,8 @@ class _$LoadingAddCartsImpl implements LoadingAddCarts {
     required TResult Function() initial,
     required TResult Function() loadingAddCarts,
     required TResult Function(CartsAddResponse cartsResponse) successAddCarts,
+    required TResult Function() loadingGetCarts,
+    required TResult Function(CartsResponse cartsResponse) successGetCarts,
   }) {
     return loadingAddCarts();
   }
@@ -239,6 +265,8 @@ class _$LoadingAddCartsImpl implements LoadingAddCarts {
     TResult? Function()? initial,
     TResult? Function()? loadingAddCarts,
     TResult? Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult? Function()? loadingGetCarts,
+    TResult? Function(CartsResponse cartsResponse)? successGetCarts,
   }) {
     return loadingAddCarts?.call();
   }
@@ -249,6 +277,8 @@ class _$LoadingAddCartsImpl implements LoadingAddCarts {
     TResult Function()? initial,
     TResult Function()? loadingAddCarts,
     TResult Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult Function()? loadingGetCarts,
+    TResult Function(CartsResponse cartsResponse)? successGetCarts,
     required TResult orElse(),
   }) {
     if (loadingAddCarts != null) {
@@ -263,6 +293,8 @@ class _$LoadingAddCartsImpl implements LoadingAddCarts {
     required TResult Function(Initial value) initial,
     required TResult Function(LoadingAddCarts value) loadingAddCarts,
     required TResult Function(SuccessAddCarts value) successAddCarts,
+    required TResult Function(LoadingGetCarts value) loadingGetCarts,
+    required TResult Function(SuccessGetCarts value) successGetCarts,
   }) {
     return loadingAddCarts(this);
   }
@@ -273,6 +305,8 @@ class _$LoadingAddCartsImpl implements LoadingAddCarts {
     TResult? Function(Initial value)? initial,
     TResult? Function(LoadingAddCarts value)? loadingAddCarts,
     TResult? Function(SuccessAddCarts value)? successAddCarts,
+    TResult? Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult? Function(SuccessGetCarts value)? successGetCarts,
   }) {
     return loadingAddCarts?.call(this);
   }
@@ -283,6 +317,8 @@ class _$LoadingAddCartsImpl implements LoadingAddCarts {
     TResult Function(Initial value)? initial,
     TResult Function(LoadingAddCarts value)? loadingAddCarts,
     TResult Function(SuccessAddCarts value)? successAddCarts,
+    TResult Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult Function(SuccessGetCarts value)? successGetCarts,
     required TResult orElse(),
   }) {
     if (loadingAddCarts != null) {
@@ -365,6 +401,8 @@ class _$SuccessAddCartsImpl implements SuccessAddCarts {
     required TResult Function() initial,
     required TResult Function() loadingAddCarts,
     required TResult Function(CartsAddResponse cartsResponse) successAddCarts,
+    required TResult Function() loadingGetCarts,
+    required TResult Function(CartsResponse cartsResponse) successGetCarts,
   }) {
     return successAddCarts(cartsResponse);
   }
@@ -375,6 +413,8 @@ class _$SuccessAddCartsImpl implements SuccessAddCarts {
     TResult? Function()? initial,
     TResult? Function()? loadingAddCarts,
     TResult? Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult? Function()? loadingGetCarts,
+    TResult? Function(CartsResponse cartsResponse)? successGetCarts,
   }) {
     return successAddCarts?.call(cartsResponse);
   }
@@ -385,6 +425,8 @@ class _$SuccessAddCartsImpl implements SuccessAddCarts {
     TResult Function()? initial,
     TResult Function()? loadingAddCarts,
     TResult Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult Function()? loadingGetCarts,
+    TResult Function(CartsResponse cartsResponse)? successGetCarts,
     required TResult orElse(),
   }) {
     if (successAddCarts != null) {
@@ -399,6 +441,8 @@ class _$SuccessAddCartsImpl implements SuccessAddCarts {
     required TResult Function(Initial value) initial,
     required TResult Function(LoadingAddCarts value) loadingAddCarts,
     required TResult Function(SuccessAddCarts value) successAddCarts,
+    required TResult Function(LoadingGetCarts value) loadingGetCarts,
+    required TResult Function(SuccessGetCarts value) successGetCarts,
   }) {
     return successAddCarts(this);
   }
@@ -409,6 +453,8 @@ class _$SuccessAddCartsImpl implements SuccessAddCarts {
     TResult? Function(Initial value)? initial,
     TResult? Function(LoadingAddCarts value)? loadingAddCarts,
     TResult? Function(SuccessAddCarts value)? successAddCarts,
+    TResult? Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult? Function(SuccessGetCarts value)? successGetCarts,
   }) {
     return successAddCarts?.call(this);
   }
@@ -419,6 +465,8 @@ class _$SuccessAddCartsImpl implements SuccessAddCarts {
     TResult Function(Initial value)? initial,
     TResult Function(LoadingAddCarts value)? loadingAddCarts,
     TResult Function(SuccessAddCarts value)? successAddCarts,
+    TResult Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult Function(SuccessGetCarts value)? successGetCarts,
     required TResult orElse(),
   }) {
     if (successAddCarts != null) {
@@ -435,5 +483,279 @@ abstract class SuccessAddCarts implements CartsState {
   CartsAddResponse get cartsResponse;
   @JsonKey(ignore: true)
   _$$SuccessAddCartsImplCopyWith<_$SuccessAddCartsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingGetCartsImplCopyWith<$Res> {
+  factory _$$LoadingGetCartsImplCopyWith(_$LoadingGetCartsImpl value,
+          $Res Function(_$LoadingGetCartsImpl) then) =
+      __$$LoadingGetCartsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingGetCartsImplCopyWithImpl<$Res>
+    extends _$CartsStateCopyWithImpl<$Res, _$LoadingGetCartsImpl>
+    implements _$$LoadingGetCartsImplCopyWith<$Res> {
+  __$$LoadingGetCartsImplCopyWithImpl(
+      _$LoadingGetCartsImpl _value, $Res Function(_$LoadingGetCartsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingGetCartsImpl implements LoadingGetCarts {
+  const _$LoadingGetCartsImpl();
+
+  @override
+  String toString() {
+    return 'CartsState.loadingGetCarts()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingGetCartsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingAddCarts,
+    required TResult Function(CartsAddResponse cartsResponse) successAddCarts,
+    required TResult Function() loadingGetCarts,
+    required TResult Function(CartsResponse cartsResponse) successGetCarts,
+  }) {
+    return loadingGetCarts();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingAddCarts,
+    TResult? Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult? Function()? loadingGetCarts,
+    TResult? Function(CartsResponse cartsResponse)? successGetCarts,
+  }) {
+    return loadingGetCarts?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingAddCarts,
+    TResult Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult Function()? loadingGetCarts,
+    TResult Function(CartsResponse cartsResponse)? successGetCarts,
+    required TResult orElse(),
+  }) {
+    if (loadingGetCarts != null) {
+      return loadingGetCarts();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(LoadingAddCarts value) loadingAddCarts,
+    required TResult Function(SuccessAddCarts value) successAddCarts,
+    required TResult Function(LoadingGetCarts value) loadingGetCarts,
+    required TResult Function(SuccessGetCarts value) successGetCarts,
+  }) {
+    return loadingGetCarts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(LoadingAddCarts value)? loadingAddCarts,
+    TResult? Function(SuccessAddCarts value)? successAddCarts,
+    TResult? Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult? Function(SuccessGetCarts value)? successGetCarts,
+  }) {
+    return loadingGetCarts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(LoadingAddCarts value)? loadingAddCarts,
+    TResult Function(SuccessAddCarts value)? successAddCarts,
+    TResult Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult Function(SuccessGetCarts value)? successGetCarts,
+    required TResult orElse(),
+  }) {
+    if (loadingGetCarts != null) {
+      return loadingGetCarts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingGetCarts implements CartsState {
+  const factory LoadingGetCarts() = _$LoadingGetCartsImpl;
+}
+
+/// @nodoc
+abstract class _$$SuccessGetCartsImplCopyWith<$Res> {
+  factory _$$SuccessGetCartsImplCopyWith(_$SuccessGetCartsImpl value,
+          $Res Function(_$SuccessGetCartsImpl) then) =
+      __$$SuccessGetCartsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CartsResponse cartsResponse});
+}
+
+/// @nodoc
+class __$$SuccessGetCartsImplCopyWithImpl<$Res>
+    extends _$CartsStateCopyWithImpl<$Res, _$SuccessGetCartsImpl>
+    implements _$$SuccessGetCartsImplCopyWith<$Res> {
+  __$$SuccessGetCartsImplCopyWithImpl(
+      _$SuccessGetCartsImpl _value, $Res Function(_$SuccessGetCartsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cartsResponse = null,
+  }) {
+    return _then(_$SuccessGetCartsImpl(
+      null == cartsResponse
+          ? _value.cartsResponse
+          : cartsResponse // ignore: cast_nullable_to_non_nullable
+              as CartsResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessGetCartsImpl implements SuccessGetCarts {
+  const _$SuccessGetCartsImpl(this.cartsResponse);
+
+  @override
+  final CartsResponse cartsResponse;
+
+  @override
+  String toString() {
+    return 'CartsState.successGetCarts(cartsResponse: $cartsResponse)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessGetCartsImpl &&
+            (identical(other.cartsResponse, cartsResponse) ||
+                other.cartsResponse == cartsResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, cartsResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessGetCartsImplCopyWith<_$SuccessGetCartsImpl> get copyWith =>
+      __$$SuccessGetCartsImplCopyWithImpl<_$SuccessGetCartsImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingAddCarts,
+    required TResult Function(CartsAddResponse cartsResponse) successAddCarts,
+    required TResult Function() loadingGetCarts,
+    required TResult Function(CartsResponse cartsResponse) successGetCarts,
+  }) {
+    return successGetCarts(cartsResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingAddCarts,
+    TResult? Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult? Function()? loadingGetCarts,
+    TResult? Function(CartsResponse cartsResponse)? successGetCarts,
+  }) {
+    return successGetCarts?.call(cartsResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingAddCarts,
+    TResult Function(CartsAddResponse cartsResponse)? successAddCarts,
+    TResult Function()? loadingGetCarts,
+    TResult Function(CartsResponse cartsResponse)? successGetCarts,
+    required TResult orElse(),
+  }) {
+    if (successGetCarts != null) {
+      return successGetCarts(cartsResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(LoadingAddCarts value) loadingAddCarts,
+    required TResult Function(SuccessAddCarts value) successAddCarts,
+    required TResult Function(LoadingGetCarts value) loadingGetCarts,
+    required TResult Function(SuccessGetCarts value) successGetCarts,
+  }) {
+    return successGetCarts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(LoadingAddCarts value)? loadingAddCarts,
+    TResult? Function(SuccessAddCarts value)? successAddCarts,
+    TResult? Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult? Function(SuccessGetCarts value)? successGetCarts,
+  }) {
+    return successGetCarts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(LoadingAddCarts value)? loadingAddCarts,
+    TResult Function(SuccessAddCarts value)? successAddCarts,
+    TResult Function(LoadingGetCarts value)? loadingGetCarts,
+    TResult Function(SuccessGetCarts value)? successGetCarts,
+    required TResult orElse(),
+  }) {
+    if (successGetCarts != null) {
+      return successGetCarts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessGetCarts implements CartsState {
+  const factory SuccessGetCarts(final CartsResponse cartsResponse) =
+      _$SuccessGetCartsImpl;
+
+  CartsResponse get cartsResponse;
+  @JsonKey(ignore: true)
+  _$$SuccessGetCartsImplCopyWith<_$SuccessGetCartsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

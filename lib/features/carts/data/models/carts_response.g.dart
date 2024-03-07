@@ -9,7 +9,7 @@ part of 'carts_response.dart';
 CartsResponse _$CartsResponseFromJson(Map<String, dynamic> json) =>
     CartsResponse(
       status: json['status'] as bool?,
-      favoritesData: json['data'] == null
+      cartsData: json['data'] == null
           ? null
           : CartsData.fromJson(json['data'] as Map<String, dynamic>),
     );
@@ -17,7 +17,7 @@ CartsResponse _$CartsResponseFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$CartsResponseToJson(CartsResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
-      'data': instance.favoritesData,
+      'data': instance.cartsData,
     };
 
 CartsData _$CartsDataFromJson(Map<String, dynamic> json) => CartsData(

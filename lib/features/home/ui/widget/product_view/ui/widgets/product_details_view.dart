@@ -31,22 +31,26 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
             children: [
               Column(
                 children: [
-                  Text(
-                    'Price',
-                    textAlign: TextAlign.center,
-                    style: TextStyles.font14LightGrayMedium.copyWith(
-                        decoration: TextDecoration.underline,
-                        decorationColor: ColorsManager.lighterGray),
+                  Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Price\n',
+                          style: TextStyles.font14LightGrayMedium.copyWith(
+                              decoration: TextDecoration.underline,
+                              decorationColor: ColorsManager.lighterGray),
+                        ),
+                        TextSpan(
+                          text: widget.productData.price
+                              .toString()
+                              .replaceAll('.0', ''),
+                          style: TextStyles.font14MainBlueBold,
+                        ),
+                      ],
+                    ),
                   ),
-                  Text(
-                      textAlign: TextAlign.center,
-                      widget.productData.price
-                          .toString()
-                          .replaceAll('.0', '  '),
-                      style: TextStyles.font14MainBlueBold),
                 ],
               ),
-              ButtonCartsHome(productId: widget.productData.id!),
               _theProductDetails(),
             ],
           ),

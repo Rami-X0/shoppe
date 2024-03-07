@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
+import 'package:shoppe/core/helper/extension.dart';
+import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_icon_button_and_tool_tip.dart';
 
@@ -21,8 +23,9 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
           children: [
             _iconDrawerAndTextShoppe(context),
             const Spacer(),
-            AppIconButtonAnfToolTip(
+            AppIconButtonAndToolTip(
               onTap: () {
+                context.pushNamed(Routes.cartsScreen);
               },
               icon: FontAwesomeIcons.cartShopping,
               toolTipMessage: 'carts',
@@ -36,7 +39,7 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
   Row _iconDrawerAndTextShoppe(BuildContext context) {
     return Row(
       children: [
-        AppIconButtonAnfToolTip(
+        AppIconButtonAndToolTip(
           onTap: () {
             Scaffold.of(context).openDrawer();
           },

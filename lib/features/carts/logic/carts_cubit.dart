@@ -19,7 +19,16 @@ class CartsCubit extends Cubit<CartsState> {
       if (!cartsResponse.status!) {
         _homeCubit.carts[id.productId] = !_homeCubit.carts[id.productId]!;
       }
+      emitCarts();
       emit(CartsState.successAddCarts(cartsResponse));
+    });
+  }
+  
+  void emitCarts() async {
+    emit(const CartsState.loadingGetCarts());
+    final response = await _cartsRepo.carts();
+    response.whenOrNull(success: (cartsResponse) {
+      emit(CartsState.successGetCarts(cartsResponse));
     });
   }
 }

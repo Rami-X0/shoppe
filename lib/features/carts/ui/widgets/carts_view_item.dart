@@ -5,19 +5,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
-import 'package:shoppe/features/favorites/ui/widgets/button_favorite.dart';
-import 'package:shoppe/features/favorites/ui/widgets/favorites_image.dart';
-import 'package:shoppe/features/favorites/ui/widgets/favorites_name.dart';
-import 'package:shoppe/features/favorites/data/models/favorites_response.dart';
-import 'package:shoppe/features/favorites/ui/widgets/price_icon_favorites.dart';
+import 'package:shoppe/features/carts/data/models/carts_response.dart';
+import 'package:shoppe/features/carts/ui/widgets/button_carts.dart';
+import 'package:shoppe/features/carts/ui/widgets/carts_image.dart';
+import 'package:shoppe/features/carts/ui/widgets/carts_name.dart';
 
-class FavoritesViewItem extends StatelessWidget {
-  final FavoritesResponse favoritesResponse;
+import 'package:shoppe/features/carts/ui/widgets/price_icon_favorites.dart';
+
+class CartsViewItem extends StatelessWidget {
+  final CartsResponse cartsResponse;
   final int index;
 
-  const FavoritesViewItem({
+  const CartsViewItem({
     super.key,
-    required this.favoritesResponse,
+    required this.cartsResponse,
     required this.index,
   });
 
@@ -47,8 +48,8 @@ class FavoritesViewItem extends StatelessWidget {
   Row _imageFavorite() {
     return Row(
       children: [
-        FavoritesImage(
-          favoritesResponse: favoritesResponse,
+        CartsImage(
+          cartsResponse:cartsResponse ,
           index: index,
         ),
         horizontalSpace(10),
@@ -62,8 +63,8 @@ class FavoritesViewItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Gap(20.h),
-        FavoritesName(
-          favoritesResponse: favoritesResponse,
+        CartsName(
+          cartsResponse: cartsResponse,
           index: index,
         ),
         Gap(50.h),
@@ -71,14 +72,13 @@ class FavoritesViewItem extends StatelessWidget {
           width: 160.w,
           child: Row(
             children: [
-              PriceFavorites(
-                favoritesResponse: favoritesResponse,
+              PriceCarts(
+                favoritesResponse: cartsResponse,
                 index: index,
               ),
               const Spacer(),
-              ButtonFavorite(
-                productId:
-                    favoritesResponse.favoritesData!.data![index].product!.id!,
+              ButtonCarts(
+                productId: cartsResponse.cartsData!.data![index].product!.id!,
               ),
             ],
           ),

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/features/home/data/home_repo/home_repo.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
@@ -38,18 +37,28 @@ class HomeCubit extends Cubit<HomeState> {
     final response = await _homeRepo.products();
     response.whenOrNull(
       success: (productsResponse) {
-        addFavoritesAndCartsMap(productsResponse, favorites);
-        addFavoritesAndCartsMap(productsResponse, carts);
+        addFavoritesMap(productsResponse, favorites);
+        addCartsMap(productsResponse, carts);
         emit(HomeState.successGetProducts(data: productsResponse));
       },
     );
   }
 
-  void addFavoritesAndCartsMap(
-      ProductsResponse productsResponse, Map<num, bool> map) {
+  void addFavoritesMap(ProductsResponse productsResponse, Map<num, bool> map) {
     for (var element in productsResponse.data!.productData!) {
       map.addAll({
         element.id!: element.inFavorites!,
+      });
+    }
+  }
+
+  void addCartsMap(
+    ProductsResponse productsResponse,
+    Map<num, bool> map,
+  ) {
+    for (var element in productsResponse.data!.productData!) {
+      map.addAll({
+        element.id!: element.inCart!,
       });
     }
   }

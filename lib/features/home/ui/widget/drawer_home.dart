@@ -14,7 +14,7 @@ class DrawerHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       width: 240.w,
-      backgroundColor:ColorsManager.skyBlue,
+      backgroundColor: ColorsManager.skyBlue,
       child: Column(
         children: [
           DrawerHeader(
@@ -29,10 +29,17 @@ class DrawerHome extends StatelessWidget {
           _buildIconAndTextDrawer(
               context: context,
               onTap: () {
-                context.pushNamed(Routes.favoritesScreen);
               },
               icon: FontAwesomeIcons.solidHeart,
               text: 'F A V O R I T E'),
+          Gap(35.h),
+          _buildIconAndTextDrawer(
+              context: context,
+              onTap: () {
+                context.pushNamed(Routes.cartsScreen);
+              },
+              icon: FontAwesomeIcons.cartShopping,
+              text: 'C A R T S'),
         ],
       ),
     );

@@ -3,12 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppe/core/theming/colors.dart';
 
-class AppIconButtonAnfToolTip extends StatelessWidget {
+class AppIconButtonAndToolTip extends StatelessWidget {
   final String toolTipMessage;
   final IconData icon;
   final VoidCallback onTap;
 
-  const AppIconButtonAnfToolTip({
+  const AppIconButtonAndToolTip({
     super.key,
     required this.toolTipMessage,
     required this.icon, required this.onTap,

@@ -4,11 +4,11 @@ part'carts_response.g.dart';
 class CartsResponse {
   final bool? status;
   @JsonKey(name: 'data')
-  final CartsData? favoritesData;
+  final CartsData? cartsData;
 
   CartsResponse({
     this.status,
-    this.favoritesData,
+    this.cartsData,
   });
   factory CartsResponse.fromJson(Map<String, dynamic> json) =>
       _$CartsResponseFromJson(json);

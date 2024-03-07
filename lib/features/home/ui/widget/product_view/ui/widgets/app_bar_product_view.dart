@@ -5,7 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
-import 'package:shoppe/features/favorites/data/models/favorites_request.dart';
 import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
 import 'package:shoppe/features/home/logic/home_cubit.dart';

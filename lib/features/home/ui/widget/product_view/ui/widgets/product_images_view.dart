@@ -43,18 +43,25 @@ class _ProductImagesViewState extends State<ProductImagesView> {
           child: _buildPgaViewImageProductView(),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 2.h),
+          padding: EdgeInsets.symmetric(vertical: 5.h),
           child: AppSmoothSwipe(
             itemLength: widget.productData.images!.length,
             activePage: context.read<HomeCubit>().activePage,
           ),
         ),
-        // Padding(
-        //   padding:  EdgeInsets.symmetric(vertical: 18.h,horizontal:18.w ),
-        //   child: Align(
-        //       alignment: Alignment.bottomRight,
-        //       child: ButtonCartsHome(productId: widget.productData.id!)),
-        // )
+        Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: 5.h,
+            horizontal: 10.w,
+          ),
+          child: Align(
+            alignment: Alignment.bottomRight,
+            child: CircleAvatar(
+              backgroundColor: ColorsManager.darkBlue.withOpacity(0.1),
+              child: ButtonCartsHome(productId: widget.productData.id!),
+            ),
+          ),
+        )
       ],
     );
   }

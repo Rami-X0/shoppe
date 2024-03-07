@@ -77,9 +77,7 @@ Widget _routesMultiBlocProvider({
       BlocProvider<FavoritesCubit>.value(
         value: getIt<FavoritesCubit>()..emitFavorites(),
       ),
-      BlocProvider<CartsCubit>.value(
-        value: getIt<CartsCubit>(),
-      )
+
     ],
     child: child,
   );
