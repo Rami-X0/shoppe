@@ -11,6 +11,8 @@ class BlocBuilderFavoritesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FavoritesCubit, FavoritesState>(
+      buildWhen: (previous, current) =>
+          current is SuccessGetFavorites,
       builder: (context, state) {
         return state.maybeWhen(
           orElse: () {

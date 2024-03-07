@@ -8,7 +8,7 @@ part of 'favorites_request.dart';
 
 FavoritesRequest _$FavoritesRequestFromJson(Map<String, dynamic> json) =>
     FavoritesRequest(
-      productId: json['product_id'] as int,
+      productId: json['product_id'] as num,
     );
 
 Map<String, dynamic> _$FavoritesRequestToJson(FavoritesRequest instance) =>

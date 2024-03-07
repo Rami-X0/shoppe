@@ -43,17 +43,32 @@ class TextStyles {
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: Colors.white,
-  );static TextStyle font18DarkBlueSemiBold = TextStyle(
+  );static TextStyle font18MainBlueSemiBold = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.semiBold,
-    color: ColorsManager.darkBlue,
+    color: ColorsManager.mainBlue,
   );static TextStyle font15MainBlueSemiBold = TextStyle(
     fontSize: 15.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.mainBlue,
-  );static TextStyle font10WhiteBold = TextStyle(
+  );static TextStyle font70WhiteBold = TextStyle(
     fontSize: 10.sp,
     fontWeight: FontWeightHelper.bold,
     color: Colors.white70,
+  );
+  static TextStyle font14MainBlueBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsManager.mainBlue,
+  );
+  static TextStyle font15greySemiBold = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.mainBlue,
+  );
+  static TextStyle font9WhiteSemiBold = TextStyle(
+    fontSize: 9.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: Colors.white,
   );
 }

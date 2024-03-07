@@ -186,12 +186,12 @@ class _ApiServices implements ApiServices {
 
   @override
   Future<FavoritesAddResponse> addFavorites(
-      FavoritesRequest favoritesResponse) async {
+      FavoritesRequest favoritesRequest) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(favoritesResponse.toJson());
+    _data.addAll(favoritesRequest.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<FavoritesAddResponse>(Options(
       method: 'POST',
@@ -210,6 +210,34 @@ class _ApiServices implements ApiServices {
               baseUrl,
             ))));
     final value = FavoritesAddResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<CartsAddResponse> addCarts(CartsRequest cartsRequest) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(cartsRequest.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<CartsAddResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'carts',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = CartsAddResponse.fromJson(_result.data!);
     return value;
   }
 

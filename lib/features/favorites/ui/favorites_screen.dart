@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/features/favorites/ui/widgets/bloc_builder_favorites_view.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -7,7 +8,18 @@ class FavoritesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilderFavoritesView(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        toolbarHeight: 35,
+        automaticallyImplyLeading: false,
+        leading: BackButton(
+          style: ButtonStyle(
+            overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
+          ),
+          color: ColorsManager.mainBlue,
+        ),
+      ),
+      body: const BlocBuilderFavoritesView(),
     );
   }
 }

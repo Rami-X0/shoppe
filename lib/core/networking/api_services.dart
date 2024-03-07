@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:shoppe/core/networking/api_constants.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:shoppe/features/carts/data/models/carts_add_response.dart';
+import 'package:shoppe/features/carts/data/models/carts_request.dart';
 import 'package:shoppe/features/favorites/data/models/favorites_add_response.dart';
 import 'package:shoppe/features/favorites/data/models/favorites_request.dart';
 import 'package:shoppe/features/favorites/data/models/favorites_response.dart';
@@ -37,5 +39,11 @@ abstract class ApiServices {
   Future<FavoritesResponse> favorites();
 
   @POST(ApiConstants.favorites)
-  Future<FavoritesAddResponse> addFavorites(@Body() FavoritesRequest favoritesResponse);
+  Future<FavoritesAddResponse> addFavorites(
+      @Body() FavoritesRequest favoritesRequest);
+
+  @POST(ApiConstants.carts)
+  Future<CartsAddResponse> addCarts(
+      @Body() CartsRequest cartsRequest);
+
 }

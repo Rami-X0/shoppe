@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shoppe/core/networking/dio_factory.dart';
 import 'package:shoppe/core/networking/api_services.dart';
+import 'package:shoppe/features/carts/data/carts_repo/carts_repo.dart';
+import 'package:shoppe/features/carts/logic/carts_cubit.dart';
 import 'package:shoppe/features/favorites/data/favorites_repo/favorites_repo.dart';
 import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
 import 'package:shoppe/features/home/data/home_repo/home_repo.dart';
@@ -26,6 +28,10 @@ Future<void> initGetIt() async {
   getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
 // favorites
-  getIt.registerFactory<FavoritesCubit>(() => FavoritesCubit(getIt(), getIt()));
+  getIt.registerLazySingleton<FavoritesCubit>(
+      () => FavoritesCubit(getIt(), getIt()));
   getIt.registerLazySingleton<FavoritesRepo>(() => FavoritesRepo(getIt()));
+// carts
+  getIt.registerLazySingleton<CartsCubit>(() => CartsCubit(getIt(), getIt()));
+  getIt.registerLazySingleton<CartsRepo>(() => CartsRepo(getIt()));
 }

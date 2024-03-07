@@ -27,20 +27,20 @@ class DioFactory {
       dio!
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut;
-      addDioInterceptor();
+      // addDioInterceptor();
       return dio!;
     } else {
       return dio!;
     }
   }
 
-  static void addDioInterceptor() async {
-    dio?.interceptors.add(
-      PrettyDioLogger(
-        requestBody: true,
-        requestHeader: true,
-        responseHeader: true,
-      ),
-    );
-  }
+  // static void addDioInterceptor() async {
+  //   dio?.interceptors.add(
+  //     PrettyDioLogger(
+  //       requestBody: true,
+  //       requestHeader: true,
+  //       responseHeader: true,
+  //     ),
+  //   );
+  // }
 }

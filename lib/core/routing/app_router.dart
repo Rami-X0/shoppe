@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/core/di/dependency_injection.dart';
+import 'package:shoppe/core/routing/animation_routing/app_alignment_router.dart';
 import 'package:shoppe/core/routing/animation_routing/app_size_transition_router.dart';
 import 'package:shoppe/core/routing/routes.dart';
+import 'package:shoppe/features/carts/logic/carts_cubit.dart';
+import 'package:shoppe/features/carts/ui/carts_screen.dart';
 import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
 import 'package:shoppe/features/favorites/ui/favorites_screen.dart';
 import 'package:shoppe/features/home/logic/home_cubit.dart';
@@ -31,15 +34,27 @@ Route generateRoute(RouteSettings settings) {
       );
     case Routes.homeScreen:
       return AppSizeTransitionRouter(
-        BlocProvider(
-                  create: (context) => getIt<HomeCubit>(), child: const HomeScreen()),
+        _routesMultiBlocProvider(
+          child: const HomeScreen(),
+        ),
       );
+
     case Routes.favoritesScreen:
-   return   MaterialPageRoute(
-          builder: (_) => BlocProvider(
-                create: (context) => getIt<FavoritesCubit>()..emitFavorites(),
-                child: const FavoritesScreen(),
-              ));
+      return AppAlignmentRouter(
+        _routesMultiBlocProvider(
+          child: const FavoritesScreen(),
+        ),
+      );
+    case Routes.cartsScreen:
+      return AppAlignmentRouter(
+        BlocProvider<CartsCubit>.value(
+          value: getIt<CartsCubit>(),
+          child: _routesMultiBlocProvider(
+            child: const CartsScreen(),
+          ),
+        ),
+      );
+
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(
@@ -49,4 +64,23 @@ Route generateRoute(RouteSettings settings) {
         ),
       );
   }
+}
+
+Widget _routesMultiBlocProvider({
+  required Widget child,
+}) {
+  return MultiBlocProvider(
+    providers: [
+      BlocProvider<HomeCubit>.value(
+        value: getIt<HomeCubit>(),
+      ),
+      BlocProvider<FavoritesCubit>.value(
+        value: getIt<FavoritesCubit>()..emitFavorites(),
+      ),
+      BlocProvider<CartsCubit>.value(
+        value: getIt<CartsCubit>(),
+      )
+    ],
+    child: child,
+  );
 }
