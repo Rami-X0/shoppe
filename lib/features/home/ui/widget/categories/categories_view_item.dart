@@ -40,8 +40,7 @@ class CategoriesViewItem extends StatelessWidget {
           children: [
             AppCachedNetworkImage(
           fitImage: BoxFit.cover,
-              index: index,
-              object: categoriesResponse.data!.categoriesData![index].image
+              imageUrl: categoriesResponse.data!.categoriesData![index].image
                   .toString(),
             ),
             CategoriesName(

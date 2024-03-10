@@ -12,6 +12,7 @@ import 'package:shoppe/features/home/data/models/categories_response.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
 import 'package:shoppe/features/login/data/models/login_request_body.dart';
 import 'package:shoppe/features/login/data/models/login_response.dart';
+import 'package:shoppe/features/search/data/models/search_request.dart';
 import 'package:shoppe/features/sign_up/data/models/signup_request.dart';
 import 'package:shoppe/features/sign_up/data/models/signup_response.dart';
 
@@ -44,10 +45,11 @@ abstract class ApiServices {
       @Body() FavoritesRequest favoritesRequest);
 
   @POST(ApiConstants.carts)
-  Future<CartsAddResponse> addCarts(
-      @Body() CartsRequest cartsRequest);
+  Future<CartsAddResponse> addCarts(@Body() CartsRequest cartsRequest);
 
   @GET(ApiConstants.carts)
   Future<CartsResponse> carts();
 
+  @POST(ApiConstants.search)
+  Future<ProductsResponse> search(@Body() SearchRequest searchRequest);
 }

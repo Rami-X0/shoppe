@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class AppSlideScaleFadeTransition extends StatefulWidget {
   final Widget child;
   final double scaleOffsetEnd;
+  final int? duration;
 
   const AppSlideScaleFadeTransition({
     super.key,
     required this.child,
     required this.scaleOffsetEnd,
+    this.duration,
   });
 
   @override
@@ -22,7 +24,7 @@ class _AppSlideScaleFadeTransitionState
   late Animation<double> _scaleWithFadeAnimation;
   late Animation<Offset> _slideAnimation;
 
-  Duration durationAnimation = const Duration(milliseconds: 1350);
+  Duration durationAnimation = const Duration(milliseconds:  1350);
   Curve curvesAnimation = Curves.ease;
 
   @override
@@ -33,14 +35,18 @@ class _AppSlideScaleFadeTransitionState
   }
 
   void createScaleFadeAnimation() {
-    _controller = AnimationController(vsync: this, duration: durationAnimation)
+    _controller = AnimationController(vsync: this, duration: widget.duration != null
+        ? Duration(milliseconds: widget.duration!)
+        : durationAnimation)
       ..forward();
     _scaleWithFadeAnimation = Tween<double>(begin: 0.0, end: 1)
         .animate(CurvedAnimation(parent: _controller, curve: curvesAnimation));
   }
 
   void createSlideAnimation() {
-    _controller = AnimationController(vsync: this, duration: durationAnimation)
+    _controller = AnimationController(vsync: this, duration:  widget.duration != null
+        ? Duration(milliseconds: widget.duration!)
+        : durationAnimation)
       ..forward();
     _slideAnimation = Tween<Offset>(
             begin: Offset(0, widget.scaleOffsetEnd), end: const Offset(0, 0))

@@ -5,8 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
 
 class AppCachedNetworkImage extends StatelessWidget {
-  final int index;
-  final Object object;
+  final String imageUrl;
   final double? circular;
   final double? widthErrorIcon;
   final double? heightErrorIcon;
@@ -16,8 +15,7 @@ class AppCachedNetworkImage extends StatelessWidget {
 
   const AppCachedNetworkImage({
     super.key,
-    required this.index,
-    required this.object,
+    required this.imageUrl,
     this.circular,
     this.widthErrorIcon,
     this.heightErrorIcon,
@@ -33,7 +31,7 @@ class AppCachedNetworkImage extends StatelessWidget {
       child: CachedNetworkImage(
         width: widthImage?.w,
         height: heightImage?.h,
-        imageUrl: object.toString(),
+        imageUrl: imageUrl.toString(),
         placeholder: (context, url) => const AppLoading(),
         errorWidget: (context, error, url) => errorDownloadImage(),
         fit: fitImage,

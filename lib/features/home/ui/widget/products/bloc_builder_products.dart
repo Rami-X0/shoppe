@@ -8,8 +8,8 @@ import 'package:shoppe/features/home/logic/home_state.dart';
 import 'package:shoppe/features/home/ui/widget/default_container_home.dart';
 import 'package:shoppe/features/home/ui/widget/products/products_view.dart';
 
-class BlocBuilderProductsView extends StatelessWidget {
-  const BlocBuilderProductsView({super.key});
+class BlocBuilderProducts extends StatelessWidget {
+  const BlocBuilderProducts({super.key});
 
   @override
   Widget build(BuildContext context) {

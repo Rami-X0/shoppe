@@ -49,23 +49,25 @@ class _ProductImagesViewState extends State<ProductImagesView> {
             activePage: context.read<HomeCubit>().activePage,
           ),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: 5.h,
-            horizontal: 10.w,
-          ),
-          child: Align(
-            alignment: Alignment.bottomRight,
-            child: CircleAvatar(
-              backgroundColor: ColorsManager.darkBlue.withOpacity(0.1),
-              child: ButtonCartsHome(productId: widget.productData.id!),
-            ),
-          ),
-        )
+        _buttonCart()
       ],
     );
   }
-
+Widget _buttonCart(){
+    return   Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: 5.h,
+        horizontal: 10.w,
+      ),
+      child: Align(
+        alignment: Alignment.bottomRight,
+        child: CircleAvatar(
+          backgroundColor: ColorsManager.darkBlue.withOpacity(0.1),
+          child: ButtonCartsHome(productId: widget.productData.id!),
+        ),
+      ),
+    );
+}
   Widget _buildPgaViewImageProductView() {
     return PageView.builder(
       itemCount: widget.productData.images!.length,
@@ -79,8 +81,7 @@ class _ProductImagesViewState extends State<ProductImagesView> {
         return Hero(
           tag: widget.productData.id.toString(),
           child: AppCachedNetworkImage(
-            index: index,
-            object: widget.productData.images![index],
+            imageUrl: widget.productData.images![index],
           ),
         );
       },

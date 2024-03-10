@@ -6,7 +6,6 @@ import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
-import 'package:shoppe/features/home/ui/widget/button_carts_home.dart';
 import 'package:shoppe/features/home/ui/widget/product_view/ui/widgets/inkwell_product_view.dart';
 
 class ProductDetailsView extends StatefulWidget {

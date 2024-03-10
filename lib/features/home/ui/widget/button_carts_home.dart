@@ -24,9 +24,9 @@ class ButtonCartsHome extends StatelessWidget {
         return AppIconButtonAndToolTip(
           toolTipMessage: 'cart',
           onTap: () {
-            context
-                .read<CartsCubit>()
-                .emitAddCarts(CartsRequest(productId: productId));
+            context.read<CartsCubit>().emitAddCarts(
+                  CartsRequest(productId: productId),
+                );
           },
           icon: context.read<HomeCubit>().carts[productId]!
               ? FontAwesomeIcons.cartShopping

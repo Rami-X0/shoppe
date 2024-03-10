@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
+import 'package:shoppe/core/widgets/app_no_data.dart';
 import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
 import 'package:shoppe/features/favorites/logic/favorites_state.dart';
 import 'package:shoppe/features/favorites/ui/widgets/favorites_view.dart';
@@ -11,8 +12,7 @@ class BlocBuilderFavoritesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FavoritesCubit, FavoritesState>(
-      buildWhen: (previous, current) =>
-          current is SuccessGetFavorites,
+      buildWhen: (previous, current) => current is SuccessGetFavorites,
       builder: (context, state) {
         return state.maybeWhen(
           orElse: () {
@@ -22,6 +22,9 @@ class BlocBuilderFavoritesView extends StatelessWidget {
             return const AppLoading();
           },
           successGetFavorites: (favoritesResponse) {
+            if (favoritesResponse.favoritesData!.data!.isEmpty) {
+              return const AppNoData();
+            }
             return FavoritesView(
               favoritesResponse: favoritesResponse,
             );

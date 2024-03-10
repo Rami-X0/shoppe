@@ -32,8 +32,7 @@ class MoreSmallProductViewItem extends StatelessWidget {
           widthImage: 15,
           heightImage: 15,
           circular: 1,
-          object: productData.images![index].toString(),
-          index: index,
+          imageUrl: productData.images![index].toString(),
         ),
       ),
     );

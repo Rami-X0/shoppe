@@ -29,6 +29,7 @@ class DrawerHome extends StatelessWidget {
           _buildIconAndTextDrawer(
               context: context,
               onTap: () {
+                context.pushNamed(Routes.favoritesScreen);
               },
               icon: FontAwesomeIcons.solidHeart,
               text: 'F A V O R I T E'),

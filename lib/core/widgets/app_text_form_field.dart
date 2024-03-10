@@ -10,15 +10,17 @@ class AppTextFormField extends StatelessWidget {
   final bool? obscureText;
   final Function(String?) validator;
   final TextEditingController? controller;
+  final Color? fillColor;
 
   const AppTextFormField({
     super.key,
     required this.hintText,
-    required this.suffixIcon,
+     this.suffixIcon,
     this.contentPadding,
     this.obscureText,
     required this.validator,
     required this.controller,
+    this.fillColor,
   });
 
   @override
@@ -71,7 +73,7 @@ class AppTextFormField extends StatelessWidget {
         ),
         isDense: true,
         filled: true,
-        fillColor: ColorsManager.moreLightGray,
+        fillColor: fillColor ?? ColorsManager.moreLightGray,
       ),
     );
   }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
-import 'package:shoppe/core/helper/extension.dart';
-import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_icon_button_and_tool_tip.dart';
+import 'package:shoppe/features/search/logic/search_cubit.dart';
+import 'package:shoppe/features/search/ui/search_screen.dart';
 
 class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
   const AppBarHome({super.key});
@@ -25,10 +26,20 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
             const Spacer(),
             AppIconButtonAndToolTip(
               onTap: () {
-                context.pushNamed(Routes.cartsScreen);
+                showModalBottomSheet(
+                  isDismissible: true,
+                  context: context,
+                  isScrollControlled: true,
+                  builder: (index) {
+                    return const SearchScreen();
+                  },
+                ).whenComplete(() {
+                  debugPrint('close showModalBottomSheet');
+                  context.read<SearchCubit>().searchController.clear();
+                });
               },
-              icon: FontAwesomeIcons.cartShopping,
-              toolTipMessage: 'carts',
+              icon: FontAwesomeIcons.magnifyingGlass,
+              toolTipMessage: 'search',
             ),
           ],
         ),

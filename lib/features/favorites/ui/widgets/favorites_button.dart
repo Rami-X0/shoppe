@@ -9,10 +9,10 @@ import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
 import 'package:shoppe/features/favorites/logic/favorites_state.dart';
 import 'package:shoppe/features/home/logic/home_cubit.dart';
 
-class ButtonFavorite extends StatelessWidget {
+class FavoritesButton extends StatelessWidget {
   final num productId;
 
-  const ButtonFavorite({
+  const FavoritesButton({
     super.key,
     required this.productId,
   });

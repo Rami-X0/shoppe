@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
-import 'package:shoppe/features/favorites/ui/widgets/button_favorite.dart';
+import 'package:shoppe/features/favorites/ui/widgets/favorites_button.dart';
 import 'package:shoppe/features/favorites/ui/widgets/favorites_image.dart';
 import 'package:shoppe/features/favorites/ui/widgets/favorites_name.dart';
 import 'package:shoppe/features/favorites/data/models/favorites_response.dart';
@@ -76,7 +76,7 @@ class FavoritesViewItem extends StatelessWidget {
                 index: index,
               ),
               const Spacer(),
-              ButtonFavorite(
+              FavoritesButton(
                 productId:
                     favoritesResponse.favoritesData!.data![index].product!.id!,
               ),

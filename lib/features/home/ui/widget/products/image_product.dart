@@ -38,11 +38,10 @@ class ImageProduct extends StatelessWidget {
             );
           },
           child: Hero(
-            tag: productData.id.toString(),
+            tag  : productData.id.toString(),
             child: AppCachedNetworkImage(
-              object:
+              imageUrl:
                   productsResponse.data!.productData![index].image.toString(),
-              index: index,
             ),
           ),
         ),

@@ -24,9 +24,8 @@ class CartsImage extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(10)),
           child: AppCachedNetworkImage(
-            object: cartsResponse.cartsData!.data![index].product!.image
+            imageUrl: cartsResponse.cartsData!.data![index].product!.image
                 .toString(),
-            index: index,
           ),
         ),
         cartsResponse.cartsData!.data![index].product!.discount!>0?

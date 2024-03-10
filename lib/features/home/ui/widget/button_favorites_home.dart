@@ -22,13 +22,17 @@ class ButtonFavoriteHome extends StatelessWidget {
       buildWhen: (previous, current) =>
           current is LoadingAddFavorites || current is SuccessAddFavorites,
       builder: (context, state) {
-        return FaIcon(
-          context.read<HomeCubit>().favorites[productId]!
-              ? FontAwesomeIcons.solidHeart
-              : FontAwesomeIcons.heart,
-          color: favoriteIconColor,
-          size: 20.w,
-        );
+        return context.read<HomeCubit>().favorites[productId]!
+            ?  FaIcon(
+                FontAwesomeIcons.solidHeart,
+                color: favoriteIconColor,
+                size: 22.w,
+              )
+            : FaIcon(
+                FontAwesomeIcons.heart,
+                color: favoriteIconColor,
+                size: 20.w,
+              );
       },
     );
   }

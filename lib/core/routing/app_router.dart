@@ -19,29 +19,33 @@ import 'package:shoppe/features/sign_up/ui/sign_up_screen.dart';
 Route generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case Routes.onBoardingScreen:
-      return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
+      return MaterialPageRoute(
+        builder: (_) => const OnBoardingScreen(),
+      );
     case Routes.loginScreen:
       return AppSizeTransitionRouter(
         BlocProvider(
-            create: (context) => getIt<LoginCubit>(),
-            child: const LoginScreen()),
+          create: (context) => getIt<LoginCubit>(),
+          child: const LoginScreen(),
+        ),
       );
     case Routes.signUpScreen:
       return AppSizeTransitionRouter(
         BlocProvider(
-            create: (context) => getIt<SignUpCubit>(),
-            child: const SignUpScreen()),
+          create: (context) => getIt<SignUpCubit>(),
+          child: const SignUpScreen(),
+        ),
       );
     case Routes.homeScreen:
-      return AppSizeTransitionRouter(
-        _routesMultiBlocProvider(
+      return AppAlignmentRouter(
+        routesMultiBlocProvider(
           child: const HomeScreen(),
         ),
       );
 
     case Routes.favoritesScreen:
       return AppAlignmentRouter(
-        _routesMultiBlocProvider(
+        routesMultiBlocProvider(
           child: const FavoritesScreen(),
         ),
       );
@@ -49,7 +53,7 @@ Route generateRoute(RouteSettings settings) {
       return AppAlignmentRouter(
         BlocProvider<CartsCubit>.value(
           value: getIt<CartsCubit>(),
-          child: _routesMultiBlocProvider(
+          child: routesMultiBlocProvider(
             child: const CartsScreen(),
           ),
         ),
@@ -66,7 +70,7 @@ Route generateRoute(RouteSettings settings) {
   }
 }
 
-Widget _routesMultiBlocProvider({
+Widget routesMultiBlocProvider({
   required Widget child,
 }) {
   return MultiBlocProvider(
@@ -77,7 +81,6 @@ Widget _routesMultiBlocProvider({
       BlocProvider<FavoritesCubit>.value(
         value: getIt<FavoritesCubit>()..emitFavorites(),
       ),
-
     ],
     child: child,
   );

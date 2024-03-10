@@ -24,9 +24,8 @@ class FavoritesImage extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(10)),
           child: AppCachedNetworkImage(
-            object: favoritesResponse.favoritesData!.data![index].product!.image
+            imageUrl: favoritesResponse.favoritesData!.data![index].product!.image
                 .toString(),
-            index: index,
           ),
         ),
         favoritesResponse.favoritesData!.data![index].product!.discount!>0?
