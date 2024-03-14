@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,6 +31,7 @@ class _ProductImagesViewState extends State<ProductImagesView> {
           decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [
+
                 BoxShadow(
                   color: ColorsManager.mainBlue.withOpacity(0.3),
                   blurRadius: 10,

@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:retrofit/http.dart';
 import 'package:shoppe/core/networking/api_constants.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:shoppe/features/carts/data/models/carts_add_response.dart';
@@ -13,6 +14,8 @@ import 'package:shoppe/features/home/data/models/product_response.dart';
 import 'package:shoppe/features/login/data/models/login_request_body.dart';
 import 'package:shoppe/features/login/data/models/login_response.dart';
 import 'package:shoppe/features/search/data/models/search_request.dart';
+import 'package:shoppe/features/settings/data/models/profile_response.dart';
+import 'package:shoppe/features/settings/data/models/profile_update_request.dart';
 import 'package:shoppe/features/sign_up/data/models/signup_request.dart';
 import 'package:shoppe/features/sign_up/data/models/signup_response.dart';
 
@@ -52,4 +55,11 @@ abstract class ApiServices {
 
   @POST(ApiConstants.search)
   Future<ProductsResponse> search(@Body() SearchRequest searchRequest);
+
+  @GET(ApiConstants.profile)
+  Future<ProfileResponse> profile();
+
+  @PUT(ApiConstants.updateProfile)
+  Future<ProfileResponse> updateProfile(
+      @Body() ProfileUpdateRequest profileUpdateRequest);
 }

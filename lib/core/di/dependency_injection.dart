@@ -12,6 +12,8 @@ import 'package:shoppe/features/login/data/repo/login_repo.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/features/search/data/search_repo/search_repo.dart';
 import 'package:shoppe/features/search/logic/search_cubit.dart';
+import 'package:shoppe/features/settings/data/settings_repo/settings_repo.dart';
+import 'package:shoppe/features/settings/logic/settings_cubit.dart';
 import 'package:shoppe/features/sign_up/data/repo/signup_repo.dart';
 import 'package:shoppe/features/sign_up/logic/cubit/signup_cubit.dart';
 
@@ -39,4 +41,8 @@ Future<void> initGetIt() async {
 // search
   getIt.registerFactory<SearchCubit>(() => SearchCubit(getIt()));
   getIt.registerLazySingleton<SearchRepo>(() => SearchRepo(getIt()));
+// settings
+  getIt.registerLazySingleton<SettingsCubit>(() => SettingsCubit(getIt()));
+  getIt.registerLazySingleton<SettingsRepo>(() => SettingsRepo(getIt()));
+
 }

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/helper/spacing.dart';
-import 'package:shoppe/core/routing/routes.dart';
+import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
-import 'package:shoppe/core/widgets/app_have_account.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/features/login/ui/widgets/login_form.dart';
 import 'package:shoppe/features/login/ui/widgets/login_bloc_listener.dart';
 import 'package:shoppe/core/widgets/app_terms_and_conditions.dart';
+import 'package:shoppe/features/login/ui/widgets/login_have_account.dart';
 import 'package:shoppe/features/login/ui/widgets/text_login.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -34,6 +33,7 @@ class LoginScreen extends StatelessWidget {
                 verticalSpace(36),
                 const LoginForm(),
                 AppTextButton(
+                  shadowColor: ColorsManager.mainBlue,
                   onPressed: () {
                     validateThenLogin(context);
                   },
@@ -43,13 +43,7 @@ class LoginScreen extends StatelessWidget {
                 verticalSpace(50),
                 const Center(child: AppTermsAndConditions()),
                 verticalSpace(24),
-                AppHaveAccount(
-                    onPressed: () {
-                      context.pushNamed(
-                          Routes.signUpScreen);
-                    },
-                    text: 'You don\'t have an account?',
-                    textButton: 'Sign Up'),
+                const LoginHaveAccount(),
                 const LoginBlocListener(),
               ],
             ),

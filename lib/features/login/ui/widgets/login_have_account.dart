@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/helper/spacing.dart';
+import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 
-class AppHaveAccount extends StatelessWidget {
-  final String text;
-  final String textButton;
-  final VoidCallback onPressed;
+class LoginHaveAccount extends StatelessWidget {
 
-  const AppHaveAccount({
+
+  const LoginHaveAccount({
     super.key,
-    required this.onPressed,
-    required this.text,
-    required this.textButton,
+
   });
 
   @override
@@ -21,14 +19,17 @@ class AppHaveAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          text,
+          'You don\'t have an account?',
           style: TextStyles.font13DarkBlueRegular,
         ),
         horizontalSpace(3),
         InkWell(
-          onTap: onPressed,
+          onTap: (){
+            context.pushNamed(
+                Routes.signUpScreen);
+          },
           child: Text(
-            textButton,
+            'Sign Up',
             style: TextStyles.font13DarkBlueRegular.copyWith(
               color: ColorsManager.mainBlue,
             ),

@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/helper/spacing.dart';
-import 'package:shoppe/core/routing/routes.dart';
+import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
-import 'package:shoppe/core/widgets/app_have_account.dart';
 import 'package:shoppe/core/widgets/app_terms_and_conditions.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
 import 'package:shoppe/features/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:shoppe/features/sign_up/ui/widgets/create_account_text.dart';
+import 'package:shoppe/features/sign_up/ui/widgets/sign_up_have_account.dart';
 import 'package:shoppe/features/sign_up/ui/widgets/signup_form.dart';
 import 'package:shoppe/features/sign_up/ui/widgets/signup_bloc_listener.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
-
-
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -35,6 +32,7 @@ class SignUpScreen extends StatelessWidget {
                 verticalSpace(36),
                 const SignUpForm(),
                 AppTextButton(
+                  shadowColor: ColorsManager.mainBlue,
                   onPressed: () {
                     validationThenSignUp(context);
                   },
@@ -44,19 +42,7 @@ class SignUpScreen extends StatelessWidget {
                 verticalSpace(35),
                 const AppTermsAndConditions(),
                 verticalSpace(24),
-                AppHaveAccount(
-                    onPressed: () {
-                      // context.navigatorPushNamedAndRemoveUntil(
-                      //   Routes.loginScreen,
-                      // );
-
-                    context.pushNamed(Routes.loginScreen);
-
-
-
-                    },
-                    text: 'You have an account?',
-                    textButton: 'Login'),
+                const SignUpAccount(),
                 const SignUpBlocListener(),
               ],
             ),

@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/theming/colors.dart';
+import 'package:shoppe/core/theming/styles.dart';
 
 class AppTextFormField extends StatelessWidget {
-  final String hintText;
+  final String? hintText;
+  final Widget? labelText;
   final Widget? suffixIcon;
   final EdgeInsetsGeometry? contentPadding;
   final double borderRadius = 16;
   final bool? obscureText;
   final Function(String?) validator;
   final TextEditingController? controller;
-  final Color? fillColor;
 
   const AppTextFormField({
     super.key,
-    required this.hintText,
-     this.suffixIcon,
+    this.hintText,
+    this.labelText,
+    this.suffixIcon,
     this.contentPadding,
     this.obscureText,
     required this.validator,
     required this.controller,
-    this.fillColor,
   });
 
   @override
@@ -38,6 +39,7 @@ class AppTextFormField extends StatelessWidget {
               vertical: 17,
               horizontal: 20,
             ),
+        label:labelText,
         hintText: hintText,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
@@ -73,7 +75,7 @@ class AppTextFormField extends StatelessWidget {
         ),
         isDense: true,
         filled: true,
-        fillColor: fillColor ?? ColorsManager.moreLightGray,
+        fillColor: ColorsManager.mainBlue.withOpacity(0.1),
       ),
     );
   }

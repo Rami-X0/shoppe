@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/widgets/app_slide_scale_fade_transition.dart';
 import 'package:shoppe/features/home/ui/widget/drawer_home.dart';
-import 'package:shoppe/features/home/ui/widget/products/bloc_builder_products.dart';
 import 'package:shoppe/features/home/ui/widget/app_bar_home.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -26,9 +25,7 @@ class HomeScreen extends StatelessWidget {
                 // const BlocBuilderBannersView(),
                 // const BlocBuilderCategoriesView(),
                 // verticalSpace(10),
-                const BlocBuilderProducts(),
-
-
+                // const BlocBuilderProducts(),
               ],
             ),
           ),

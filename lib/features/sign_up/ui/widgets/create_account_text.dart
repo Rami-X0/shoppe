@@ -12,7 +12,7 @@ class CreateAccountText extends StatelessWidget {
       children: [
         Text(
           'Create Account',
-          style: TextStyles.font50DarkBlueBold.copyWith(
+          style: TextStyles.font50MainBlueBold.copyWith(
             fontSize: 30,
           ),
         ),

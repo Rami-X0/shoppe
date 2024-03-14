@@ -12,7 +12,7 @@ class TextLogin extends StatelessWidget {
       children: [
         Text(
           'Login',
-          style: TextStyles.font50DarkBlueBold,
+          style: TextStyles.font50MainBlueBold,
         ),
         Text(
           'Good to see you back!',

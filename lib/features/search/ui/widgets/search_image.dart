@@ -16,13 +16,10 @@ class SearchImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Hero(
-      tag: productData.id.toString(),
-      child: AppCachedNetworkImage(
-        widthImage: 150,
-        heightImage: 150,
-        imageUrl: productsResponse.data!.productData![index].image.toString(),
-      ),
+    return AppCachedNetworkImage(
+      widthImage: 150,
+      heightImage: 150,
+      imageUrl: productsResponse.data!.productData![index].image.toString(),
     );
   }
 }

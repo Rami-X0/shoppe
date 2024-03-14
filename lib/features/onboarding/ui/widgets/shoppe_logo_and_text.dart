@@ -30,7 +30,7 @@ class ShoppeLogoAndText extends StatelessWidget {
           verticalSpace(5),
           Text(
             'Shoppe',
-            style: TextStyles.font50DarkBlueBold,
+            style: TextStyles.font50MainBlueBold,
           ),
           verticalSpace(18),
           Text(

@@ -4,10 +4,10 @@ import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/font_weight_helper.dart';
 
 class TextStyles {
-  static TextStyle font50DarkBlueBold = TextStyle(
+  static TextStyle font50MainBlueBold = TextStyle(
     fontSize: 50.sp,
     fontWeight: FontWeightHelper.bold,
-    color: ColorsManager.darkBlue,
+    color: ColorsManager.mainBlue,
   );
 
   static TextStyle font22WhiteBold = TextStyle(
@@ -61,14 +61,15 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: ColorsManager.mainBlue,
   );
-  static TextStyle font15greySemiBold = TextStyle(
-    fontSize: 15.sp,
-    fontWeight: FontWeightHelper.semiBold,
-    color: ColorsManager.mainBlue,
-  );
+
   static TextStyle font9WhiteSemiBold = TextStyle(
     fontSize: 9.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: Colors.white,
+  );
+  static TextStyle font13RedSemiBold = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: Colors.red,
   );
 }

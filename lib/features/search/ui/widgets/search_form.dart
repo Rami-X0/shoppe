@@ -21,9 +21,8 @@ class _SearchFormState extends State<SearchForm> {
         key: context.read<SearchCubit>().formKey,
         child: AppTextFormField(
           hintText: 'search',
-          fillColor: ColorsManager.mainBlue.withOpacity(0.1),
           validator: (value) {
-            return validatorSearch(value);
+            return validateSearch(value);
           },
           controller: context.read<SearchCubit>().searchController,
         ),
@@ -31,7 +30,7 @@ class _SearchFormState extends State<SearchForm> {
     );
   }
 
-  String? validatorSearch(String? value) {
+  String? validateSearch(String? value) {
     if (value == null || value.isEmpty) {
       return 'Please, enter the product name';
     }

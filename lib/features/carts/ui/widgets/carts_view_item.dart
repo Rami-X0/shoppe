@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
+import 'package:shoppe/core/widgets/app_slide_scale_fade_transition.dart';
 import 'package:shoppe/features/carts/data/models/carts_response.dart';
 import 'package:shoppe/features/carts/ui/widgets/button_carts.dart';
 import 'package:shoppe/features/carts/ui/widgets/carts_image.dart';
@@ -25,22 +26,26 @@ class CartsViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final BorderRadius radius = BorderRadius.circular(10);
-    return Container(
-      height: 150.h,
-      margin: EdgeInsets.symmetric(
-        horizontal: 5.w,
-        vertical: 3.h,
-      ),
-      decoration: BoxDecoration(
-        color: ColorsManager.mainBlue.withOpacity(0.1),
-        borderRadius: radius,
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 6.w,
-          vertical: 10.h,
+    return AppSlideScaleFadeTransition(
+      scaleOffsetEnd: 3,
+
+      child: Container(
+        height: 150.h,
+        margin: EdgeInsets.symmetric(
+          horizontal: 5.w,
+          vertical: 3.h,
         ),
-        child: _imageFavorite(),
+        decoration: BoxDecoration(
+          color: ColorsManager.mainBlue.withOpacity(0.1),
+          borderRadius: radius,
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 6.w,
+            vertical: 10.h,
+          ),
+          child: _imageFavorite(),
+        ),
       ),
     );
   }

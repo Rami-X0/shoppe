@@ -13,6 +13,8 @@ import 'package:shoppe/features/home/ui/home_screen.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/features/login/ui/login_screen.dart';
 import 'package:shoppe/features/onboarding/ui/onboarding_screen.dart';
+import 'package:shoppe/features/settings/logic/settings_cubit.dart';
+import 'package:shoppe/features/settings/ui/settings_screen.dart';
 import 'package:shoppe/features/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:shoppe/features/sign_up/ui/sign_up_screen.dart';
 
@@ -55,6 +57,15 @@ Route generateRoute(RouteSettings settings) {
           value: getIt<CartsCubit>(),
           child: routesMultiBlocProvider(
             child: const CartsScreen(),
+          ),
+        ),
+      );
+    case Routes.settingsScreen:
+      return AppAlignmentRouter(
+        routesMultiBlocProvider(
+          child: BlocProvider<SettingsCubit>.value(
+            value: getIt<SettingsCubit>()..emitProfile(),
+            child: const SettingsScreen(),
           ),
         ),
       );

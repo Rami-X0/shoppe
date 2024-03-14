@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/core/caching/app_shared_pref.dart';
@@ -6,7 +8,7 @@ import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
-import 'package:shoppe/core/widgets/app_show_dialog.dart';
+import 'package:shoppe/core/widgets/app_error_show_dialog.dart';
 import 'package:shoppe/core/widgets/app_snack_bar.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/features/login/logic/cubit/login_state.dart';
@@ -23,11 +25,15 @@ class LoginBlocListener extends StatelessWidget {
         state.whenOrNull(
           loading: () {
             return showDialog(
-                barrierDismissible: false,
-                context: context,
-                builder: (context) {
-                  return const AppLoading();
-                });
+              barrierDismissible: false,
+              context: context,
+              builder: (context) {
+                return BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+
+                    child: const AppLoading());
+              },
+            );
           },
           success: (loginResponse) {
             if (loginResponse.status == true) {
@@ -49,7 +55,7 @@ class LoginBlocListener extends StatelessWidget {
                 barrierDismissible: false,
                 context: context,
                 builder: (context) {
-                  return AppShowDialog(text: loginResponse.message);
+                  return AppErrorShowDialog(text: loginResponse.message);
                 },
               );
             }

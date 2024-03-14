@@ -24,16 +24,16 @@ class _LoginFormState extends State<LoginForm> {
   bool hasMineLength = false;
   bool isEmailColorFailureIcon = false;
   bool isPasswordColorFailureIcon = false;
-   TextEditingController passwordController=TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     passwordController = context.read<LoginCubit>().passwordController;
-   setupPasswordControllerListener();
+    setupPasswordControllerListener();
   }
 
- void setupPasswordControllerListener() {
+  void setupPasswordControllerListener() {
     passwordController.addListener(() {
       setState(() {
         hasLowerCase = AppRegex.hasLowerCase(passwordController.text);
@@ -46,7 +46,6 @@ class _LoginFormState extends State<LoginForm> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -54,34 +53,24 @@ class _LoginFormState extends State<LoginForm> {
       child: Column(
         children: [
           AppTextFormField(
+
             controller: context.read<LoginCubit>().emailController,
             hintText: 'Email',
-            suffixIcon:  FaIcon(
+            suffixIcon: FaIcon(
               FontAwesomeIcons.solidEnvelope,
-              color: isEmailColorFailureIcon
-                  ? Colors.red
-                  : ColorsManager.mainBlue,
+              color:
+                  isEmailColorFailureIcon ? Colors.red : ColorsManager.mainBlue,
             ),
             validator: (value) {
-              if (value == null ||
-                  value.isEmpty ||
-                  !AppRegex.isEmailValidate(value)) {
-                setState(() {
-                  isEmailColorFailureIcon = true;
-                });
-                return 'Please enter your email right';
-              } else {
-                setState(() {
-                  isEmailColorFailureIcon = false;
-                });
-              }
+              return validateEmail(value);
             },
           ),
           verticalSpace(16),
           AppTextFormField(
+
             controller: context.read<LoginCubit>().passwordController,
             hintText: 'Password',
-            suffixIcon:  GestureDetector(
+            suffixIcon: GestureDetector(
               onTap: () {
                 setState(() {
                   _showPassword = !_showPassword;
@@ -94,23 +83,11 @@ class _LoginFormState extends State<LoginForm> {
                 color: isPasswordColorFailureIcon
                     ? Colors.red
                     : ColorsManager.mainBlue,
-
               ),
             ),
             obscureText: _showPassword,
             validator: (value) {
-              if (value == null ||
-                  value.isEmpty ||
-                  !AppRegex.isPasswordValid(value)) {
-                setState(() {
-                  isPasswordColorFailureIcon = true;
-                });
-                return 'Please enter your password right';
-              } else {
-                setState(() {
-                  isPasswordColorFailureIcon = false;
-                });
-              }
+              return validatePassword(value);
             },
           ),
           verticalSpace(25),
@@ -127,7 +104,33 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
+  String? validateEmail(String? value) {
+    if (value == null || value.isEmpty || !AppRegex.isEmailValidate(value)) {
+      setState(() {
+        isEmailColorFailureIcon = true;
+      });
+      return 'Please enter your email right';
+    } else {
+      setState(() {
+        isEmailColorFailureIcon = false;
+      });
+    }
+    return null;
+  }
 
+  String? validatePassword(String? value) {
+    if (value == null || value.isEmpty || !AppRegex.isPasswordValid(value)) {
+      setState(() {
+        isPasswordColorFailureIcon = true;
+      });
+      return 'Please enter your password right';
+    } else {
+      setState(() {
+        isPasswordColorFailureIcon = false;
+      });
+    }
+    return null;
+  }
 
   @override
   void dispose() {

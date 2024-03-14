@@ -58,75 +58,39 @@ class _SignUpFormState extends State<SignUpForm> {
           AppTextFormField(
             controller: context.read<SignUpCubit>().emailController,
             hintText: 'Email',
-            suffixIcon:   FaIcon(
+            suffixIcon: FaIcon(
               FontAwesomeIcons.solidEnvelope,
-              color: isEmailColorFailureIcon
-                  ? Colors.red
-                  : ColorsManager.mainBlue,
+              color:
+                  isEmailColorFailureIcon ? Colors.red : ColorsManager.mainBlue,
             ),
             validator: (value) {
-              if (value == null ||
-                  value.isEmpty ||
-                  !AppRegex.isEmailValidate(value)) {
-                setState(() {
-                  isEmailColorFailureIcon = true;
-                });
-                return 'Please enter your email right';
-              } else {
-                setState(() {
-                  isEmailColorFailureIcon = false;
-                });
-              }
+              return validateEmail(value);
             },
           ),
           verticalSpace(16),
           AppTextFormField(
             controller: context.read<SignUpCubit>().nameController,
             hintText: 'Name',
-            suffixIcon:  FaIcon(
+            suffixIcon: FaIcon(
               FontAwesomeIcons.solidUser,
-              color: isNameColorFailureIcon
-                  ? Colors.red
-                  : ColorsManager.mainBlue,
+              color:
+                  isNameColorFailureIcon ? Colors.red : ColorsManager.mainBlue,
             ),
             validator: (value) {
-              if (value == null || value.isEmpty) {
-                setState(() {
-                  isNameColorFailureIcon = true;
-                });
-                return 'Please enter your name right';
-              } else if (value.length < 4) {
-                return "Name must be more than four letters";
-              } else {
-                setState(() {
-                  isNameColorFailureIcon = false;
-                });
-              }
+              return validateName(value);
             },
           ),
           verticalSpace(16),
           AppTextFormField(
             controller: context.read<SignUpCubit>().phoneController,
             hintText: 'Phone',
-            suffixIcon:  FaIcon(
+            suffixIcon: FaIcon(
               FontAwesomeIcons.squarePhone,
-              color: isPhoneColorFailureIcon
-                  ? Colors.red
-                  : ColorsManager.mainBlue,
+              color:
+                  isPhoneColorFailureIcon ? Colors.red : ColorsManager.mainBlue,
             ),
             validator: (value) {
-              if (value == null || value.isEmpty) {
-                setState(() {
-                  isPhoneColorFailureIcon = true;
-                });
-                return 'Please enter your phone right';
-              } else if (value.length < 8) {
-                return "Number must be more than eight letters";
-              } else {
-                setState(() {
-                  isPhoneColorFailureIcon = false;
-                });
-              }
+              return validatePhone(value);
             },
           ),
           verticalSpace(16),
@@ -151,18 +115,7 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             //obscureText: _showPassword,
             validator: (value) {
-              if (value == null ||
-                  value.isEmpty ||
-                  !AppRegex.isPasswordValid(value)) {
-                setState(() {
-                  isPasswordColorFailureIcon = true;
-                });
-                return 'Please enter your password right';
-              } else {
-                setState(() {
-                  isPasswordColorFailureIcon = false;
-                });
-              }
+              return validatePassword(value);
             },
           ),
           verticalSpace(25),
@@ -179,10 +132,69 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 
+  String? validateEmail(String? value) {
+    if (value == null || value.isEmpty || !AppRegex.isEmailValidate(value)) {
+      setState(() {
+        isEmailColorFailureIcon = true;
+      });
+      return 'Please enter your email right';
+    } else {
+      setState(() {
+        isEmailColorFailureIcon = false;
+      });
+    }
+    return null;
+  }
+
+  String? validateName(String? value) {
+    if (value == null || value.isEmpty) {
+      setState(() {
+        isNameColorFailureIcon = true;
+      });
+      return 'Please enter your name right';
+    } else if (value.length < 4) {
+      return "Name must be more than four letters";
+    } else {
+      setState(() {
+        isNameColorFailureIcon = false;
+      });
+    }
+    return null;
+  }
+
+  String? validatePhone(String? value) {
+    if (value == null || value.isEmpty) {
+      setState(() {
+        isPhoneColorFailureIcon = true;
+      });
+      return 'Please enter your phone right';
+    } else if (value.length < 8) {
+      return "Number must be more than eight letters";
+    } else {
+      setState(() {
+        isPhoneColorFailureIcon = false;
+      });
+    }
+    return null;
+  }
+
+  String? validatePassword(String? value) {
+    if (value == null || value.isEmpty || !AppRegex.isPasswordValid(value)) {
+      setState(() {
+        isPasswordColorFailureIcon = true;
+      });
+      return 'Please enter your password right';
+    } else {
+      setState(() {
+        isPasswordColorFailureIcon = false;
+      });
+    }
+    return null;
+  }
+
   @override
   void dispose() {
     passwordController.dispose();
     super.dispose();
   }
-
 }

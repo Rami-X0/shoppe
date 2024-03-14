@@ -1,9 +1,10 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
-import 'package:shoppe/core/widgets/app_show_dialog.dart';
+import 'package:shoppe/core/widgets/app_error_show_dialog.dart';
 import 'package:shoppe/features/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:shoppe/features/sign_up/logic/cubit/signup_state.dart';
 
@@ -14,15 +15,16 @@ class SignUpBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpState>(
       listenWhen: (previous, current) =>
-      current is Loading || current is Success,
+          current is Loading || current is Success,
       listener: (context, state) {
         state.whenOrNull(loading: () {
-         return showDialog(
-             barrierDismissible: false,
-             context: context,
+          return showDialog(
+              barrierDismissible: false,
+              context: context,
               builder: (context) {
-                return
-                  const AppLoading();
+                return BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    child: const AppLoading());
               });
         }, success: (signupResponse) {
           if (signupResponse.status == true) {
@@ -35,7 +37,7 @@ class SignUpBlocListener extends StatelessWidget {
                 barrierDismissible: false,
                 context: context,
                 builder: (context) {
-                  return AppShowDialog(
+                  return AppErrorShowDialog(
                     text: signupResponse.message,
                   );
                 });
