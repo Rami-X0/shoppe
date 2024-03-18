@@ -14,7 +14,11 @@ class SettingsState with _$SettingsState {
 
   const factory SettingsState.loadingPutData() = LoadingPutData;
 
-  const factory SettingsState.successPutData(
-      ProfileResponse profileResponse) = SuccessPutData;
+  const factory SettingsState.successPutData(ProfileResponse profileResponse) =
+      SuccessPutData;
+
+  const factory SettingsState.successSwitchLanguage({required String language}) = SuccessSwitchLanguage;
 
 }
+
+

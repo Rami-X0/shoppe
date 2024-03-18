@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
@@ -8,9 +10,10 @@ import 'package:shoppe/core/widgets/app_text_button.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/features/login/ui/widgets/login_form.dart';
 import 'package:shoppe/features/login/ui/widgets/login_bloc_listener.dart';
-import 'package:shoppe/core/widgets/app_terms_and_conditions.dart';
 import 'package:shoppe/features/login/ui/widgets/login_have_account.dart';
+import 'package:shoppe/features/login/ui/widgets/login_terms_and_condition.dart';
 import 'package:shoppe/features/login/ui/widgets/text_login.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -37,11 +40,11 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () {
                     validateThenLogin(context);
                   },
-                  text: 'Login',
+                  text: AppLocalizations.of(context)!.login,
                   textStyle: TextStyles.font22WhiteBold,
                 ),
                 verticalSpace(50),
-                const Center(child: AppTermsAndConditions()),
+                const LoginTermsAndConditions(),
                 verticalSpace(24),
                 const LoginHaveAccount(),
                 const LoginBlocListener(),
@@ -54,7 +57,11 @@ class LoginScreen extends StatelessWidget {
   }
 
   void validateThenLogin(BuildContext context) {
-    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+    if (context
+        .read<LoginCubit>()
+        .formKey
+        .currentState!
+        .validate()) {
       context.read<LoginCubit>().emitLogin();
     }
   }

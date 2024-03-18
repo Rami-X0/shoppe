@@ -6,7 +6,7 @@ import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_icon_button_and_tool_tip.dart';
 import 'package:shoppe/features/search/logic/search_cubit.dart';
 import 'package:shoppe/features/search/logic/search_state.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SearchButton extends StatelessWidget {
   const SearchButton({super.key});
 
@@ -25,7 +25,7 @@ class SearchButton extends StatelessWidget {
     return AppIconButtonAndToolTip(
           colorIcon:ColorsManager.mainBlue,
           highlightColor:ColorsManager.mainBlue.withOpacity(0.1),
-          toolTipMessage: 'search',
+          toolTipMessage: AppLocalizations.of(context)!.search,
           icon: FontAwesomeIcons.magnifyingGlass,
           onTap: () {
             validateSearch(context);

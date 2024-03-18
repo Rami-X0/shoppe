@@ -17,7 +17,7 @@ abstract class HomeState with _$HomeState {
   const factory HomeState.loadingGetCategories() = LoadingGetCategories;
 
   const factory HomeState.successGetCategories(
-      {required CategoriesResponse data}) = SuccessGetCategories;
+      {required CategoriesResponse data,}) = SuccessGetCategories;
 const factory HomeState.loadingGetProducts() = LoadingGetProducts;
 
   const factory HomeState.successGetProducts(

@@ -7,7 +7,7 @@ import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
 import 'package:shoppe/features/home/ui/widget/product_view/ui/widgets/inkwell_product_view.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ProductDetailsView extends StatefulWidget {
   final ProductData productData;
 
@@ -34,7 +34,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                     TextSpan(
                       children: [
                         TextSpan(
-                          text: 'Price\n',
+                          text: '${AppLocalizations.of(context)!.price}\n',
                           style: TextStyles.font14LightGrayMedium.copyWith(
                               decoration: TextDecoration.underline,
                               decorationColor: ColorsManager.lighterGray),
@@ -91,7 +91,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
 
   Widget _theProductDetails() {
     return InkWellProductView(
-        messageToolTip: 'details',
+        messageToolTip: AppLocalizations.of(context)!.details_product,
         height: 40,
         onTap: () {
           setState(() {
@@ -102,7 +102,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Details',
+            Text(AppLocalizations.of(context)!.details,
                 style: TextStyles.font18MainBlueSemiBold
                     .copyWith(color: ColorsManager.mainBlue)),
             horizontalSpace(20),

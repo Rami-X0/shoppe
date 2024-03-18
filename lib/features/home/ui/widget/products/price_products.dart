@@ -5,7 +5,7 @@ import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class PriceProducts extends StatelessWidget {
   final ProductsResponse productsResponse;
   final int index;
@@ -22,12 +22,12 @@ class PriceProducts extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         priceProduct(
-          text: 'Price',
+          text: AppLocalizations.of(context)!.price,
           price: productsResponse.data!.productData![index].price.toString(),
         ),
         productsResponse.data!.productData![index].discount! > 0
             ? priceProduct(
-                text: 'Old Price',
+                text: AppLocalizations.of(context)!.old_price,
                 price: productsResponse.data!.productData![index].oldPrice
                     .toString(),
                 iconPriceColor: ColorsManager.moreLighterGray,

@@ -1,9 +1,9 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppSharedPref {
-  static late  SharedPreferences sharedPref;
+  static late SharedPreferences sharedPref;
 
-  static Future<void>initSharedPref() async {
+  static Future<void> initSharedPref() async {
     sharedPref = await SharedPreferences.getInstance();
   }
 
@@ -21,5 +21,11 @@ class AppSharedPref {
     required String key,
   }) async {
     return sharedPref.get(key);
+  }
+
+  static dynamic removeKey({
+    required String key,
+  }) {
+    return sharedPref.remove(key);
   }
 }

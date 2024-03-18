@@ -8,7 +8,7 @@ import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_text_form_field.dart';
 import 'package:shoppe/features/settings/data/models/profile_response.dart';
 import 'package:shoppe/features/settings/logic/settings_cubit.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ProfileForm extends StatefulWidget {
   final ProfileResponse profileResponse;
 
@@ -37,13 +37,13 @@ class _ProfileFormState extends State<ProfileForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<SettingsCubit>().nameAndEmailKey,
+      key: context.read<SettingsCubit>().nameAndEmailFormKey,
       child: Column(
         children: [
 
           AppTextFormField(
             labelText:Text(
-              'name',
+              AppLocalizations.of(context)!.name,
               style: TextStyles.font15MainBlueSemiBold,
             ),
             suffixIcon: FaIcon(FontAwesomeIcons.userLarge,
@@ -57,7 +57,7 @@ class _ProfileFormState extends State<ProfileForm> {
           Gap(10.h),
           AppTextFormField(
             labelText:Text(
-              'email',
+              AppLocalizations.of(context)!.email,
               style: TextStyles.font15MainBlueSemiBold,
             ),
             suffixIcon: FaIcon(
@@ -78,12 +78,12 @@ class _ProfileFormState extends State<ProfileForm> {
 
   String? validateName(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your name';
+      return AppLocalizations.of(context)!.enter_name;
     }
     return null;
   }String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your email';
+      return AppLocalizations.of(context)!.enter_email;
     }
     return null;
   }

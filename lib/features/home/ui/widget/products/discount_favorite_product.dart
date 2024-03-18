@@ -6,6 +6,7 @@ import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
 import 'package:shoppe/features/home/ui/widget/button_favorites_home.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DiscountFavoriteProduct extends StatelessWidget {
   final ProductsResponse productsResponse;
@@ -35,7 +36,7 @@ class DiscountFavoriteProduct extends StatelessWidget {
                 topRight: radiusCircular,
                 bottomLeft: radiusCircular,
                 child: Text(
-                  'Discount',
+                  AppLocalizations.of(context)!.discount,
                   style: TextStyles.font70WhiteBold,
                 ),
               )

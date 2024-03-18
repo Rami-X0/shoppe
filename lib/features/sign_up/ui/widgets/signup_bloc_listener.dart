@@ -38,7 +38,7 @@ class SignUpBlocListener extends StatelessWidget {
                 context: context,
                 builder: (context) {
                   return AppErrorShowDialog(
-                    text: signupResponse.message,
+                    text: signupResponse.message.toString(),
                   );
                 });
           }

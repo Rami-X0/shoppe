@@ -4,6 +4,7 @@ import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginHaveAccount extends StatelessWidget {
 
@@ -19,7 +20,7 @@ class LoginHaveAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'You don\'t have an account?',
+          AppLocalizations.of(context)!.no_have_account,
           style: TextStyles.font13DarkBlueRegular,
         ),
         horizontalSpace(3),
@@ -29,7 +30,7 @@ class LoginHaveAccount extends StatelessWidget {
                 Routes.signUpScreen);
           },
           child: Text(
-            'Sign Up',
+            AppLocalizations.of(context)!.create_account,
             style: TextStyles.font13DarkBlueRegular.copyWith(
               color: ColorsManager.mainBlue,
             ),

@@ -5,6 +5,7 @@ import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
 
+
 class NameProducts extends StatelessWidget {
   final ProductsResponse productsResponse;
   final int index;
@@ -20,17 +21,15 @@ class NameProducts extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 18.w),
           child: Text(
-            productsResponse.data!.productData![index].name
-                .toString()
-                .substring(0, 20)
-                .replaceRange(18, 20, '...'),
+            productsResponse.data!.productData![index].name.toString(),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
             style: TextStyles.font18MainBlueSemiBold.copyWith(
-              color: ColorsManager.darkBlue ,
+              color: ColorsManager.darkBlue,
             ),
           ),
         ),
         verticalSpace(10),
-
       ],
     );
   }

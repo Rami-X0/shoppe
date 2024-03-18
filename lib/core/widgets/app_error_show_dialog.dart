@@ -6,7 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class AppErrorShowDialog extends StatelessWidget {
   const AppErrorShowDialog({super.key, required this.text});
 final String text;
@@ -34,17 +34,20 @@ final String text;
                   child: Column(
                     children: [
                       verticalSpace(70),
-                      Text(
-                        text,
-                        textAlign: TextAlign.center,
-                        style: TextStyles.font13DarkBlueMedium,
+                      Padding(
+                        padding:  EdgeInsets.symmetric(horizontal: 20.w,),
+                        child: Text(
+                          text,
+                          textAlign: TextAlign.center,
+                          style: TextStyles.font13DarkBlueMedium,
+                        ),
                       ),
                       const Spacer(),
                       AppTextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        text: 'Okay',
+                        text: AppLocalizations.of(context)!.okay,
                         textStyle: TextStyles.font22WhiteBold,
                         backGroundColor: Colors.red,
                         horizontalSize: 200,

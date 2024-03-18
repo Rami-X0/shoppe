@@ -6,7 +6,7 @@ import 'package:shoppe/features/carts/data/models/carts_request.dart';
 import 'package:shoppe/features/carts/logic/carts_cubit.dart';
 import 'package:shoppe/features/carts/logic/carts_state.dart';
 import 'package:shoppe/features/home/logic/home_cubit.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ButtonCartsHome extends StatelessWidget {
   final num productId;
 
@@ -22,7 +22,7 @@ class ButtonCartsHome extends StatelessWidget {
           current is LoadingAddCarts || current is SuccessAddCarts,
       builder: (context, state) {
         return AppIconButtonAndToolTip(
-          toolTipMessage: 'cart',
+          toolTipMessage: AppLocalizations.of(context)!.carts,
           onTap: () {
             context.read<CartsCubit>().emitAddCarts(
                   CartsRequest(productId: productId),

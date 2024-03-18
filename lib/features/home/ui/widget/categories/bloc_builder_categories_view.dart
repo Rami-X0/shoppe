@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
 import 'package:shoppe/core/widgets/app_slide_scale_fade_transition.dart';
@@ -9,24 +10,15 @@ import 'package:shoppe/features/home/ui/widget/categories/categories_view.dart';
 import 'package:shoppe/features/home/ui/widget/categories/see_more_categories.dart';
 import 'package:shoppe/features/home/ui/widget/default_container_home.dart';
 
-class BlocBuilderCategoriesView extends StatefulWidget {
+class BlocBuilderCategoriesView extends StatelessWidget {
   const BlocBuilderCategoriesView({super.key});
 
   @override
-  State<BlocBuilderCategoriesView> createState() => _BlocBuilderCategoriesViewState();
-}
-
-class _BlocBuilderCategoriesViewState extends State<BlocBuilderCategoriesView> with
-AutomaticKeepAliveClientMixin
-{
-  @override
-  bool get wantKeepAlive => true;
-  @override
   Widget build(BuildContext context) {
-    super.build(context);
     BlocProvider.of<HomeCubit>(context).emitCategories();
+
     return AppSlideScaleFadeTransition(
-     scaleOffsetEnd: 6,
+      scaleOffsetEnd: 6,
       child: DefaultContainerHome(
         child: Column(
           children: [
@@ -39,14 +31,11 @@ AutomaticKeepAliveClientMixin
               builder: (context, state) {
                 return state.maybeWhen(
                   loadingGetCategories: () {
-                    return const AppLoading();
+                    return SizedBox(height: 140.h, child: const AppLoading());
                   },
                   successGetCategories: (categoriesResponse) {
-                    return SizedBox(
-                      height: 110,
-                      child: CategoriesView(
-                        categoriesResponse: categoriesResponse,
-                      ),
+                    return CategoriesView(
+                      categoriesResponse: categoriesResponse,
                     );
                   },
                   orElse: () {

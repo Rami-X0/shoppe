@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/widgets/app_slide_scale_fade_transition.dart';
+import 'package:shoppe/features/home/ui/widget/banners/bloc_builder_banners_view.dart';
+import 'package:shoppe/features/home/ui/widget/categories/bloc_builder_categories_view.dart';
 import 'package:shoppe/features/home/ui/widget/drawer_home.dart';
 import 'package:shoppe/features/home/ui/widget/app_bar_home.dart';
+import 'package:shoppe/features/home/ui/widget/products/bloc_builder_products.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,10 +26,10 @@ class HomeScreen extends StatelessWidget {
             scaleOffsetEnd: 2,
             child: ListView(
               children: [
-                // const BlocBuilderBannersView(),
-                // const BlocBuilderCategoriesView(),
-                // verticalSpace(10),
-                // const BlocBuilderProducts(),
+                const BlocBuilderBannersView(),
+                const BlocBuilderCategoriesView(),
+                verticalSpace(10),
+                const BlocBuilderProducts(),
               ],
             ),
           ),

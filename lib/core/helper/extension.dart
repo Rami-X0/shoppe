@@ -5,7 +5,7 @@ extension NavigatorHelper on BuildContext {
    return  Navigator.pushNamed(this, name);
   }
 
-  void navigatorPushNamedAndRemoveUntil(String name) {
+  void pushNamedAndRemoveUntil(String name) {
     Navigator.pushNamedAndRemoveUntil(this, name, (route) => false);
   }
 

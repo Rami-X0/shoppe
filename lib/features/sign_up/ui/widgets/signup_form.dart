@@ -7,6 +7,7 @@ import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_text_form_field.dart';
 import 'package:shoppe/core/widgets/app_password_validations.dart';
 import 'package:shoppe/features/sign_up/logic/cubit/signup_cubit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -57,7 +58,7 @@ class _SignUpFormState extends State<SignUpForm> {
         children: [
           AppTextFormField(
             controller: context.read<SignUpCubit>().emailController,
-            hintText: 'Email',
+            hintText: AppLocalizations.of(context)!.email,
             suffixIcon: FaIcon(
               FontAwesomeIcons.solidEnvelope,
               color:
@@ -70,7 +71,7 @@ class _SignUpFormState extends State<SignUpForm> {
           verticalSpace(16),
           AppTextFormField(
             controller: context.read<SignUpCubit>().nameController,
-            hintText: 'Name',
+            hintText: AppLocalizations.of(context)!.name,
             suffixIcon: FaIcon(
               FontAwesomeIcons.solidUser,
               color:
@@ -83,7 +84,7 @@ class _SignUpFormState extends State<SignUpForm> {
           verticalSpace(16),
           AppTextFormField(
             controller: context.read<SignUpCubit>().phoneController,
-            hintText: 'Phone',
+            hintText: AppLocalizations.of(context)!.phone,
             suffixIcon: FaIcon(
               FontAwesomeIcons.squarePhone,
               color:
@@ -97,7 +98,7 @@ class _SignUpFormState extends State<SignUpForm> {
           AppTextFormField(
             controller: context.read<SignUpCubit>().passwordController,
             obscureText: _showPassword,
-            hintText: 'Password',
+            hintText: AppLocalizations.of(context)!.password,
             suffixIcon: GestureDetector(
               onTap: () {
                 setState(() {
@@ -137,7 +138,7 @@ class _SignUpFormState extends State<SignUpForm> {
       setState(() {
         isEmailColorFailureIcon = true;
       });
-      return 'Please enter your email right';
+      return AppLocalizations.of(context)!.enter_email;
     } else {
       setState(() {
         isEmailColorFailureIcon = false;
@@ -151,9 +152,9 @@ class _SignUpFormState extends State<SignUpForm> {
       setState(() {
         isNameColorFailureIcon = true;
       });
-      return 'Please enter your name right';
+      return AppLocalizations.of(context)!.enter_name;
     } else if (value.length < 4) {
-      return "Name must be more than four letters";
+      return AppLocalizations.of(context)!.name_letter;
     } else {
       setState(() {
         isNameColorFailureIcon = false;
@@ -167,9 +168,9 @@ class _SignUpFormState extends State<SignUpForm> {
       setState(() {
         isPhoneColorFailureIcon = true;
       });
-      return 'Please enter your phone right';
+      return AppLocalizations.of(context)!.enter_phone;
     } else if (value.length < 8) {
-      return "Number must be more than eight letters";
+      return AppLocalizations.of(context)!.number_letter;
     } else {
       setState(() {
         isPhoneColorFailureIcon = false;
@@ -183,7 +184,7 @@ class _SignUpFormState extends State<SignUpForm> {
       setState(() {
         isPasswordColorFailureIcon = true;
       });
-      return 'Please enter your password right';
+      return AppLocalizations.of(context)!.enter_password;
     } else {
       setState(() {
         isPasswordColorFailureIcon = false;

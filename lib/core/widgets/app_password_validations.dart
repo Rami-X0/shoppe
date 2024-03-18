@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppPasswordValidations extends StatelessWidget {
   final bool hasUpperCase;
@@ -22,16 +23,16 @@ class AppPasswordValidations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildValidationRow('At least 1 lowercase letter', hasLowerCase),
+        buildValidationRow(AppLocalizations.of(context)!.validate_lowerCase, hasLowerCase),
         verticalSpace(2),
-        buildValidationRow('At least 1 uppercase letter', hasUpperCase),
+        buildValidationRow(AppLocalizations.of(context)!.validate_upperCase, hasUpperCase),
         verticalSpace(2),
         buildValidationRow(
-            'At least 1 special character', hasSpecialCharacters),
+            AppLocalizations.of(context)!.validate_character, hasSpecialCharacters),
         verticalSpace(2),
-        buildValidationRow('At least 1 number', hasNumber),
+        buildValidationRow(AppLocalizations.of(context)!.validate_number, hasNumber),
         verticalSpace(2),
-        buildValidationRow('At least 8 characters long', hasMineLength),
+        buildValidationRow(AppLocalizations.of(context)!.validate_characters_8, hasMineLength),
       ],
     );
   }

@@ -4,14 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
-import 'package:shoppe/core/widgets/app_terms_and_conditions.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
 import 'package:shoppe/features/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:shoppe/features/sign_up/ui/widgets/create_account_text.dart';
 import 'package:shoppe/features/sign_up/ui/widgets/sign_up_have_account.dart';
+import 'package:shoppe/features/sign_up/ui/widgets/sign_up_terms_and_condition.dart';
 import 'package:shoppe/features/sign_up/ui/widgets/signup_form.dart';
 import 'package:shoppe/features/sign_up/ui/widgets/signup_bloc_listener.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
@@ -36,11 +36,11 @@ class SignUpScreen extends StatelessWidget {
                   onPressed: () {
                     validationThenSignUp(context);
                   },
-                  text: 'Login',
+                  text: AppLocalizations.of(context)!.create_account,
                   textStyle: TextStyles.font22WhiteBold,
                 ),
                 verticalSpace(35),
-                const AppTermsAndConditions(),
+                const SignUpTermsAndConditions(),
                 verticalSpace(24),
                 const SignUpAccount(),
                 const SignUpBlocListener(),

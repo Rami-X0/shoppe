@@ -7,6 +7,7 @@ import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DrawerHome extends StatelessWidget {
   const DrawerHome({super.key});
@@ -31,7 +32,7 @@ class DrawerHome extends StatelessWidget {
                 context.pushNamed(Routes.favoritesScreen);
               },
               icon: FontAwesomeIcons.solidHeart,
-              text: 'F A V O R I T E S'),
+              text: AppLocalizations.of(context)!.favorites_drawer),
           Gap(35.h),
           _buildIconAndTextDrawer(
               context: context,
@@ -39,8 +40,7 @@ class DrawerHome extends StatelessWidget {
                 context.pushNamed(Routes.cartsScreen);
               },
               icon: FontAwesomeIcons.cartShopping,
-              text: 'C A R T S'),
-
+              text: AppLocalizations.of(context)!.carts_drawer),
           Gap(35.h),
           _buildIconAndTextDrawer(
               context: context,
@@ -48,8 +48,7 @@ class DrawerHome extends StatelessWidget {
                 context.pushNamed(Routes.settingsScreen);
               },
               icon: FontAwesomeIcons.gear,
-              text: 'S E T T I N G S'),
-
+              text: AppLocalizations.of(context)!.settings_drawer),
         ],
       ),
     );

@@ -30,6 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -71,6 +74,7 @@ dependencies:
   # Add easy spacing in column and row
   gap: ^3.0.1
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -87,6 +91,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -98,6 +103,8 @@ flutter:
     - assets/images/
     - assets/svgs/
     - assets/lottie/
+    - lib/l10n/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

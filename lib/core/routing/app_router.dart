@@ -63,10 +63,7 @@ Route generateRoute(RouteSettings settings) {
     case Routes.settingsScreen:
       return AppAlignmentRouter(
         routesMultiBlocProvider(
-          child: BlocProvider<SettingsCubit>.value(
-            value: getIt<SettingsCubit>()..emitProfile(),
-            child: const SettingsScreen(),
-          ),
+          child: const SettingsScreen(),
         ),
       );
 
@@ -87,11 +84,15 @@ Widget routesMultiBlocProvider({
   return MultiBlocProvider(
     providers: [
       BlocProvider<HomeCubit>.value(
-        value: getIt<HomeCubit>(),
+        value: getIt<HomeCubit>()
       ),
       BlocProvider<FavoritesCubit>.value(
         value: getIt<FavoritesCubit>()..emitFavorites(),
       ),
+      BlocProvider<SettingsCubit>.value(
+        value: getIt<SettingsCubit>(),
+      ),
+
     ],
     child: child,
   );

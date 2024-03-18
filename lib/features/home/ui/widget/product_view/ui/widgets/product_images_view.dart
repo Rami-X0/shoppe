@@ -60,7 +60,8 @@ Widget _buttonCart(){
         horizontal: 10.w,
       ),
       child: Align(
-        alignment: Alignment.bottomRight,
+        alignment: AlignmentDirectional.bottomEnd,
+
         child: CircleAvatar(
           backgroundColor: ColorsManager.darkBlue.withOpacity(0.1),
           child: ButtonCartsHome(productId: widget.productData.id!),

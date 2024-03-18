@@ -7,7 +7,7 @@ import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/settings/data/models/profile_response.dart';
 import 'package:shoppe/features/settings/ui/widgets/phone_form.dart';
 import 'package:shoppe/features/settings/ui/widgets/settings_dialog.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class PhoneEdite extends StatelessWidget {
   final ProfileResponse profileResponse;
 
@@ -21,22 +21,24 @@ class PhoneEdite extends StatelessWidget {
     return SizedBox(
       height: 50.h,
       child: InkWell(
+        overlayColor: MaterialStateProperty.all(ColorsManager.skyBlue),
         onTap: () {
           showDialog(
             barrierDismissible: false,
             useRootNavigator: false,
             context: context,
             builder: (context) {
-              return  SettingsDialog(
+              return SettingsDialog(
                 height: 300,
-                child: PhoneForm(profileResponse: profileResponse,),
+                child: PhoneForm(
+                  profileResponse: profileResponse,
+                ),
               );
             },
           );
         },
         child: Row(
           children: [
-            Gap(10.w),
             FaIcon(
               FontAwesomeIcons.phone,
               color: ColorsManager.mainBlue,
@@ -47,11 +49,13 @@ class PhoneEdite extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Phone',
-                  style: TextStyles.font13DarkBlueRegular,
+                  AppLocalizations.of(context)!.phone_settings,
+                  style: TextStyles.font14MainBlueBold.copyWith(
+                    fontSize: 13.sp
+                  ),
                 ),
                 Text(
-                   profileResponse.userData!.phone.toString(),
+                  profileResponse.userData!.phone.toString(),
                   style: TextStyles.font15MainBlueSemiBold,
                 ),
               ],

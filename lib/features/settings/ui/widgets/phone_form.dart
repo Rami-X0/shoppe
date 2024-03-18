@@ -8,10 +8,10 @@ import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_text_form_field.dart';
 import 'package:shoppe/features/settings/data/models/profile_response.dart';
 import 'package:shoppe/features/settings/logic/settings_cubit.dart';
-import 'package:shoppe/features/settings/ui/widgets/button_edite_phone.dart';
+import 'package:shoppe/features/settings/ui/widgets/phone_edite_button.dart';
 import 'package:shoppe/features/settings/ui/widgets/message_error_edite_profile.dart';
 import 'package:shoppe/features/settings/ui/widgets/setting_close_button.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class PhoneForm extends StatefulWidget {
   final ProfileResponse profileResponse;
 
@@ -40,7 +40,7 @@ class _PhoneFormState extends State<PhoneForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<SettingsCubit>().phoneKey,
+      key: context.read<SettingsCubit>().phoneFormKey,
       child: Column(
         children: [
           const SettingsCloseButton(),
@@ -54,7 +54,7 @@ class _PhoneFormState extends State<PhoneForm> {
               color: ColorsManager.mainBlue,
             ),
             labelText: Text(
-              'phone',
+              AppLocalizations.of(context)!.phone,
               style: TextStyles.font15MainBlueSemiBold,
             ),
             validator: (value) {
@@ -63,7 +63,7 @@ class _PhoneFormState extends State<PhoneForm> {
             controller: context.read<SettingsCubit>().phoneController,
           ),
           Gap(15.h),
-          const ButtonEditePhone(),
+          const PhoneEditeButton(),
         ],
       ),
     );

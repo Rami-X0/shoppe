@@ -10,9 +10,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   initGetIt();
   await AppSharedPref.initSharedPref();
-  token = await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.tokenKey);
-  onBoarding = await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.onBoarding);
+  token = await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.token);
+  onBoarding =
+      await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.onBoarding);
+  appLanguage =
+      await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.appLanguage);
   Bloc.observer = MyBlocObserver();
-
   runApp(const ShoppeApp());
 }

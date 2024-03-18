@@ -4,10 +4,10 @@ import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
 import 'package:shoppe/features/settings/logic/settings_cubit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+class PhoneEditeButton extends StatelessWidget {
 
-class ButtonEditePhone extends StatelessWidget {
-
-  const ButtonEditePhone({
+  const PhoneEditeButton({
     super.key,
   });
 
@@ -20,12 +20,12 @@ class ButtonEditePhone extends StatelessWidget {
         onPressed: () {
           putEmailAndName(context);
         },
-        text: 'Done',
+        text: AppLocalizations.of(context)!.save,
         textStyle: TextStyles.font22WhiteBold);
   }
 
   void putEmailAndName(BuildContext context) {
-    if (context.read<SettingsCubit>().phoneKey.currentState!.validate()) {
+    if (context.read<SettingsCubit>().phoneFormKey.currentState!.validate()) {
       context.read<SettingsCubit>().emitUpdateProfileData();
     }
   }

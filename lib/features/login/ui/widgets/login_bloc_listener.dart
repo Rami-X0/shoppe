@@ -6,7 +6,6 @@ import 'package:shoppe/core/caching/app_shared_pref.dart';
 import 'package:shoppe/core/caching/app_shared_pref_key.dart';
 import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/routing/routes.dart';
-import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
 import 'package:shoppe/core/widgets/app_error_show_dialog.dart';
 import 'package:shoppe/core/widgets/app_snack_bar.dart';
@@ -29,24 +28,23 @@ class LoginBlocListener extends StatelessWidget {
               context: context,
               builder: (context) {
                 return BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-
-                    child: const AppLoading());
+                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                  child: const AppLoading(),
+                );
               },
             );
           },
           success: (loginResponse) {
             if (loginResponse.status == true) {
-              context.pop();
-              Navigator.pop(context);
               context.pushNamed(Routes.homeScreen);
               AppSharedPref.sharedPrefSet(
-                key: AppSharedPrefKey.tokenKey,
+                key: AppSharedPrefKey.token,
                 value: loginResponse.userData!.token,
               );
               appSnackBar(
-                text: loginResponse.message,
-                backGroundColor: ColorsManager.darkBlue,
+                text: loginResponse.message.toString(),
+                backGroundColor:
+                    loginResponse.status == true ? Colors.green : Colors.red,
                 context: context,
               );
             } else {
@@ -55,7 +53,9 @@ class LoginBlocListener extends StatelessWidget {
                 barrierDismissible: false,
                 context: context,
                 builder: (context) {
-                  return AppErrorShowDialog(text: loginResponse.message);
+                  return AppErrorShowDialog(
+                    text: loginResponse.message.toString(),
+                  );
                 },
               );
             }

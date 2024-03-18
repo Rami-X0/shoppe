@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CreateAccountText extends StatelessWidget {
   const CreateAccountText({super.key});
@@ -11,13 +12,14 @@ class CreateAccountText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Create Account',
+          AppLocalizations.of(context)!.create_account,
           style: TextStyles.font50MainBlueBold.copyWith(
             fontSize: 30,
           ),
         ),
+
         Text(
-          'Sign up now and start exploring all that our app has to offer. We\'re excited to welcome \nyou to our community!',
+          AppLocalizations.of(context)!.signup_invitation,
           style: TextStyles.font15DarkBlueRegular
               .copyWith(color: ColorsManager.grey),
         ),

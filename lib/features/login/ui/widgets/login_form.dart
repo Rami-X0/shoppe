@@ -7,6 +7,7 @@ import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_text_form_field.dart';
 import 'package:shoppe/features/login/logic/cubit/login_cubit.dart';
 import 'package:shoppe/core/widgets/app_password_validations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -55,7 +56,7 @@ class _LoginFormState extends State<LoginForm> {
           AppTextFormField(
 
             controller: context.read<LoginCubit>().emailController,
-            hintText: 'Email',
+            hintText: AppLocalizations.of(context)!.email,
             suffixIcon: FaIcon(
               FontAwesomeIcons.solidEnvelope,
               color:
@@ -69,7 +70,7 @@ class _LoginFormState extends State<LoginForm> {
           AppTextFormField(
 
             controller: context.read<LoginCubit>().passwordController,
-            hintText: 'Password',
+            hintText: AppLocalizations.of(context)!.password,
             suffixIcon: GestureDetector(
               onTap: () {
                 setState(() {
@@ -109,7 +110,7 @@ class _LoginFormState extends State<LoginForm> {
       setState(() {
         isEmailColorFailureIcon = true;
       });
-      return 'Please enter your email right';
+      return AppLocalizations.of(context)!.enter_email;
     } else {
       setState(() {
         isEmailColorFailureIcon = false;
@@ -123,7 +124,7 @@ class _LoginFormState extends State<LoginForm> {
       setState(() {
         isPasswordColorFailureIcon = true;
       });
-      return 'Please enter your password right';
+      return AppLocalizations.of(context)!.enter_password;
     } else {
       setState(() {
         isPasswordColorFailureIcon = false;

@@ -32,7 +32,7 @@ Future<void> initGetIt() async {
   getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
 // favorites
-  getIt.registerLazySingleton<FavoritesCubit>(
+  getIt.registerFactory<FavoritesCubit>(
       () => FavoritesCubit(getIt(), getIt()));
   getIt.registerLazySingleton<FavoritesRepo>(() => FavoritesRepo(getIt()));
 // carts
@@ -42,7 +42,7 @@ Future<void> initGetIt() async {
   getIt.registerFactory<SearchCubit>(() => SearchCubit(getIt()));
   getIt.registerLazySingleton<SearchRepo>(() => SearchRepo(getIt()));
 // settings
-  getIt.registerLazySingleton<SettingsCubit>(() => SettingsCubit(getIt()));
+  getIt.registerLazySingleton<SettingsCubit>(() => SettingsCubit(getIt(),getIt()));
   getIt.registerLazySingleton<SettingsRepo>(() => SettingsRepo(getIt()));
 
 }

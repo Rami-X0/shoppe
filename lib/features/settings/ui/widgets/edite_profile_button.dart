@@ -5,11 +5,11 @@ import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_text_button.dart';
 import 'package:shoppe/features/settings/data/models/profile_response.dart';
 import 'package:shoppe/features/settings/logic/settings_cubit.dart';
-
-class ButtonEditeProfile extends StatelessWidget {
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+class EditeProfileButton extends StatelessWidget {
   final ProfileResponse profileResponse;
 
-  const ButtonEditeProfile({super.key, required this.profileResponse});
+  const EditeProfileButton({super.key, required this.profileResponse});
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +20,14 @@ class ButtonEditeProfile extends StatelessWidget {
         onPressed: () {
           putEmailAndName(context);
         },
-        text: 'Done',
+        text: AppLocalizations.of(context)!.save,
         textStyle: TextStyles.font22WhiteBold);
   }
 
   void putEmailAndName(BuildContext context) {
     if (context
         .read<SettingsCubit>()
-        .nameAndEmailKey
+        .nameAndEmailFormKey
         .currentState!
         .validate()) {
       context.read<SettingsCubit>().emitUpdateProfileData();

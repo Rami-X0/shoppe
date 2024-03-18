@@ -24,6 +24,7 @@ mixin _$SettingsState {
         successGetProfile,
     required TResult Function() loadingPutData,
     required TResult Function(ProfileResponse profileResponse) successPutData,
+    required TResult Function(String language) successSwitchLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,6 +34,7 @@ mixin _$SettingsState {
     TResult? Function(ProfileResponse profileResponse)? successGetProfile,
     TResult? Function()? loadingPutData,
     TResult? Function(ProfileResponse profileResponse)? successPutData,
+    TResult? Function(String language)? successSwitchLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +44,7 @@ mixin _$SettingsState {
     TResult Function(ProfileResponse profileResponse)? successGetProfile,
     TResult Function()? loadingPutData,
     TResult Function(ProfileResponse profileResponse)? successPutData,
+    TResult Function(String language)? successSwitchLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +55,8 @@ mixin _$SettingsState {
     required TResult Function(SuccessGetProfile value) successGetProfile,
     required TResult Function(LoadingPutData value) loadingPutData,
     required TResult Function(SuccessPutData value) successPutData,
+    required TResult Function(SuccessSwitchLanguage value)
+        successSwitchLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +66,7 @@ mixin _$SettingsState {
     TResult? Function(SuccessGetProfile value)? successGetProfile,
     TResult? Function(LoadingPutData value)? loadingPutData,
     TResult? Function(SuccessPutData value)? successPutData,
+    TResult? Function(SuccessSwitchLanguage value)? successSwitchLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +76,7 @@ mixin _$SettingsState {
     TResult Function(SuccessGetProfile value)? successGetProfile,
     TResult Function(LoadingPutData value)? loadingPutData,
     TResult Function(SuccessPutData value)? successPutData,
+    TResult Function(SuccessSwitchLanguage value)? successSwitchLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -137,6 +144,7 @@ class _$InitilaImpl implements Initila {
         successGetProfile,
     required TResult Function() loadingPutData,
     required TResult Function(ProfileResponse profileResponse) successPutData,
+    required TResult Function(String language) successSwitchLanguage,
   }) {
     return initial();
   }
@@ -149,6 +157,7 @@ class _$InitilaImpl implements Initila {
     TResult? Function(ProfileResponse profileResponse)? successGetProfile,
     TResult? Function()? loadingPutData,
     TResult? Function(ProfileResponse profileResponse)? successPutData,
+    TResult? Function(String language)? successSwitchLanguage,
   }) {
     return initial?.call();
   }
@@ -161,6 +170,7 @@ class _$InitilaImpl implements Initila {
     TResult Function(ProfileResponse profileResponse)? successGetProfile,
     TResult Function()? loadingPutData,
     TResult Function(ProfileResponse profileResponse)? successPutData,
+    TResult Function(String language)? successSwitchLanguage,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -177,6 +187,8 @@ class _$InitilaImpl implements Initila {
     required TResult Function(SuccessGetProfile value) successGetProfile,
     required TResult Function(LoadingPutData value) loadingPutData,
     required TResult Function(SuccessPutData value) successPutData,
+    required TResult Function(SuccessSwitchLanguage value)
+        successSwitchLanguage,
   }) {
     return initial(this);
   }
@@ -189,6 +201,7 @@ class _$InitilaImpl implements Initila {
     TResult? Function(SuccessGetProfile value)? successGetProfile,
     TResult? Function(LoadingPutData value)? loadingPutData,
     TResult? Function(SuccessPutData value)? successPutData,
+    TResult? Function(SuccessSwitchLanguage value)? successSwitchLanguage,
   }) {
     return initial?.call(this);
   }
@@ -201,6 +214,7 @@ class _$InitilaImpl implements Initila {
     TResult Function(SuccessGetProfile value)? successGetProfile,
     TResult Function(LoadingPutData value)? loadingPutData,
     TResult Function(SuccessPutData value)? successPutData,
+    TResult Function(SuccessSwitchLanguage value)? successSwitchLanguage,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -258,6 +272,7 @@ class _$LoadingGetProfileImpl implements LoadingGetProfile {
         successGetProfile,
     required TResult Function() loadingPutData,
     required TResult Function(ProfileResponse profileResponse) successPutData,
+    required TResult Function(String language) successSwitchLanguage,
   }) {
     return loadingGetProfile();
   }
@@ -270,6 +285,7 @@ class _$LoadingGetProfileImpl implements LoadingGetProfile {
     TResult? Function(ProfileResponse profileResponse)? successGetProfile,
     TResult? Function()? loadingPutData,
     TResult? Function(ProfileResponse profileResponse)? successPutData,
+    TResult? Function(String language)? successSwitchLanguage,
   }) {
     return loadingGetProfile?.call();
   }
@@ -282,6 +298,7 @@ class _$LoadingGetProfileImpl implements LoadingGetProfile {
     TResult Function(ProfileResponse profileResponse)? successGetProfile,
     TResult Function()? loadingPutData,
     TResult Function(ProfileResponse profileResponse)? successPutData,
+    TResult Function(String language)? successSwitchLanguage,
     required TResult orElse(),
   }) {
     if (loadingGetProfile != null) {
@@ -298,6 +315,8 @@ class _$LoadingGetProfileImpl implements LoadingGetProfile {
     required TResult Function(SuccessGetProfile value) successGetProfile,
     required TResult Function(LoadingPutData value) loadingPutData,
     required TResult Function(SuccessPutData value) successPutData,
+    required TResult Function(SuccessSwitchLanguage value)
+        successSwitchLanguage,
   }) {
     return loadingGetProfile(this);
   }
@@ -310,6 +329,7 @@ class _$LoadingGetProfileImpl implements LoadingGetProfile {
     TResult? Function(SuccessGetProfile value)? successGetProfile,
     TResult? Function(LoadingPutData value)? loadingPutData,
     TResult? Function(SuccessPutData value)? successPutData,
+    TResult? Function(SuccessSwitchLanguage value)? successSwitchLanguage,
   }) {
     return loadingGetProfile?.call(this);
   }
@@ -322,6 +342,7 @@ class _$LoadingGetProfileImpl implements LoadingGetProfile {
     TResult Function(SuccessGetProfile value)? successGetProfile,
     TResult Function(LoadingPutData value)? loadingPutData,
     TResult Function(SuccessPutData value)? successPutData,
+    TResult Function(SuccessSwitchLanguage value)? successSwitchLanguage,
     required TResult orElse(),
   }) {
     if (loadingGetProfile != null) {
@@ -407,6 +428,7 @@ class _$SuccessGetProfileImpl implements SuccessGetProfile {
         successGetProfile,
     required TResult Function() loadingPutData,
     required TResult Function(ProfileResponse profileResponse) successPutData,
+    required TResult Function(String language) successSwitchLanguage,
   }) {
     return successGetProfile(profileResponse);
   }
@@ -419,6 +441,7 @@ class _$SuccessGetProfileImpl implements SuccessGetProfile {
     TResult? Function(ProfileResponse profileResponse)? successGetProfile,
     TResult? Function()? loadingPutData,
     TResult? Function(ProfileResponse profileResponse)? successPutData,
+    TResult? Function(String language)? successSwitchLanguage,
   }) {
     return successGetProfile?.call(profileResponse);
   }
@@ -431,6 +454,7 @@ class _$SuccessGetProfileImpl implements SuccessGetProfile {
     TResult Function(ProfileResponse profileResponse)? successGetProfile,
     TResult Function()? loadingPutData,
     TResult Function(ProfileResponse profileResponse)? successPutData,
+    TResult Function(String language)? successSwitchLanguage,
     required TResult orElse(),
   }) {
     if (successGetProfile != null) {
@@ -447,6 +471,8 @@ class _$SuccessGetProfileImpl implements SuccessGetProfile {
     required TResult Function(SuccessGetProfile value) successGetProfile,
     required TResult Function(LoadingPutData value) loadingPutData,
     required TResult Function(SuccessPutData value) successPutData,
+    required TResult Function(SuccessSwitchLanguage value)
+        successSwitchLanguage,
   }) {
     return successGetProfile(this);
   }
@@ -459,6 +485,7 @@ class _$SuccessGetProfileImpl implements SuccessGetProfile {
     TResult? Function(SuccessGetProfile value)? successGetProfile,
     TResult? Function(LoadingPutData value)? loadingPutData,
     TResult? Function(SuccessPutData value)? successPutData,
+    TResult? Function(SuccessSwitchLanguage value)? successSwitchLanguage,
   }) {
     return successGetProfile?.call(this);
   }
@@ -471,6 +498,7 @@ class _$SuccessGetProfileImpl implements SuccessGetProfile {
     TResult Function(SuccessGetProfile value)? successGetProfile,
     TResult Function(LoadingPutData value)? loadingPutData,
     TResult Function(SuccessPutData value)? successPutData,
+    TResult Function(SuccessSwitchLanguage value)? successSwitchLanguage,
     required TResult orElse(),
   }) {
     if (successGetProfile != null) {
@@ -534,6 +562,7 @@ class _$LoadingPutDataImpl implements LoadingPutData {
         successGetProfile,
     required TResult Function() loadingPutData,
     required TResult Function(ProfileResponse profileResponse) successPutData,
+    required TResult Function(String language) successSwitchLanguage,
   }) {
     return loadingPutData();
   }
@@ -546,6 +575,7 @@ class _$LoadingPutDataImpl implements LoadingPutData {
     TResult? Function(ProfileResponse profileResponse)? successGetProfile,
     TResult? Function()? loadingPutData,
     TResult? Function(ProfileResponse profileResponse)? successPutData,
+    TResult? Function(String language)? successSwitchLanguage,
   }) {
     return loadingPutData?.call();
   }
@@ -558,6 +588,7 @@ class _$LoadingPutDataImpl implements LoadingPutData {
     TResult Function(ProfileResponse profileResponse)? successGetProfile,
     TResult Function()? loadingPutData,
     TResult Function(ProfileResponse profileResponse)? successPutData,
+    TResult Function(String language)? successSwitchLanguage,
     required TResult orElse(),
   }) {
     if (loadingPutData != null) {
@@ -574,6 +605,8 @@ class _$LoadingPutDataImpl implements LoadingPutData {
     required TResult Function(SuccessGetProfile value) successGetProfile,
     required TResult Function(LoadingPutData value) loadingPutData,
     required TResult Function(SuccessPutData value) successPutData,
+    required TResult Function(SuccessSwitchLanguage value)
+        successSwitchLanguage,
   }) {
     return loadingPutData(this);
   }
@@ -586,6 +619,7 @@ class _$LoadingPutDataImpl implements LoadingPutData {
     TResult? Function(SuccessGetProfile value)? successGetProfile,
     TResult? Function(LoadingPutData value)? loadingPutData,
     TResult? Function(SuccessPutData value)? successPutData,
+    TResult? Function(SuccessSwitchLanguage value)? successSwitchLanguage,
   }) {
     return loadingPutData?.call(this);
   }
@@ -598,6 +632,7 @@ class _$LoadingPutDataImpl implements LoadingPutData {
     TResult Function(SuccessGetProfile value)? successGetProfile,
     TResult Function(LoadingPutData value)? loadingPutData,
     TResult Function(SuccessPutData value)? successPutData,
+    TResult Function(SuccessSwitchLanguage value)? successSwitchLanguage,
     required TResult orElse(),
   }) {
     if (loadingPutData != null) {
@@ -683,6 +718,7 @@ class _$SuccessPutDataImpl implements SuccessPutData {
         successGetProfile,
     required TResult Function() loadingPutData,
     required TResult Function(ProfileResponse profileResponse) successPutData,
+    required TResult Function(String language) successSwitchLanguage,
   }) {
     return successPutData(profileResponse);
   }
@@ -695,6 +731,7 @@ class _$SuccessPutDataImpl implements SuccessPutData {
     TResult? Function(ProfileResponse profileResponse)? successGetProfile,
     TResult? Function()? loadingPutData,
     TResult? Function(ProfileResponse profileResponse)? successPutData,
+    TResult? Function(String language)? successSwitchLanguage,
   }) {
     return successPutData?.call(profileResponse);
   }
@@ -707,6 +744,7 @@ class _$SuccessPutDataImpl implements SuccessPutData {
     TResult Function(ProfileResponse profileResponse)? successGetProfile,
     TResult Function()? loadingPutData,
     TResult Function(ProfileResponse profileResponse)? successPutData,
+    TResult Function(String language)? successSwitchLanguage,
     required TResult orElse(),
   }) {
     if (successPutData != null) {
@@ -723,6 +761,8 @@ class _$SuccessPutDataImpl implements SuccessPutData {
     required TResult Function(SuccessGetProfile value) successGetProfile,
     required TResult Function(LoadingPutData value) loadingPutData,
     required TResult Function(SuccessPutData value) successPutData,
+    required TResult Function(SuccessSwitchLanguage value)
+        successSwitchLanguage,
   }) {
     return successPutData(this);
   }
@@ -735,6 +775,7 @@ class _$SuccessPutDataImpl implements SuccessPutData {
     TResult? Function(SuccessGetProfile value)? successGetProfile,
     TResult? Function(LoadingPutData value)? loadingPutData,
     TResult? Function(SuccessPutData value)? successPutData,
+    TResult? Function(SuccessSwitchLanguage value)? successSwitchLanguage,
   }) {
     return successPutData?.call(this);
   }
@@ -747,6 +788,7 @@ class _$SuccessPutDataImpl implements SuccessPutData {
     TResult Function(SuccessGetProfile value)? successGetProfile,
     TResult Function(LoadingPutData value)? loadingPutData,
     TResult Function(SuccessPutData value)? successPutData,
+    TResult Function(SuccessSwitchLanguage value)? successSwitchLanguage,
     required TResult orElse(),
   }) {
     if (successPutData != null) {
@@ -764,4 +806,167 @@ abstract class SuccessPutData implements SettingsState {
   @JsonKey(ignore: true)
   _$$SuccessPutDataImplCopyWith<_$SuccessPutDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessSwitchLanguageImplCopyWith<$Res> {
+  factory _$$SuccessSwitchLanguageImplCopyWith(
+          _$SuccessSwitchLanguageImpl value,
+          $Res Function(_$SuccessSwitchLanguageImpl) then) =
+      __$$SuccessSwitchLanguageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String language});
+}
+
+/// @nodoc
+class __$$SuccessSwitchLanguageImplCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$SuccessSwitchLanguageImpl>
+    implements _$$SuccessSwitchLanguageImplCopyWith<$Res> {
+  __$$SuccessSwitchLanguageImplCopyWithImpl(_$SuccessSwitchLanguageImpl _value,
+      $Res Function(_$SuccessSwitchLanguageImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? language = null,
+  }) {
+    return _then(_$SuccessSwitchLanguageImpl(
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessSwitchLanguageImpl implements SuccessSwitchLanguage {
+  const _$SuccessSwitchLanguageImpl({required this.language});
+
+  @override
+  final String language;
+
+  @override
+  String toString() {
+    return 'SettingsState.successSwitchLanguage(language: $language)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessSwitchLanguageImpl &&
+            (identical(other.language, language) ||
+                other.language == language));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, language);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessSwitchLanguageImplCopyWith<_$SuccessSwitchLanguageImpl>
+      get copyWith => __$$SuccessSwitchLanguageImplCopyWithImpl<
+          _$SuccessSwitchLanguageImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingGetProfile,
+    required TResult Function(ProfileResponse profileResponse)
+        successGetProfile,
+    required TResult Function() loadingPutData,
+    required TResult Function(ProfileResponse profileResponse) successPutData,
+    required TResult Function(String language) successSwitchLanguage,
+  }) {
+    return successSwitchLanguage(language);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingGetProfile,
+    TResult? Function(ProfileResponse profileResponse)? successGetProfile,
+    TResult? Function()? loadingPutData,
+    TResult? Function(ProfileResponse profileResponse)? successPutData,
+    TResult? Function(String language)? successSwitchLanguage,
+  }) {
+    return successSwitchLanguage?.call(language);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingGetProfile,
+    TResult Function(ProfileResponse profileResponse)? successGetProfile,
+    TResult Function()? loadingPutData,
+    TResult Function(ProfileResponse profileResponse)? successPutData,
+    TResult Function(String language)? successSwitchLanguage,
+    required TResult orElse(),
+  }) {
+    if (successSwitchLanguage != null) {
+      return successSwitchLanguage(language);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initila value) initial,
+    required TResult Function(LoadingGetProfile value) loadingGetProfile,
+    required TResult Function(SuccessGetProfile value) successGetProfile,
+    required TResult Function(LoadingPutData value) loadingPutData,
+    required TResult Function(SuccessPutData value) successPutData,
+    required TResult Function(SuccessSwitchLanguage value)
+        successSwitchLanguage,
+  }) {
+    return successSwitchLanguage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initila value)? initial,
+    TResult? Function(LoadingGetProfile value)? loadingGetProfile,
+    TResult? Function(SuccessGetProfile value)? successGetProfile,
+    TResult? Function(LoadingPutData value)? loadingPutData,
+    TResult? Function(SuccessPutData value)? successPutData,
+    TResult? Function(SuccessSwitchLanguage value)? successSwitchLanguage,
+  }) {
+    return successSwitchLanguage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initila value)? initial,
+    TResult Function(LoadingGetProfile value)? loadingGetProfile,
+    TResult Function(SuccessGetProfile value)? successGetProfile,
+    TResult Function(LoadingPutData value)? loadingPutData,
+    TResult Function(SuccessPutData value)? successPutData,
+    TResult Function(SuccessSwitchLanguage value)? successSwitchLanguage,
+    required TResult orElse(),
+  }) {
+    if (successSwitchLanguage != null) {
+      return successSwitchLanguage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessSwitchLanguage implements SettingsState {
+  const factory SuccessSwitchLanguage({required final String language}) =
+      _$SuccessSwitchLanguageImpl;
+
+  String get language;
+  @JsonKey(ignore: true)
+  _$$SuccessSwitchLanguageImplCopyWith<_$SuccessSwitchLanguageImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

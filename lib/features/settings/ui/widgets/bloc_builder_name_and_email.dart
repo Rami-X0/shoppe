@@ -11,22 +11,25 @@ class BlocBuilderNameAndEmail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<SettingsCubit>(context).emitProfile();
     return SizedBox(
       height: 185.h,
       child: BlocBuilder<SettingsCubit, SettingsState>(
+        buildWhen: (previous, current) =>
+            current is LoadingGetProfile || current is SuccessGetProfile,
         builder: (context, state) {
           return state.maybeWhen(
             orElse: () {
               return const SizedBox.shrink();
             },
             loadingGetProfile: () {
-              return const Center(
-                child: SettingsTextLoading(),
+              return SettingsTextLoading(
+                height: 50.h,
               );
             },
             loadingPutData: () {
-              return const Center(
-                child: SettingsTextLoading(),
+              return SettingsTextLoading(
+                height: 50.h,
               );
             },
             successGetProfile: (profileResponse) {

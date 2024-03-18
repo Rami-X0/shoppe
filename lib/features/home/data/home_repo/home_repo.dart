@@ -26,6 +26,7 @@ class HomeRepo {
       return ApiResult.failure(error.toString());
     }
   }
+
   Future<ApiResult<ProductsResponse>> products() async {
     try {
       final response = await _apiServices.products();
