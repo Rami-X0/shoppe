@@ -33,7 +33,7 @@ class SettingsDialog extends StatelessWidget {
             surfaceTintColor:Colors.transparent ,
             backgroundColor: Colors.transparent,
             clipBehavior: Clip.antiAliasWithSaveLayer,
-            insetPadding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 0),
+            insetPadding: EdgeInsets.symmetric(horizontal: 5.w, ),
             child: Container(
               color: ColorsManager.skyBlue,
               height: height.h,
