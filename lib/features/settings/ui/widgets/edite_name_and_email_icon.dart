@@ -10,10 +10,10 @@ import 'package:shoppe/features/settings/ui/widgets/setting_close_button.dart';
 import 'package:shoppe/features/settings/ui/widgets/settings_dialog.dart';
 import 'package:shoppe/features/settings/ui/widgets/profile_form.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-class EditeNameAndEmail extends StatelessWidget {
+class EditeNameAndEmailIcon extends StatelessWidget {
   final ProfileResponse profileResponse;
 
-  const EditeNameAndEmail({super.key, required this.profileResponse});
+  const EditeNameAndEmailIcon({super.key, required this.profileResponse});
 
   @override
   Widget build(BuildContext context) {

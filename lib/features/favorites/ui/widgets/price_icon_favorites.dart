@@ -23,7 +23,7 @@ class PriceFavorites extends StatelessWidget {
               .toString(),
           style: TextStyles.font15MainBlueSemiBold,
         ),
-        Gap(18.w),
+        Gap(20.w),
         favoritesResponse.favoritesData!.data![index].product!.discount! > 0
             ? Text(
                 favoritesResponse.favoritesData!.data![index].product!.oldPrice

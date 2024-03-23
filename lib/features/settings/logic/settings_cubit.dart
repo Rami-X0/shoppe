@@ -60,9 +60,8 @@ class SettingsCubit extends Cubit<SettingsState> {
     appLanguage =
         await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.appLanguage);
     DioFactory.dio!.options.headers[dioHeaderLang] = appLanguage.toString();
-    _homeCubit.emitProducts();
     _homeCubit.emitCategories();
-    emitProfile();
-    emit( SettingsState.successSwitchLanguage(language: appLanguage.toString()));
+    _homeCubit.emitProducts();
+    emit(SettingsState.successSwitchLanguage(language: appLanguage.toString()));
   }
 }

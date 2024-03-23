@@ -69,11 +69,12 @@ Route generateRoute(RouteSettings settings) {
 
     default:
       return MaterialPageRoute(
-        builder: (_) => Scaffold(
-          body: Center(
-            child: Text('No route defined for ${settings.name}'),
-          ),
-        ),
+        builder: (_) =>
+            Scaffold(
+              body: Center(
+                child: Text('No route defined for ${settings.name}'),
+              ),
+            ),
       );
   }
 }
@@ -84,10 +85,11 @@ Widget routesMultiBlocProvider({
   return MultiBlocProvider(
     providers: [
       BlocProvider<HomeCubit>.value(
-        value: getIt<HomeCubit>()
+          value: getIt<HomeCubit>()
       ),
       BlocProvider<FavoritesCubit>.value(
-        value: getIt<FavoritesCubit>()..emitFavorites(),
+        value: getIt<FavoritesCubit>()
+
       ),
       BlocProvider<SettingsCubit>.value(
         value: getIt<SettingsCubit>(),

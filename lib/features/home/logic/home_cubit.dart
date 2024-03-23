@@ -3,6 +3,7 @@ import 'package:shoppe/features/home/data/home_repo/home_repo.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
 import 'package:shoppe/features/home/logic/home_state.dart';
 
+
 class HomeCubit extends Cubit<HomeState> {
   final HomeRepo _homeRepo;
   int activePage = 0;
@@ -36,7 +37,7 @@ class HomeCubit extends Cubit<HomeState> {
     emit(const HomeState.loadingGetProducts());
     final response = await _homeRepo.products();
     response.whenOrNull(
-      success: (productsResponse) {
+      success: (productsResponse)async {
         addFavoritesMap(productsResponse, favorites);
         addCartsMap(productsResponse, carts);
         emit(HomeState.successGetProducts(data: productsResponse));

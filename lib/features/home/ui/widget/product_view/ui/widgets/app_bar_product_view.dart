@@ -12,6 +12,7 @@ import 'package:shoppe/features/home/logic/home_cubit.dart';
 import 'package:shoppe/features/home/ui/widget/product_view/ui/widgets/inkwell_product_view.dart';
 import 'package:shoppe/features/home/ui/widget/button_favorites_home.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class AppBarProductView extends StatelessWidget {
   final ProductData productData;
 
@@ -28,16 +29,15 @@ class AppBarProductView extends StatelessWidget {
             messageToolTip: AppLocalizations.of(context)!.back,
             onTap: () {
               context.pop();
-              context
-                  .read<HomeCubit>()
-
-                  .activePage = 0;
+              context.read<HomeCubit>().activePage = 0;
             },
             circular: 10,
             height: 40,
             width: 50,
             child: FaIcon(
-             appLanguage=='en'? FontAwesomeIcons.arrowLeft:FontAwesomeIcons.arrowRight,
+              ( appLanguage == 'en'|| appLanguage == null)
+                  ? FontAwesomeIcons.arrowLeft
+                  : FontAwesomeIcons.arrowRight,
               size: 24.w,
               color: ColorsManager.mainBlue,
             ),
@@ -52,9 +52,10 @@ class AppBarProductView extends StatelessWidget {
             height: 40,
             width: 50,
             onTap: () {
-            context.read<FavoritesCubit>().addProductFavorites(context, productData);
-            }
-            ,
+              context
+                  .read<FavoritesCubit>()
+                  .addProductFavorites(context, productData);
+            },
             child: ButtonFavoriteHome(
               favoriteIconColor: ColorsManager.mainBlue,
               productId: productData.id!,
@@ -64,6 +65,4 @@ class AppBarProductView extends StatelessWidget {
       ),
     );
   }
-
-
 }

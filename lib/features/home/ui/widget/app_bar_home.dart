@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
+import 'package:shoppe/core/di/dependency_injection.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/core/widgets/app_icon_button_and_tool_tip.dart';
 import 'package:shoppe/features/search/logic/search_cubit.dart';
 import 'package:shoppe/features/search/ui/search_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
   const AppBarHome({super.key});
@@ -24,31 +25,35 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
         surfaceTintColor: Colors.white,
         title: Row(
           children: [
-            _iconDrawerAndTextShoppe(context),
+            _drawerIconAndTextShoppe(context),
             const Spacer(),
-            AppIconButtonAndToolTip(
-              onTap: () {
-                showModalBottomSheet(
-                  isDismissible: true,
-                  context: context,
-                  isScrollControlled: true,
-                  builder: (index) {
-                    return const SearchScreen();
-                  },
-                ).whenComplete(() {
-                  context.read<SearchCubit>().searchController.clear();
-                });
-              },
-              icon: FontAwesomeIcons.magnifyingGlass,
-              toolTipMessage: AppLocalizations.of(context)!.search,
-            ),
+            _searchIcon(context),
           ],
         ),
       ),
     );
   }
 
-  Row _iconDrawerAndTextShoppe(BuildContext context) {
+  Widget _searchIcon(BuildContext context) {
+    return AppIconButtonAndToolTip(
+      onTap: () {
+        showModalBottomSheet(
+          isDismissible: true,
+          context: context,
+          isScrollControlled: true,
+          builder: (index) {
+            return const SearchScreen();
+          },
+        ).then((value) {
+          getIt<SearchCubit>().searchController.clear();
+        });
+      },
+      icon: FontAwesomeIcons.magnifyingGlass,
+      toolTipMessage: AppLocalizations.of(context)!.search,
+    );
+  }
+
+  Row _drawerIconAndTextShoppe(BuildContext context) {
     return Row(
       children: [
         AppIconButtonAndToolTip(
@@ -66,7 +71,8 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         Gap(15.w),
-        SvgPicture.asset('assets/svgs/shoppe_logo.svg', width: 35.w, height: 35.h),
+        SvgPicture.asset('assets/svgs/shoppe_logo.svg',
+            width: 35.w, height: 35.h),
       ],
     );
   }

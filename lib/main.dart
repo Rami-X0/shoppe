@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/core/caching/app_shared_pref_key.dart';
 import 'package:shoppe/core/di/dependency_injection.dart';
@@ -16,5 +17,7 @@ void main() async {
   appLanguage =
       await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.appLanguage);
   Bloc.observer = MyBlocObserver();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await Future.delayed(const Duration(milliseconds: 150));
   runApp(const ShoppeApp());
 }

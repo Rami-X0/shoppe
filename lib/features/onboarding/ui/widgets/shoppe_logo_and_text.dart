@@ -17,7 +17,7 @@ class ShoppeLogoAndText extends StatelessWidget {
               borderRadius: BorderRadius.circular(100),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black.withOpacity(.1),
+                    color: ColorsManager.mainBlue.withOpacity(.1),
                     offset: const Offset(0, 4),
                     spreadRadius: 4,
                     blurRadius: 10),

@@ -38,6 +38,7 @@ class BlocBuilderCategoriesView extends StatelessWidget {
                       categoriesResponse: categoriesResponse,
                     );
                   },
+
                   orElse: () {
                     return const SizedBox.shrink();
                   },

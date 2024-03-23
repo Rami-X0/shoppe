@@ -5,10 +5,11 @@ import 'package:gap/gap.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/settings/data/models/profile_response.dart';
-import 'package:shoppe/features/settings/ui/widgets/edite_name_and_email.dart';
+import 'package:shoppe/features/settings/ui/widgets/edite_name_and_email_icon.dart';
 
 class SettingsNameAndEmail extends StatelessWidget {
   final ProfileResponse profileResponse;
+
   const SettingsNameAndEmail({super.key, required this.profileResponse});
 
   @override
@@ -16,23 +17,24 @@ class SettingsNameAndEmail extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(
-          child: Column(
-            children: [
-              _imageProfile(),
-              Gap(10.h),
-              Text(
-                profileResponse.userData!.name.toString(),
-                style: TextStyles.font18MainBlueSemiBold,
-              ),
-              Text(
-                profileResponse.userData!.email.toString(),
-                style: TextStyles.font14MainBlueBold.copyWith(fontSize: 10.sp),
-              ),
-            ],
-          ),
+        Gap(45.w),
+        Column(
+          children: [
+            _imageProfile(),
+            Gap(10.h),
+            Text(
+              profileResponse.userData!.name.toString(),
+              style: TextStyles.font18MainBlueSemiBold,
+            ),
+            Text(
+              profileResponse.userData!.email.toString(),
+              style: TextStyles.font14MainBlueBold.copyWith(fontSize: 10.sp),
+            ),
+          ],
         ),
-         EditeNameAndEmail(profileResponse: profileResponse,)
+        EditeNameAndEmailIcon(
+          profileResponse: profileResponse,
+        )
       ],
     );
   }
@@ -47,5 +49,4 @@ class SettingsNameAndEmail extends StatelessWidget {
       ),
     );
   }
-
 }

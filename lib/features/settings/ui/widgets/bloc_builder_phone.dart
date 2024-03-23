@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/settings/logic/settings_cubit.dart';
 import 'package:shoppe/features/settings/logic/settings_state.dart';
 import 'package:shoppe/features/settings/ui/widgets/phone_edite.dart';
@@ -20,9 +21,11 @@ class BlocBuilderPhone extends StatelessWidget {
             return const SizedBox.shrink();
           },
           loadingGetProfile: () {
-
-            return SettingsTextLoading(
+            return SizedBox(
               height: 50.h,
+              child: SettingsTextLoading(
+                textStyle: TextStyles.font18MainBlueSemiBold,
+              ),
             );
           },
           successGetProfile: (profileResponse) {

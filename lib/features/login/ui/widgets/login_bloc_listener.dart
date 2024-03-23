@@ -2,8 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoppe/core/caching/app_shared_pref.dart';
-import 'package:shoppe/core/caching/app_shared_pref_key.dart';
 import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/routing/routes.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
@@ -28,7 +26,7 @@ class LoginBlocListener extends StatelessWidget {
               context: context,
               builder: (context) {
                 return BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                  filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                   child: const AppLoading(),
                 );
               },
@@ -37,10 +35,6 @@ class LoginBlocListener extends StatelessWidget {
           success: (loginResponse) {
             if (loginResponse.status == true) {
               context.pushNamed(Routes.homeScreen);
-              AppSharedPref.sharedPrefSet(
-                key: AppSharedPrefKey.token,
-                value: loginResponse.userData!.token,
-              );
               appSnackBar(
                 text: loginResponse.message.toString(),
                 backGroundColor:

@@ -18,6 +18,7 @@ class GetStartedButton extends StatelessWidget {
     return Column(
       children: [
         AppTextButton(
+         shadowColor: ColorsManager.mainBlue,
           onPressed: () {
             context.pushNamed(Routes.signUpScreen);
               AppSharedPref.sharedPrefSet(
@@ -45,7 +46,8 @@ class GetStartedButton extends StatelessWidget {
                     35.h,
                   ),
                   shape: const CircleBorder(),
-                 elevation: 5,
+                 shadowColor: ColorsManager.mainBlue.withOpacity(0.5),
+                  elevation: 5,
                   backgroundColor: ColorsManager.mainBlue),
               onPressed: () {
                 context.pushNamed(Routes.loginScreen);

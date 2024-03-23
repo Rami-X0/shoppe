@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/widgets/app_text_form_field.dart';
 import 'package:shoppe/features/search/logic/search_cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class SearchForm extends StatefulWidget {
   const SearchForm({super.key});
 
@@ -19,7 +20,13 @@ class _SearchFormState extends State<SearchForm> {
       child: Form(
         key: context.read<SearchCubit>().formKey,
         child: AppTextFormField(
+          autoFocus: true,
+          textInputAction: TextInputAction.search,
+          keyboardType: TextInputType.text,
           hintText: AppLocalizations.of(context)!.search,
+        onEditingComplete: (){
+          actionButtonSearchKeyBoard(context);
+        },
           validator: (value) {
             return validateSearch(value);
           },
@@ -35,5 +42,10 @@ class _SearchFormState extends State<SearchForm> {
     }
 
     return null;
+  }
+  void actionButtonSearchKeyBoard(BuildContext context) {
+    if (context.read<SearchCubit>().formKey.currentState!.validate()) {
+      context.read<SearchCubit>().emitSearch();
+    }
   }
 }

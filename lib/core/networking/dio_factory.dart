@@ -10,19 +10,20 @@ class DioFactory {
 
   static Future<Dio> getDio() async {
     await AppSharedPref.initSharedPref();
-    token = await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.token);
-    appLanguage =
+     appLanguage =
         await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.appLanguage);
+    token = await AppSharedPref.sharedPrefGet(key: AppSharedPrefKey.token);
 
     Duration timeOut = const Duration(seconds: 30);
 
     if (dio == null) {
       dio = Dio();
 
+
       dio!.options.headers = {
         'Content-Type': 'application/json',
-        'lang':appLanguage.toString(),
-        'Authorization': token.toString() ,
+        'lang': appLanguage??'en',
+        'Authorization': token,
       };
       dio!
         ..options.connectTimeout = timeOut
@@ -34,13 +35,13 @@ class DioFactory {
     }
   }
 
-static void addDioInterceptor() async {
-  dio?.interceptors.add(
-    PrettyDioLogger(
-      requestBody: true,
-      requestHeader: true,
-      responseHeader: true,
-    ),
-  );
-}
+  static void addDioInterceptor() async {
+    dio?.interceptors.add(
+      PrettyDioLogger(
+        requestBody: true,
+        requestHeader: true,
+        responseHeader: true,
+      ),
+    );
+  }
 }

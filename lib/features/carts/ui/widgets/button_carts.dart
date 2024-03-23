@@ -32,29 +32,36 @@ class ButtonCarts extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
           ),
           child: GestureDetector(
-              onTap: () {
-                addProductCarts(context);
-              },
-              child: context.read<HomeCubit>().carts[productId]!
-                  ? Center(
-                      child: FaIcon(
-                        context.read<HomeCubit>().carts[productId]!
-                            ? FontAwesomeIcons.cartShopping
-                            : FontAwesomeIcons.cartShopping,
-                        color: ColorsManager.mainBlue,
-                        size: 20.w,
-                      ),
-                    )
-                  : Center(
-                      child: Text(
-                        AppLocalizations.of(context)!.wait,
-                        style: TextStyles.font14MainBlueBold.copyWith(
-                          fontSize: 11.sp,
-                        ),
-                      ),
-                    )),
+            onTap: () {
+              addProductCarts(context);
+            },
+            child: context.read<HomeCubit>().carts[productId]!
+                ? favoriteIcon()
+                : textWait(context),
+          ),
         );
       },
+    );
+  }
+
+  Center favoriteIcon() {
+    return Center(
+      child: FaIcon(
+        FontAwesomeIcons.cartShopping,
+        color: ColorsManager.mainBlue,
+        size: 20.w,
+      ),
+    );
+  }
+
+  Center textWait(BuildContext context) {
+    return Center(
+      child: Text(
+        AppLocalizations.of(context)!.wait,
+        style: TextStyles.font14MainBlueBold.copyWith(
+          fontSize: 11.sp,
+        ),
+      ),
     );
   }
 

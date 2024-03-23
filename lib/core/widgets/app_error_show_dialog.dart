@@ -13,7 +13,7 @@ final String text;
   @override
   Widget build(BuildContext context) {
     return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+      filter: ImageFilter.blur(sigmaX:5, sigmaY: 5),
       child: Dialog(
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,

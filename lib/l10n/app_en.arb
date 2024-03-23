@@ -21,7 +21,7 @@
 "drawer":"drawer",
 "edite":"edite",
 "back":"back",
-"loading":"loading...",
+"loading":"Loading",
 "wait":"wait...",
 "details_product":"Product Details",
 "details":"Details",
@@ -56,6 +56,6 @@
 "name_letter": " Name must be more than four letters",
 "number_letter": " The phone number should not be less than eight digits",
 "okay": "Okay",
-"log_out": "log Out"
-
+"log_out": "Log Out",
+"exit_drawer": "E X I T"
 }

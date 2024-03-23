@@ -27,7 +27,8 @@ class FavoritesCubit extends Cubit<FavoritesState> {
     final response = await _favoritesRepo.addFavorites(id);
     response.whenOrNull(success: (favoritesAddResponse) {
       if (!favoritesAddResponse.status!) {
-        _homeCubit.favorites[id.productId] = !_homeCubit.favorites[id.productId]!;
+        _homeCubit.favorites[id.productId] =
+            !_homeCubit.favorites[id.productId]!;
       }
       emitFavorites();
       emit(FavoritesState.successAddFavorites(favoritesAddResponse));

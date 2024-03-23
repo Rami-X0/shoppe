@@ -29,7 +29,6 @@ class _ShoppeAppState extends State<ShoppeApp> {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
-
     return BlocProvider<SettingsCubit>.value(
       value: getIt<SettingsCubit>(),
       child: BlocBuilder<SettingsCubit, SettingsState>(

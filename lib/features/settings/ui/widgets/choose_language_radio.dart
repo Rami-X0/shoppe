@@ -7,6 +7,7 @@ import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
 import 'package:shoppe/features/settings/logic/settings_cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:shoppe/features/settings/ui/widgets/dialog_choose_language.dart';
 
 class ChooseLanguageRadio extends StatefulWidget {
   const ChooseLanguageRadio({super.key});
@@ -54,6 +55,7 @@ class _ChooseLanguageRadioState extends State<ChooseLanguageRadio> {
                   context.read<SettingsCubit>().emitAppLanguage(value);
                 },
               );
+              showDialogAfterChooseLanguage(context);
             },
           ),
           _defaultRadio(
@@ -68,12 +70,25 @@ class _ChooseLanguageRadioState extends State<ChooseLanguageRadio> {
                   context.read<SettingsCubit>().emitAppLanguage(value);
                 },
               );
+              showDialogAfterChooseLanguage(context);
             },
           ),
         ],
       ),
     );
   }
+
+  showDialogAfterChooseLanguage(BuildContext context) {
+    showDialog(
+    barrierDismissible: false,
+      context: context,
+      builder: (context) {
+        return const DialogChooseLanguage();
+      },
+    );
+  }
+
+
 
   void cachingRadio(String value) {
     AppSharedPref.sharedPrefSet(
@@ -86,7 +101,6 @@ class _ChooseLanguageRadioState extends State<ChooseLanguageRadio> {
     required dynamic groupValue,
     required void Function(dynamic)? onChanged,
   }) {
-
     return RadioListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 15.w),
       dense: true,

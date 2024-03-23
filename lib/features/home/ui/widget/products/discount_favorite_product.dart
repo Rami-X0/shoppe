@@ -37,7 +37,7 @@ class DiscountFavoriteProduct extends StatelessWidget {
                 bottomLeft: radiusCircular,
                 child: Text(
                   AppLocalizations.of(context)!.discount,
-                  style: TextStyles.font70WhiteBold,
+                  style: TextStyles.font10WhiteBold,
                 ),
               )
             : const SizedBox.shrink(),

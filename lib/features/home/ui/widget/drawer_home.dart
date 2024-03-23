@@ -49,6 +49,15 @@ class DrawerHome extends StatelessWidget {
               },
               icon: FontAwesomeIcons.gear,
               text: AppLocalizations.of(context)!.settings_drawer),
+          const Spacer(),
+          _buildIconAndTextDrawer(
+              context: context,
+              onTap: () {
+                Scaffold.of(context).closeDrawer();
+              },
+              icon: FontAwesomeIcons.rightFromBracket,
+              text: AppLocalizations.of(context)!.exit_drawer),
+          Gap(25.h),
         ],
       ),
     );

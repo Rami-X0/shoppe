@@ -57,6 +57,7 @@ class _SignUpFormState extends State<SignUpForm> {
       child: Column(
         children: [
           AppTextFormField(
+            keyboardType: TextInputType.emailAddress,
             controller: context.read<SignUpCubit>().emailController,
             hintText: AppLocalizations.of(context)!.email,
             suffixIcon: FaIcon(
@@ -70,6 +71,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           verticalSpace(16),
           AppTextFormField(
+            keyboardType: TextInputType.text,
             controller: context.read<SignUpCubit>().nameController,
             hintText: AppLocalizations.of(context)!.name,
             suffixIcon: FaIcon(
@@ -83,6 +85,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           verticalSpace(16),
           AppTextFormField(
+            keyboardType: TextInputType.number,
             controller: context.read<SignUpCubit>().phoneController,
             hintText: AppLocalizations.of(context)!.phone,
             suffixIcon: FaIcon(
@@ -96,6 +99,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           verticalSpace(16),
           AppTextFormField(
+            keyboardType: TextInputType.visiblePassword,
             controller: context.read<SignUpCubit>().passwordController,
             obscureText: _showPassword,
             hintText: AppLocalizations.of(context)!.password,

@@ -15,6 +15,7 @@ class AppLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
+
         child: Lottie.asset(
       'assets/lottie/loading.json',
       width: width ?? 150.w,

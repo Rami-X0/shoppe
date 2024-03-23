@@ -18,13 +18,15 @@ class AppSlideScaleFadeTransition extends StatefulWidget {
 }
 
 class _AppSlideScaleFadeTransitionState
-    extends State<AppSlideScaleFadeTransition> with TickerProviderStateMixin {
+    extends State<AppSlideScaleFadeTransition>
+    with TickerProviderStateMixin, AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   late AnimationController _controller;
-
   late Animation<double> _scaleWithFadeAnimation;
   late Animation<Offset> _slideAnimation;
 
-  Duration durationAnimation = const Duration(milliseconds:  1350);
+  Duration durationAnimation = const Duration(milliseconds: 1350);
   Curve curvesAnimation = Curves.ease;
 
   @override
@@ -32,21 +34,26 @@ class _AppSlideScaleFadeTransitionState
     super.initState();
     createScaleFadeAnimation();
     createSlideAnimation();
+    _controller.forward();
   }
 
   void createScaleFadeAnimation() {
-    _controller = AnimationController(vsync: this, duration: widget.duration != null
-        ? Duration(milliseconds: widget.duration!)
-        : durationAnimation)
+    _controller = AnimationController(
+        vsync: this,
+        duration: widget.duration != null
+            ? Duration(milliseconds: widget.duration!)
+            : durationAnimation)
       ..forward();
     _scaleWithFadeAnimation = Tween<double>(begin: 0.0, end: 1)
         .animate(CurvedAnimation(parent: _controller, curve: curvesAnimation));
   }
 
   void createSlideAnimation() {
-    _controller = AnimationController(vsync: this, duration:  widget.duration != null
-        ? Duration(milliseconds: widget.duration!)
-        : durationAnimation)
+    _controller = AnimationController(
+        vsync: this,
+        duration: widget.duration != null
+            ? Duration(milliseconds: widget.duration!)
+            : durationAnimation)
       ..forward();
     _slideAnimation = Tween<Offset>(
             begin: Offset(0, widget.scaleOffsetEnd), end: const Offset(0, 0))
@@ -55,6 +62,7 @@ class _AppSlideScaleFadeTransitionState
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return ScaleTransition(
       scale: _scaleWithFadeAnimation,
       child: SlideTransition(

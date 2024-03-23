@@ -35,7 +35,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
           return AppIconButtonAndToolTip(
             toolTipMessage: 'back',
             onTap: onTap,
-            icon: appLanguage == 'en'
+            icon: (appLanguage == 'en' || appLanguage == null)
                 ? FontAwesomeIcons.arrowLeft
                 : FontAwesomeIcons.arrowRight,
           );

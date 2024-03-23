@@ -54,7 +54,7 @@ class _LoginFormState extends State<LoginForm> {
       child: Column(
         children: [
           AppTextFormField(
-
+            keyboardType: TextInputType.emailAddress,
             controller: context.read<LoginCubit>().emailController,
             hintText: AppLocalizations.of(context)!.email,
             suffixIcon: FaIcon(
@@ -68,7 +68,7 @@ class _LoginFormState extends State<LoginForm> {
           ),
           verticalSpace(16),
           AppTextFormField(
-
+              keyboardType: TextInputType.visiblePassword,
             controller: context.read<LoginCubit>().passwordController,
             hintText: AppLocalizations.of(context)!.password,
             suffixIcon: GestureDetector(

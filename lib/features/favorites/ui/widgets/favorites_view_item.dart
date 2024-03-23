@@ -72,7 +72,7 @@ class FavoritesViewItem extends StatelessWidget {
         ),
         Gap(50.h),
         SizedBox(
-          width: 160.w,
+          width: 190.w,
           child: Row(
             children: [
               PriceFavorites(

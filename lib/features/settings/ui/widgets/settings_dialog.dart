@@ -12,20 +12,28 @@ class SettingsDialog extends StatelessWidget {
   final Widget child;
   final double height;
 
-  const SettingsDialog({super.key, required this.child, required this.height});
+  const SettingsDialog({
+    super.key,
+    required this.child,
+    required this.height,
+  });
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<SettingsCubit>.value(
       value: getIt<SettingsCubit>(),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
         child: AppSlideScaleFadeTransition(
           scaleOffsetEnd: 1,
           duration: 600,
           child: Dialog(
-            insetPadding: EdgeInsets.symmetric(horizontal: 10.w),
+            elevation: 0,
+            shadowColor:  Colors.transparent,
+            surfaceTintColor:Colors.transparent ,
+            backgroundColor: Colors.transparent,
             clipBehavior: Clip.antiAliasWithSaveLayer,
+            insetPadding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 0),
             child: Container(
               color: ColorsManager.skyBlue,
               height: height.h,

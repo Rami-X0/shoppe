@@ -9,6 +9,7 @@ import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
 import 'package:shoppe/features/favorites/logic/favorites_state.dart';
 import 'package:shoppe/features/home/logic/home_cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class FavoritesButton extends StatelessWidget {
   final num productId;
 
@@ -35,26 +36,32 @@ class FavoritesButton extends StatelessWidget {
               addProductFavorites(context);
             },
             child: context.read<HomeCubit>().favorites[productId]!
-                ? Center(
-              child: FaIcon(
-                context.read<HomeCubit>().favorites[productId]!
-                    ? FontAwesomeIcons.solidHeart
-                    : FontAwesomeIcons.heart,
-                color: ColorsManager.mainBlue,
-                size: 20.w,
-              ),
-            )
-                : Center(
-              child: Text(
-                AppLocalizations.of(context)!.wait,
-                style: TextStyles.font14MainBlueBold.copyWith(
-                  fontSize: 11.sp,
-                ),
-              ),
-            ),
+                ? favoriteIcon()
+                : textWait(context),
           ),
         );
       },
+    );
+  }
+
+  Center favoriteIcon() {
+    return Center(
+      child: FaIcon(
+        FontAwesomeIcons.solidHeart,
+        color: ColorsManager.mainBlue,
+        size: 20.w,
+      ),
+    );
+  }
+
+  Center textWait(BuildContext context) {
+    return Center(
+      child: Text(
+        AppLocalizations.of(context)!.wait,
+        style: TextStyles.font14MainBlueBold.copyWith(
+          fontSize: 11.sp,
+        ),
+      ),
     );
   }
 

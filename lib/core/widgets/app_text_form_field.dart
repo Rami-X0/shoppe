@@ -9,7 +9,11 @@ class AppTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final double borderRadius = 16;
   final bool? obscureText;
+  final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
+  final bool? autoFocus;
   final Function(String?) validator;
+  final Function()?  onEditingComplete;
   final TextEditingController? controller;
 
   const AppTextFormField({
@@ -21,11 +25,23 @@ class AppTextFormField extends StatelessWidget {
     this.obscureText,
     required this.validator,
     required this.controller,
+    this.keyboardType,
+    this.textInputAction,
+    this.autoFocus,
+    this.onEditingComplete,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autofocus: autoFocus ?? false,
+      textInputAction: textInputAction,
+      keyboardType: keyboardType,
+      onEditingComplete:(){
+        onEditingComplete?.call();
+        FocusScope.of(context).requestFocus(FocusNode());
+
+      },
       validator: (value) {
         return validator(value);
       },
@@ -38,7 +54,7 @@ class AppTextFormField extends StatelessWidget {
               vertical: 17,
               horizontal: 20,
             ),
-        label:labelText,
+        label: labelText,
         hintText: hintText,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),

@@ -8,6 +8,7 @@ import 'package:shoppe/features/home/logic/home_state.dart';
 import 'package:shoppe/features/home/ui/widget/default_container_home.dart';
 import 'package:shoppe/features/home/ui/widget/products/products_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class BlocBuilderProducts extends StatelessWidget {
   const BlocBuilderProducts({super.key});
 
@@ -28,21 +29,25 @@ class BlocBuilderProducts extends StatelessWidget {
             ),
           ),
           BlocBuilder<HomeCubit, HomeState>(
-              buildWhen: (previous, current) =>
-                  current is LoadingGetProducts ||
-                  current is SuccessGetProducts ,
-              builder: (context, state) {
-                return state.maybeWhen(loadingGetProducts: () {
+            buildWhen: (previous, current) =>
+                current is LoadingGetProducts || current is SuccessGetProducts,
+            builder: (context, state) {
+              return state.maybeWhen(
+                loadingGetProducts: () {
                   return SizedBox(
                     height: 300.h,
                     child: const AppLoading(),
                   );
-                }, successGetProducts: (productsResponse) {
+                },
+                successGetProducts: (productsResponse) {
                   return ProductsView(productsResponse: productsResponse);
-                }, orElse: () {
+                },
+                orElse: () {
                   return const SizedBox.shrink();
-                });
-              }),
+                },
+              );
+            },
+          ),
         ],
       ),
     );
