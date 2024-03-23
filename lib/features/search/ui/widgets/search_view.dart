@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/features/home/data/models/product_response.dart';
+import 'package:shoppe/features/search/ui/widgets/search_image.dart';
+import 'package:shoppe/features/search/ui/widgets/search_text.dart';
 import 'package:shoppe/features/search/ui/widgets/search_view_item.dart';
 
 class SearchView extends StatelessWidget {
@@ -13,6 +16,7 @@ class SearchView extends StatelessWidget {
     return Expanded(
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: 5/6.h,
           crossAxisCount: 2,
           crossAxisSpacing: 8.w,
           mainAxisSpacing: 5.h,
@@ -25,6 +29,7 @@ class SearchView extends StatelessWidget {
             productsResponse: productsResponse,
 
           );
+
         },
       ),
     );

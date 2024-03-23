@@ -26,10 +26,11 @@ class LoginCubit extends Cubit<LoginState> {
 
     response.whenOrNull(
       success: (loginResponse) {
-        AppSharedPref.sharedPrefSet(
-            key: AppSharedPrefKey.token, value: loginResponse.userData!.token);
-        updateToken();
         emit(LoginState.success(loginResponse));
+        AppSharedPref.sharedPrefSet(
+            key: AppSharedPrefKey.token,
+            value: loginResponse.userData!.token.toString());
+        updateToken();
       },
     );
   }
