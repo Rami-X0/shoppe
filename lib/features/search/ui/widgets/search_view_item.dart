@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/core/routing/animation_routing/app_alignment_router.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_slide_scale_fade_transition.dart';

@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:shoppe/core/helper/spacing.dart';
 import 'package:shoppe/core/theming/colors.dart';
-import 'package:shoppe/core/widgets/app_slide_scale_fade_transition.dart';
 import 'package:shoppe/features/favorites/ui/widgets/favorites_button.dart';
 import 'package:shoppe/features/favorites/ui/widgets/favorites_image.dart';
 import 'package:shoppe/features/favorites/ui/widgets/favorites_name.dart';
@@ -15,35 +14,33 @@ import 'package:shoppe/features/favorites/ui/widgets/price_icon_favorites.dart';
 class FavoritesViewItem extends StatelessWidget {
   final FavoritesResponse favoritesResponse;
   final int index;
-
+  final VoidCallback? onTap;
   const FavoritesViewItem({
     super.key,
     required this.favoritesResponse,
     required this.index,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final BorderRadius radius = BorderRadius.circular(10);
-    return AppSlideScaleFadeTransition(
-     scaleOffsetEnd: 3,
-      child: Container(
-        height: 150.h,
-        margin: EdgeInsets.symmetric(
-          horizontal: 5.w,
-          vertical: 3.h,
+    return Container(
+      height: 150.h,
+      margin: EdgeInsets.symmetric(
+        horizontal: 5.w,
+        vertical: 3.h,
+      ),
+      decoration: BoxDecoration(
+        color: ColorsManager.mainBlue.withOpacity(0.1),
+        borderRadius: radius,
+      ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: 6.w,
+          vertical: 10.h,
         ),
-        decoration: BoxDecoration(
-          color: ColorsManager.mainBlue.withOpacity(0.1),
-          borderRadius: radius,
-        ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 6.w,
-            vertical: 10.h,
-          ),
-          child: _imageFavorite(),
-        ),
+        child: _imageFavorite(),
       ),
     );
   }
@@ -81,8 +78,9 @@ class FavoritesViewItem extends StatelessWidget {
               ),
               const Spacer(),
               FavoritesButton(
-                productId:
-                    favoritesResponse.favoritesData!.data![index].product!.id!,
+                onTap: onTap,
+                productId: favoritesResponse.favoritesData!
+                    .data![index].product!.id!,
               ),
             ],
           ),

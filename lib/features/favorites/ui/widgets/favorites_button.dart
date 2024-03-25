@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/theming/styles.dart';
-import 'package:shoppe/features/favorites/data/models/favorites_request.dart';
 import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
 import 'package:shoppe/features/favorites/logic/favorites_state.dart';
 import 'package:shoppe/features/home/logic/home_cubit.dart';
@@ -12,10 +11,11 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FavoritesButton extends StatelessWidget {
   final num productId;
+  final VoidCallback? onTap;
 
   const FavoritesButton({
     super.key,
-    required this.productId,
+    required this.productId, required this.onTap,
   });
 
   @override
@@ -32,9 +32,7 @@ class FavoritesButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
           ),
           child: GestureDetector(
-            onTap: () {
-              addProductFavorites(context);
-            },
+            onTap:onTap,
             child: context.read<HomeCubit>().favorites[productId]!
                 ? favoriteIcon()
                 : textWait(context),
@@ -63,11 +61,5 @@ class FavoritesButton extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void addProductFavorites(BuildContext context) {
-    context
-        .read<FavoritesCubit>()
-        .emitAddFavorites(FavoritesRequest(productId: productId));
   }
 }

@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +32,7 @@ class DialogChooseLanguage extends StatelessWidget {
 
   BackdropFilter dialogChangeLanguage() {
     return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+      filter: ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
       child: Dialog(
         elevation: 0,
         backgroundColor: Colors.transparent,

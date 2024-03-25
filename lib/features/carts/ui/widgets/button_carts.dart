@@ -12,10 +12,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ButtonCarts extends StatelessWidget {
   final num productId;
+  final VoidCallback? onTap;
 
   const ButtonCarts({
     super.key,
     required this.productId,
+    this.onTap,
   });
 
   @override
@@ -32,9 +34,7 @@ class ButtonCarts extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
           ),
           child: GestureDetector(
-            onTap: () {
-              addProductCarts(context);
-            },
+            onTap: onTap,
             child: context.read<HomeCubit>().carts[productId]!
                 ? favoriteIcon()
                 : textWait(context),

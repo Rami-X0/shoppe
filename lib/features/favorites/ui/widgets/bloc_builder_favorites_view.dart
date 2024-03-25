@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoppe/core/caching/app_shared_pref_key.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
 import 'package:shoppe/core/widgets/app_no_data.dart';
 import 'package:shoppe/features/favorites/logic/favorites_cubit.dart';
@@ -37,7 +36,6 @@ class BlocBuilderFavoritesView extends StatelessWidget {
                     if (favoritesResponse.favoritesData!.data!.isEmpty) {
                       return const AppNoData();
                     }
-                    debugPrint('favorite Token =====${token.toString()}');
                     return FavoritesView(
                       favoritesResponse: favoritesResponse,
                     );

@@ -4,12 +4,14 @@ class AppSlideScaleFadeTransition extends StatefulWidget {
   final Widget child;
   final double scaleOffsetEnd;
   final int? duration;
+  final bool animate;
 
   const AppSlideScaleFadeTransition({
     super.key,
     required this.child,
     required this.scaleOffsetEnd,
     this.duration,
+    this.animate=true ,
   });
 
   @override
@@ -34,18 +36,22 @@ class _AppSlideScaleFadeTransitionState
     super.initState();
     createScaleFadeAnimation();
     createSlideAnimation();
+
+  }
+void checkWorkAnimation(){
+  if(widget.animate==true){
     _controller.forward();
   }
-
+}
   void createScaleFadeAnimation() {
     _controller = AnimationController(
         vsync: this,
         duration: widget.duration != null
             ? Duration(milliseconds: widget.duration!)
-            : durationAnimation)
-      ..forward();
+            : durationAnimation);
     _scaleWithFadeAnimation = Tween<double>(begin: 0.0, end: 1)
         .animate(CurvedAnimation(parent: _controller, curve: curvesAnimation));
+    checkWorkAnimation();
   }
 
   void createSlideAnimation() {
@@ -53,11 +59,11 @@ class _AppSlideScaleFadeTransitionState
         vsync: this,
         duration: widget.duration != null
             ? Duration(milliseconds: widget.duration!)
-            : durationAnimation)
-      ..forward();
+            : durationAnimation);
     _slideAnimation = Tween<Offset>(
             begin: Offset(0, widget.scaleOffsetEnd), end: const Offset(0, 0))
         .animate(CurvedAnimation(parent: _controller, curve: curvesAnimation));
+    checkWorkAnimation();
   }
 
   @override
@@ -79,7 +85,6 @@ class _AppSlideScaleFadeTransitionState
   void dispose() {
     _controller.dispose();
     debugPrint('========>>>>>Dispose Animation');
-
     super.dispose();
   }
 }

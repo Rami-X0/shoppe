@@ -11,7 +11,7 @@ class CartsCubit extends Cubit<CartsState> {
   CartsCubit(this._cartsRepo, this._homeCubit)
       : super(const CartsState.initial());
 
-  void emitAddCarts(CartsRequest id) async {
+ Future <void> emitAddCarts(CartsRequest id) async {
     emit(const CartsState.loadingAddCarts());
     _homeCubit.carts[id.productId] = !_homeCubit.carts[id.productId]!;
     final response = await _cartsRepo.addCarts(id);

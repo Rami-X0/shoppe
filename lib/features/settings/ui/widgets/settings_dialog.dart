@@ -25,8 +25,8 @@ class SettingsDialog extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
         child: AppSlideScaleFadeTransition(
-          scaleOffsetEnd: 1,
-          duration: 600,
+          scaleOffsetEnd: 0.8,
+          duration: 350,
           child: Dialog(
             elevation: 0,
             shadowColor:  Colors.transparent,
