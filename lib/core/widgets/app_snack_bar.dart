@@ -21,22 +21,27 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> appSnackBar({
           ),
           const Spacer(),
           InkWell(
-              onTap: () {
-                ScaffoldMessenger.of(context).hideCurrentSnackBar();
-              },
+            onTap: () {
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+            },
+            child: CircleAvatar(
+              backgroundColor: ColorsManager.white.withOpacity(0.2),
+              maxRadius: 10.w,
               child: FaIcon(
                 FontAwesomeIcons.x,
                 size: 8.w,
                 color: ColorsManager.white,
-              ))
+              ),
+            ),
+          ),
         ],
       ),
       duration: const Duration(milliseconds: 1000),
-      behavior: SnackBarBehavior.floating,
       hitTestBehavior: HitTestBehavior.opaque,
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
       backgroundColor: backGroundColor,
       elevation: 3,
+      behavior: SnackBarBehavior.floating,
+      margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 75.h),
     ),
   );
 }

@@ -29,7 +29,7 @@ class _FavoritesViewState extends State<FavoritesView> {
     setState(() {
       animateInitial = true;
     });
-    Future.delayed(const Duration(milliseconds: 1400), () {
+    Future.delayed(const Duration(milliseconds: 1000), () {
       setState(() {
         animateInitial = false;
       });
@@ -46,6 +46,7 @@ class _FavoritesViewState extends State<FavoritesView> {
         return animateInitial
             ? AppSlideScaleFadeTransition(
                 scaleOffsetEnd: 3,
+               duration: 1000,
                 animate: animateInitial,
                 child: FavoritesViewItem(
                   onTap: () => addProductFavorites(context, index),

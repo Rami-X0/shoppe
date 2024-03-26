@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppe/core/helper/extension.dart';
 import 'package:shoppe/core/routing/routes.dart';
+import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_loading.dart';
 import 'package:shoppe/core/widgets/app_error_show_dialog.dart';
 import 'package:shoppe/core/widgets/app_snack_bar.dart';
@@ -38,7 +39,7 @@ class LoginBlocListener extends StatelessWidget {
               appSnackBar(
                 text: loginResponse.message.toString(),
                 backGroundColor:
-                    loginResponse.status == true ? Colors.green : Colors.red,
+                    loginResponse.status == true ? ColorsManager.darkBlue : Colors.red,
                 context: context,
               );
             } else {

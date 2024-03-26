@@ -10,6 +10,7 @@ class AppNoData extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: AppSlideScaleFadeTransition(
+      duration: 550,
         scaleOffsetEnd: 3,
         child: SvgPicture.asset(
           'assets/svgs/no_data.svg',

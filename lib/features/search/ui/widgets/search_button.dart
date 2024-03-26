@@ -28,7 +28,8 @@ class SearchButton extends StatelessWidget {
               toolTipMessage: AppLocalizations.of(context)!.search,
               icon: FontAwesomeIcons.magnifyingGlass,
               onTap: () {
-                validateSearch(context);
+                FocusScope.of(context).requestFocus(FocusNode());
+                context.read<SearchCubit>().validateSearch(context);
               },
             );
           },
@@ -37,9 +38,5 @@ class SearchButton extends StatelessWidget {
     );
   }
 
-  void validateSearch(BuildContext context) {
-    if (context.read<SearchCubit>().formKey.currentState!.validate()) {
-      context.read<SearchCubit>().emitSearch();
-    }
-  }
+
 }

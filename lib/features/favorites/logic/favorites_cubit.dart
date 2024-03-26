@@ -21,7 +21,7 @@ class FavoritesCubit extends Cubit<FavoritesState> {
     });
   }
 
- Future <void> emitAddFavorites(FavoritesRequest id) async {
+  Future<void> emitAddFavorites(FavoritesRequest id) async {
     emit(const FavoritesState.loadingAddFavorites());
     _homeCubit.favorites[id.productId] = !_homeCubit.favorites[id.productId]!;
     final response = await _favoritesRepo.addFavorites(id);
@@ -35,11 +35,11 @@ class FavoritesCubit extends Cubit<FavoritesState> {
     });
   }
 
-  void addProductFavorites(BuildContext context, ProductData productData) {
-    context.read<FavoritesCubit>().emitAddFavorites(
-          FavoritesRequest(
-            productId: productData.id!,
-          ),
-        );
+  addProductFavorites(BuildContext context, ProductData productData) {
+    emitAddFavorites(
+      FavoritesRequest(
+        productId: productData.id!,
+      ),
+    );
   }
 }

@@ -20,5 +20,9 @@ class SearchCubit extends Cubit<SearchState> {
     });
   }
 
-
+  void validateSearch(BuildContext context) {
+    if (formKey.currentState!.validate()) {
+      emitSearch();
+    }
+  }
 }

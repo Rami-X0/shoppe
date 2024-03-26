@@ -14,7 +14,7 @@ class ProductsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 420.h,
+      height: 415.h,
       child: ListView.builder(
           shrinkWrap: true,
           itemCount: productsResponse.data!.productData!.length,

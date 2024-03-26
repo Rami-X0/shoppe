@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoppe/core/theming/colors.dart';
 import 'package:shoppe/core/widgets/app_icon_button_and_tool_tip.dart';
+import 'package:shoppe/core/widgets/app_snack_bar.dart';
 import 'package:shoppe/features/carts/data/models/carts_request.dart';
 import 'package:shoppe/features/carts/logic/carts_cubit.dart';
 import 'package:shoppe/features/carts/logic/carts_state.dart';
@@ -17,7 +19,7 @@ class ButtonCartsHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CartsCubit, CartsState>(
+    return BlocConsumer<CartsCubit, CartsState>(
       buildWhen: (previous, current) =>
           current is LoadingAddCarts || current is SuccessAddCarts,
       builder: (context, state) {
@@ -33,6 +35,19 @@ class ButtonCartsHome extends StatelessWidget {
               : Icons.shopping_cart_outlined,
         );
       },
+        listener: (context, state) {
+          state.whenOrNull(
+
+            successAddCarts: (data) {
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              appSnackBar(
+                text: data.message.toString(),
+                backGroundColor:data.status! ? ColorsManager.darkBlue : Colors.red,
+                context: context,
+              );
+            },
+          );
+        }
     );
   }
 }

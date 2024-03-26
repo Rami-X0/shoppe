@@ -13,7 +13,8 @@ class SearchView extends StatelessWidget {
     return Expanded(
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 5/6.h,
+          childAspectRatio: MediaQuery.of(context).size.width /
+              (MediaQuery.of(context).size.height / 1.9),
           crossAxisCount: 2,
           crossAxisSpacing: 8.w,
           mainAxisSpacing: 5.h,

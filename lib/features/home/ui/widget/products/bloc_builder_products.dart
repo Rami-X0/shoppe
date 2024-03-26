@@ -17,12 +17,12 @@ class BlocBuilderProducts extends StatelessWidget {
     context.read<HomeCubit>().emitProducts();
 
     return DefaultContainerHome(
-      height: 581.h,
+      height: 460,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            padding: EdgeInsets.symmetric(horizontal: 8.w,),
             child: Text(
               AppLocalizations.of(context)!.products,
               style: TextStyles.font18MainBlueSemiBold,

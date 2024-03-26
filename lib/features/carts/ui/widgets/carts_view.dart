@@ -33,7 +33,7 @@ class _CartsViewState extends State<CartsView> {
       animateInitial = true;
     });
     Future.delayed(
-      const Duration(milliseconds: 1400),
+      const Duration(milliseconds: 1000),
       () {
         setState(() {
           animateInitial = false;
@@ -42,6 +42,7 @@ class _CartsViewState extends State<CartsView> {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return AnimatedList(
       key: _listKey,
@@ -51,6 +52,7 @@ class _CartsViewState extends State<CartsView> {
         return animateInitial
             ? AppSlideScaleFadeTransition(
                 scaleOffsetEnd: 3,
+                duration: 1000,
                 animate: animateInitial,
                 child: CartsViewItem(
                   onTap: () => addProductCarts(context, index),
